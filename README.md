@@ -41,7 +41,7 @@ YouTube Realtime is a simple way to view your favorite channel's subscriber coun
 
 # ToDo
 * Comparison of 2 YouTube Video Dislikes
-* Make buttons actually work (lol)
+* Make buttons on sub compare actually work (lol)
 
 # License
 Copyright © Shaz - 2019
