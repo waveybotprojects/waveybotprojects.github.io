@@ -1,0 +1,176 @@
+/* ----------------------------------------------- */
+/*                  Main Stuff                     */
+/* ----------------------------------------------- */
+
+html {
+	background-color: #EDF5F8;
+	overflow: scroll;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.row {
+	position: relative; 
+	left: 7%;
+ }
+
+.title {
+	position: relative; 
+	top: -25px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+
+ #card1 {
+	max-height: 610px;
+ }
+
+ #card2 {
+	position: relative; 
+	left: 38%; 
+	max-width: 350px;
+ }
+ @media screen and (max-width: 1816px) {
+	#card1 {
+	   max-height: 590px;
+	}
+ }
+
+ @media screen and (max-width: 1752px) {
+	#card1 {
+	   max-height: 570px;
+	}
+ }
+
+ @media screen and (max-width: 1670px) {
+	#card1 {
+	   max-height: 550px;
+	}
+ }
+
+ @media screen and (max-width: 1594px) {
+	#card1 {
+	   max-height: 530px;
+	}
+ }
+
+ @media screen and (max-width: 1506px) {
+	#card1 {
+	   max-height: 510px;
+	}
+ }
+
+ @media screen and (max-width: 1410px) {
+	#card1 {
+	   max-height: 490px;
+	}
+ }
+
+ @media screen and (max-width: 1358px) {
+	#card1 {
+	   max-height: 490px;
+	}
+
+	#count1 {
+	   font-size: 80px;
+	}
+
+	#count2 {
+	   font-size: 80px;
+	}
+
+	@media screen and (max-width: 1313px) {
+	#card1 {
+	   max-height: 470px;
+	}
+ }
+
+ @media screen and (max-width: 1252px) {
+	#card1 {
+	   max-height: 450px;
+	}
+ }
+
+ @media screen and (max-width: 1213px) {
+
+	#count1 {
+	   font-size: 70px;
+	}
+
+	#count2 {
+	   font-size: 70px;
+	}
+ }
+
+ @media screen and (max-width: 1180px) {
+	#card1 {
+	   max-height: 430px;
+	}
+ }
+
+ @media screen and (max-width: 1103px) {
+	#card1 {
+	   max-height: 410px;
+	}
+ }
+
+ #count1 {
+	   font-size: 60px;
+	}
+
+	#count2 {
+	   font-size: 60px;
+	}
+
+	@media screen and (max-width: 1008px) {
+	#card1 {
+	   max-height: 390px;
+	}
+ }
+
+ @media screen and (max-width: 930px) {
+	#card1 {
+	   max-height: 370px;
+	}
+
+	#count1 {
+	   font-size: 50px;
+	}
+
+	#count2 {
+	   font-size: 50px;
+	}
+ }
+
+ @media screen and (max-width: 770px) {
+	#card1 {
+	   max-height: 340px;
+	}
+	#count1 {
+	   font-size: 40px;
+	}
+
+	#count2 {
+	   font-size: 40px;
+	}
+ }
+
+ @media screen and (max-width: 600px) {
+	#card1 {
+	   max-height: 475px;
+	}
+
+ }
+
+
+ }

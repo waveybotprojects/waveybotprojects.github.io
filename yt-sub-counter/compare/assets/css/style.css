@@ -1,0 +1,66 @@
+/* ----------------------------------------------- */
+/*                  Main Stuff                     */
+/* ----------------------------------------------- */
+
+html {
+	background-color: #EDF5F8;
+	overflow: scroll;
+	overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.row {
+	position: relative; 
+	margin-top: 110px;
+	left: 7%;
+ }
+
+ .text-center {
+	 text-align: center!important;
+ }
+
+ .pfp {
+	 position: relative;
+	 margin-top: -50px;
+ }
+
+ .name {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	 margin-top: 10px;
+	 color: #455A64;
+	 font-family: roboto,sans-serif;
+ }
+
+ .odometer {
+	color: #455A64;
+ }
+
+.odo-difference {
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+ .odo-person {
+	font-size: 6.5vw;
+	margin-top: -25px;
+ }
+
+ @media only screen and (max-width: 600px) {
+	.odo-person {
+		font-size: 90px;
+	}
+
+	.card {
+		margin-left: -55px;
+	}
+ }
