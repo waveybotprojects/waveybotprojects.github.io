@@ -12,6 +12,13 @@ setInterval(function() {
     $.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' + user + '&key=' + key, function(data) {
         $('#odometer').html(data.items[0].statistics.subscriberCount);
     });
+	$.getJSON('https://www.googleapis.com/youtube/v3/channels?id=' + user + '&part=snippet&key=' + key, function(data) {
+                document.getElementById("name").innerHTML = data.items[0].snippet.title;
+                var image = document.querySelector('#user_pic');
+                image.src = data.items[0].snippet.thumbnails.default.url
+    })
+
+        })
 }, 2000);
 
 //---------------------------------------------------------------//
@@ -42,10 +49,6 @@ document.addEventListener("DOMContentLoaded", function(){
                 var image = document.querySelector('#user_pic');
                 image.src = data.items[0].snippet.thumbnails.default.url
             })
-            
-            $.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=' + user + '&key=' + key, function(data) {
-                $('#odometer').html(data.items[0].statistics.subscriberCount);
-            });
 
         })
 
