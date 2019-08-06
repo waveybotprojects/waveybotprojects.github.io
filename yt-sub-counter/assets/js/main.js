@@ -42,7 +42,7 @@ function getUrlVars() {
     });
     return vars
 }
-document.addEventListener("DOMContentLoaded", function(){
+$(document).ready() {
 
     $.getJSON('https://www.googleapis.com/youtube/v3/channels?id=' + user + '&part=snippet&key=' + key, function(data) {
                 document.getElementById("name").innerHTML = data.items[0].snippet.title;
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 image.src = data.items[0].snippet.thumbnails.default.url
             })
 
-        })
+        }
 
         //setInterval(getKey, 20000)
 //function getKey() {
