@@ -1,0 +1,16 @@
+.text-center {
+    text-align: center;
+}
+
+.link {
+    font-size: 20px;
+}
+
+hr {
+    border: 0;
+    clear:both;
+    display:block;
+    width: 96%;               
+    background-color:rgb(173, 169, 169);
+    height: 1px;
+}
