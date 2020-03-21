@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - Stopthefire.gg Live Count</title>  
+     <meta name="title" content="livecounts.io - Stopthefire.gg Live Count">	
+     <meta name="description" content="Livecounts.io is a simple way to display current count from Stopthefire.gg in real-time.">		
+     <meta name="robots" content="index, follow">	
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+     <meta name="language" content="English">	
+     <meta name="author" content="Shaz">	
+     <link rel="icon" href="/assets/global/youtube-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/stopthefire-live-count.css?v=1.0">
+    <script data-ad-client="ca-pub-1358865196814452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h1 class="header-text">stopthefire.gg Live Count</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row center">
+
+                <div class="col-sm-12 offset-sm-1">
+					<div class="row center">
+						<div class="col-sm-12">
+						<h4 class="text-center video-title">Donated so far</h4>
+						</div>
+					</div>
+                    <div class="d-flex justify-content-center odometer main-odo odometer view-odo"></div> 
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+                <div class="row">
+                        <div class="col s12 offset-md-1">
+                            <div id="chart"></div>
+                     </div>
+                    </div>
+                <div class="row center">
+                    <div class="col-sm-11 offset-md-1">
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <h3 id="sharing">Sharing</h3>
+                        <p>You can share Live Tree Count by simply by sharing the link below.</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" value="https://livecounts.io/stopthefire-live-count/" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <p></p>
+                        <h3 id="embed">Embed</h3>
+                        <p>You can embed the StopTheFire Live Count for any Channel/Video on your own website or in OBS by copying specified value</p>
+                        <p>Website:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" value="https://livecounts.io/stopthefire-live-count/" id="embed-website" class="form-control" onclick="this.select();" readonly>
+                        </div>
+
+                        <p>OBS:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" value="https://livecounts.io/stopthefire-live-count/" id="obsurl" class="form-control" onclick="this.select();" readonly>
+                        </div>
+                        <p>Make sure to set width to 500px and height to 180px for best results!</p>
+                </div>
+            </div>
+        </div>
+		
+			<ul style="position: absolute; top: 100px;">
+                <div class="links"></div>
+            </ul>
+
+
+    
+
+
+   </body>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="/assets/global/counters/js/stopthefire-live-count.js?v=1.01"></script>
+   <script src="/assets/global/counters/js/stopthefire-live-count-disqus.js"></script>
+   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</html>
