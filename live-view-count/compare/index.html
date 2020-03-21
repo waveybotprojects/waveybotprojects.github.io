@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - YouTube View Comparison</title>   
+    <meta name="title" content="livecounts.io - YouTube Live View Count">	
+    <meta name="description" content="Livecounts is a simple way to check any YouTube's video view, like and dislike count updated in real-time!">	
+    <meta name="keywords" content="livecounts, livecounts.io, live view count, view count, live count, youtube view count, youtube live, youtube count, youtube live view count, youtube, youtube live, youtube count">
+    <meta name="robots" content="index, follow">	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	<meta name="language" content="English">	
+    <meta name="author" content="Shaz">	<link rel="icon" href="/assets/global/youtube-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count-compare.css?v=1.02">
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h1 class="header-text"><i style="color: #fff;" class="fab fa-youtube"></i> YouTube Live View Comparison</h1>
+            </div>
+        </div>
+
+        <p></p> <!-- possible place for future ads -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12 col-md-6">
+                    <div class="card m-b-0 m-t-20">
+                        <img class="thumbnail1 img-fluid" width="539" height="300" src="http://i3.ytimg.com/vi/-RZjoHj78fM/maxresdefault.jpg">
+                        <h4 class="text-truncate text-center title1">livecounts.io</h4>
+                        <div class="odometer odo1 d-flex justify-content-center main-odo"></div>
+                        <h6 class="text-center">Views</h6>
+                    </div>
+                </div>
+                <div class="col s12 col-md-6">
+                        <div class="card m-b-0 m-t-20">
+                            <img class="thumbnail2 img-fluid" width="539" height="300" src="http://i3.ytimg.com/vi/-RZjoHj78fM/maxresdefault.jpg">
+                            <h4 class="text-truncate text-center title2">livecounts.io</h4>
+                            <div class="odometer odo2 d-flex justify-content-center main-odo"></div>
+                            <h6 class="text-center">Views</h6>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+        </div>
+
+        <p></p>
+
+        <div class="container">
+                <div class="row">
+                        <div class="col">
+                                <div class="input-group mb-1">
+                                    <input type="text" id="search1" class="form-control" placeholder="Query / Link" aria-label="Query / Link" aria-describedby="basic-addon2">
+                                    <button type="button" id="searchbutton1" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                    <div class="col">
+                            <div class="input-group mb-1">
+                                <input type="text" id="search2" class="form-control" placeholder="Query / Link" aria-label="Query / Link" aria-describedby="basic-addon2">
+                                <button type="button" id="searchbutton2" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                </div>
+
+                <p></p>
+
+                <div class="row">
+                        <div class="col s6 col-md-4 offset-md-4">
+                                <div class="card">
+                                    <div class="odometer d-flex justify-content-center difference-odo"></div>
+                                    <h6 class="text-center">View Difference</h6>
+                                </div>
+                            </div>
+                </div>
+
+                <p></p>
+
+                        <div class="row">
+                                <div class="col-sm-12">
+                                    <div id="chart"></div>
+                                </div>
+                            </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <div id="disqus_thread"></div>
+                    </div>
+                </div>
+        </div>
+
+   </body>
+
+    <script src="https://livecounts.io/assets/global/odometer.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
+    <script src="/assets/global/counters/js/live-view-count-compare.js?v=3.25"></script>
+    <script src="/assets/global/counters/js/live-view-count-compare-disqus.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</html>
