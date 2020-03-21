@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - YouTube Comment Live Like Count</title>  
+     <meta name="title" content="YouTube YouTube Comment Live Like Count">	
+     <meta name="description" content="Livecounts.io is a simple way to display likes under any comment on YouTube, updated in real-time!">	
+     <meta name="keywords" content="livecounts, livecounts.io, live view count, view count, live count, youtube view count, youtube live, youtube count, youtube live view count, youtube, youtube live, youtube count, youtube view comparison, youtube view vs, youtube view compare">	
+     <meta name="robots" content="index, follow">	
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+     <meta name="language" content="English">	
+     <meta name="author" content="Shaz">	
+     <link rel="icon" href="/assets/global/youtube-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/yt-comment-like-count.css?v=1.01">
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h1 class="header-text"><i style="color: #fff;" class="fab fa-youtube"></i> YouTube Comment Live Like Count</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row center">
+
+                <div class="col-sm-12 offset-sm-1">
+					<div class="row center">
+						<div class="col-sm-12">
+						<h4 class="text-center comment-title">livecounts.io</h4>
+						</div>
+					</div>
+                    <div class="d-flex justify-content-center odometer main-odo odometer view-odo"></div> 
+                </div>
+            </div>
+        </div>
+
+        <div class="row center">
+                <div class="col offset-sm-1">
+                    <h5 class="text-center">Goal</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo goal-odo"></div> 
+                </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="row center">
+                <div class="col-sm-5 offset-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" id="search" class="form-control search-input" placeholder="Link to the Comment (SEE: GUIDE)" aria-describedby="inputGroup-sizing-default">
+                        <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm-12">
+                            <div id="chart"></div>
+                        </div>
+                    </div>
+
+                <div class="row center">
+                    <div class="col-sm-11 offset-md-1">
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <h3 id="sharing">Sharing</h3>
+                        <p>You can share YouTube Live View count by simply by sharing the link below.</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <p></p>
+                        <h3 id="embed">Embed</h3>
+                        <p>You can embed the YouTube Comment Live Like Count for any Channel/Video on your own website or in OBS by copying specified value</p>
+                        <p>Website:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="embed-website" class="form-control" onclick="this.select();" readonly>
+                        </div>
+
+                        <p>OBS:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="obsurl" class="form-control" onclick="this.select();" readonly>
+                        </div>
+                        <p>Make sure to set width to 500px and height to 180px for best results!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row center">
+                <div class="col-sm-12 offset-md-1">
+                    <p></p>
+                    <h3 id="guide">Guide</h3>
+                    <p>Not sure how to get link to your comment? Hopefully this guide will help you!</p>
+                    <p>1. Find your comment</p>
+                    <p>2. Right click on the comment's date and press copy link</p>
+                    <img src="https://i.imgur.com/ETXvgNH.png"><p></p>
+                    <img src="https://i.imgur.com/1EkGW08.png">
+                    <p>3. Paste copied link into search box</p>
+                    <p>4. Done!</p>
+            </div>
+        </div>
+    </div>
+		
+			<ul style="position: absolute; top: 100px;">
+                <li class="nav-title">Featured Comments</li>
+                <li class="stretched-link link"><i class="fab fa-youtube"></i><a href="/yt-comment-like-count/Ugyb0OkJoZemhn5BD194AaABAg"> Bald Guy</li></a><br>
+                <li class="stretched-link nav-title2">Meta</li>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#embed"> Embed</li></a><br>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#sharing"> Sharing</li></a><br>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#guide"> Guide</li></a><br><br>
+                <li class="nav-title2">Other</li>
+                <div class="links"></div>
+            </ul>
+
+
+    
+
+
+   </body>
+
+   <script src="https://livecounts.io/assets/global/odometer.js"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
+   <script src="/assets/global/counters/js/yt-comment-like-count.js?v=1.09"></script>
+   <script src="/assets/global/counters/js/yt-comment-like-count-disqus.js"></script>
+
+</html>
