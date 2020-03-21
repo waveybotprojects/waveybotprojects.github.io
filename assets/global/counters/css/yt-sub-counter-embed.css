@@ -1,0 +1,25 @@
+html body{
+font-family: 'Roboto', sans-serif;
+
+}
+
+::-webkit-scrollbar{
+    display:none
+}
+#name{
+    position:absolute;
+    left:93px;
+    top:9px;
+    font-size:22px;
+    width:200px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis
+}
+#odometer{
+    position:absolute;
+    left:89px;
+    top:37px;
+    color:#24292e;
+    font-size:34px
+}

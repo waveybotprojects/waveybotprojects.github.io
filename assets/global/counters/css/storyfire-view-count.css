@@ -1,0 +1,152 @@
+.card-header {
+  background: #cb2d3e;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ef473a, #cb2d3e);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ef473a, #cb2d3e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */	
+}
+
+.header-text {
+    font-size: calc(30px + 1vw);
+    color: white;
+}
+
+.nav-item:hover {
+    background-color: #E3DEDE;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+}
+
+.main-odo {
+    font-size: calc(15px + 10vw);
+}
+
+body {
+    overflow-x: hidden;
+  }
+
+  #sidebar-wrapper {
+    margin-top: -258px;
+  }
+
+.text-center {
+  text-align: center;
+}
+
+.video-title {
+  font-size: calc(10px + 2vw);
+}
+
+.bottom-odo {
+  font-size: calc(6px + 3vw);
+}
+
+@media screen and (max-width: 500px) {
+  .card-header {
+    display: none;
+  }
+  .header-text {
+    font-size: 0;
+  }
+
+  .card-head {
+    display: none;
+  }
+}
+
+  /* ----------------------------------------------- */
+/*                    Navbar                        */
+/* ----------------------------------------------- */
+
+ul {
+  list-style-type: none;
+  margin: -10px;
+  padding: 0;
+color: rgb(75, 28, 28);
+  width: 250px;
+  background-color: #fff;
+box-shadow: 7px 2px 28px -14px;
+  height: 100%;
+  position: fixed; 
+  overflow: hidden;
+}
+
+#shoppy-link {
+cursor:pointer;
+}
+
+.nav-title {
+padding: 0px;
+text-align: center;
+font-size: 13px;
+position: relative;
+top: 20px;
+left: -23px;
+}
+
+.nav-title2 {
+padding: 0px;
+text-align: center;
+font-size: 13px;
+position: relative;
+top: 20px;
+left: -53px;
+}
+
+.link {
+position: relative;
+left: 30px;
+top: 30px;
+font-size: 17px;
+}
+
+.link2 {
+position: relative;
+left: 27px;
+top: 30px;
+font-size: 17px;
+}
+
+.link:hover {
+color: red;
+}
+
+.link2:hover {
+color: red;
+}
+
+
+.active {
+  background-color: #dddddd;
+  color: black;
+}
+
+@media screen and (max-width: 1500px) {
+  ul {
+		width: 200px;
+	}
+}
+
+@media screen and (max-width: 1252px) {
+  ul {
+		width: 0px;
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	ul {
+		width: 0px;
+	}
+	
+	pre {
+		width: 0px;
+		display: none;
+	}
+	
+	label {
+		width: 0px;
+		display: none;
+	}
+}

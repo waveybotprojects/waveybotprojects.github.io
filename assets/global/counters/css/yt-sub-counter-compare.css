@@ -1,0 +1,435 @@
+/* ----------------------------------------------- */
+/*                  Main Stuff                     */
+/* ----------------------------------------------- */
+
+body {
+	background-color: #EDF5F8;
+	overflow: scroll;
+	overflow-x: hidden;
+	font-family: roboto,sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.row {
+	position: relative; 
+	margin-top: 110px;
+	left: 7%;
+ }
+
+ .text-center {
+	 text-align: center!important;
+ }
+
+ .pfp {
+	 position: relative;
+	 margin-top: -50px;
+ }
+
+ .name {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	 margin-top: 10px;
+	 color: #455A64;
+ }
+
+ .odometer {
+	color: #455A64;
+ }
+
+.odo-difference {
+	font-size: 40px;
+	margin-top: 10px;
+}
+
+ .odo-person {
+	font-size: 6.5vw;
+	margin-top: -25px;
+ }
+
+ @media only screen and (max-width: 600px) {
+	.odo-person {
+		font-size: 90px;
+	}
+
+	.card {
+		margin-left: -55px;
+	}
+ }
+
+
+ .rainbow-text{
+	-webkit-animation: color-change 10s infinite;
+	-moz-animation: color-change 10s infinite;
+	-o-animation: color-change 10s infinite;
+	-ms-animation: color-change 10s infinite;
+	animation: color-change 10s infinite;
+}
+
+@-webkit-keyframes color-change {
+0% {
+color: #d65c97;
+}
+5% {
+color: #5cd666;
+}
+10% {
+color: #a55cd6;
+}
+15.0% {
+color: #5c7cd6;
+}
+20% {
+color: #d65c7a;
+}
+25% {
+color: #81d65c;
+}
+30.0% {
+color: #835cd6;
+}
+35% {
+color: #685cd6;
+}
+40% {
+color: #5c9dd6;
+}
+45% {
+color: #5cd670;
+}
+50% {
+color: #d6625c;
+}
+55.0% {
+color: #d6835c;
+}
+60.0% {
+color: #d6605c;
+}
+65% {
+color: #be5cd6;
+}
+70% {
+color: #5c8dd6;
+}
+75% {
+color: #95d65c;
+}
+80% {
+color: #d69d5c;
+}
+85.0% {
+color: #d65c81;
+}
+90% {
+color: #5cd666;
+}
+95% {
+color: #d67e5c;
+}
+100% {
+color: #64d65c;
+}
+}
+@-moz-keyframes color-change {
+0% {
+color: #d65c97;
+}
+5% {
+color: #5cd666;
+}
+10% {
+color: #a55cd6;
+}
+15.0% {
+color: #5c7cd6;
+}
+20% {
+color: #d65c7a;
+}
+25% {
+color: #81d65c;
+}
+30.0% {
+color: #835cd6;
+}
+35% {
+color: #685cd6;
+}
+40% {
+color: #5c9dd6;
+}
+45% {
+color: #5cd670;
+}
+50% {
+color: #d6625c;
+}
+55.0% {
+color: #d6835c;
+}
+60.0% {
+color: #d6605c;
+}
+65% {
+color: #be5cd6;
+}
+70% {
+color: #5c8dd6;
+}
+75% {
+color: #95d65c;
+}
+80% {
+color: #d69d5c;
+}
+85.0% {
+color: #d65c81;
+}
+90% {
+color: #5cd666;
+}
+95% {
+color: #d67e5c;
+}
+100% {
+color: #64d65c;
+}
+}
+@-ms-keyframes color-change {
+0% {
+color: #d65c97;
+}
+5% {
+color: #5cd666;
+}
+10% {
+color: #a55cd6;
+}
+15.0% {
+color: #5c7cd6;
+}
+20% {
+color: #d65c7a;
+}
+25% {
+color: #81d65c;
+}
+30.0% {
+color: #835cd6;
+}
+35% {
+color: #685cd6;
+}
+40% {
+color: #5c9dd6;
+}
+45% {
+color: #5cd670;
+}
+50% {
+color: #d6625c;
+}
+55.0% {
+color: #d6835c;
+}
+60.0% {
+color: #d6605c;
+}
+65% {
+color: #be5cd6;
+}
+70% {
+color: #5c8dd6;
+}
+75% {
+color: #95d65c;
+}
+80% {
+color: #d69d5c;
+}
+85.0% {
+color: #d65c81;
+}
+90% {
+color: #5cd666;
+}
+95% {
+color: #d67e5c;
+}
+100% {
+color: #64d65c;
+}
+}
+@-o-keyframes color-change {
+0% {
+color: #d65c97;
+}
+5% {
+color: #5cd666;
+}
+10% {
+color: #a55cd6;
+}
+15.0% {
+color: #5c7cd6;
+}
+20% {
+color: #d65c7a;
+}
+25% {
+color: #81d65c;
+}
+30.0% {
+color: #835cd6;
+}
+35% {
+color: #685cd6;
+}
+40% {
+color: #5c9dd6;
+}
+45% {
+color: #5cd670;
+}
+50% {
+color: #d6625c;
+}
+55.0% {
+color: #d6835c;
+}
+60.0% {
+color: #d6605c;
+}
+65% {
+color: #be5cd6;
+}
+70% {
+color: #5c8dd6;
+}
+75% {
+color: #95d65c;
+}
+80% {
+color: #d69d5c;
+}
+85.0% {
+color: #d65c81;
+}
+90% {
+color: #5cd666;
+}
+95% {
+color: #d67e5c;
+}
+100% {
+color: #64d65c;
+}
+}
+@keyframes color-change {
+0% {
+color: #d65c97;
+}
+5% {
+color: #5cd666;
+}
+10% {
+color: #a55cd6;
+}
+15.0% {
+color: #5c7cd6;
+}
+20% {
+color: #d65c7a;
+}
+25% {
+color: #81d65c;
+}
+30.0% {
+color: #835cd6;
+}
+35% {
+color: #685cd6;
+}
+40% {
+color: #5c9dd6;
+}
+45% {
+color: #5cd670;
+}
+50% {
+color: #d6625c;
+}
+55.0% {
+color: #d6835c;
+}
+60.0% {
+color: #d6605c;
+}
+65% {
+color: #be5cd6;
+}
+70% {
+color: #5c8dd6;
+}
+75% {
+color: #95d65c;
+}
+80% {
+color: #d69d5c;
+}
+85.0% {
+color: #d65c81;
+}
+90% {
+color: #5cd666;
+}
+95% {
+color: #d67e5c;
+}
+100% {
+color: #64d65c;
+}
+}
+
+.themes {
+	margin-left: -50px;
+	margin-top: -200px;
+	  position: absolute;
+	  left: 60px;
+  }
+  
+  #square-dark {
+	  width: 50px;
+	  height: 50px;
+	  background: black;
+  }
+  
+  #square-white {
+	  width: 50px;
+	  height: 50px;
+	  background: white;
+  }
+  
+  #square-rainbow-black {
+	  width: 50px;
+	  height: 50px;
+	  background-image: url('/assets/global/rainbow-black.jpg');
+	  background-size: 50px 50px;
+  }
+  
+  #square-rainbow-white {
+	  width: 50px;
+	  height: 50px;
+	  background-image: url('/assets/global/rainbow-white.jpg');
+	  background-size: 50px 50px;
+  }
+  

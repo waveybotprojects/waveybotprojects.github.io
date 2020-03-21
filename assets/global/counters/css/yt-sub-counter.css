@@ -1,0 +1,204 @@
+body {
+  background-color: #EFF4F8;
+  font-family: 'Roboto', sans-serif;
+}
+
+.odometer {
+ color: #455a64;
+}
+
+.box-text {
+	margin-left: 20px; 
+	margin-right: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.card-header {
+  background: #7b4397;
+  background: -webkit-linear-gradient(to right, #dc2430, #7b4397);  
+  background: linear-gradient(to right, #dc2430, #7b4397);
+}
+
+.header-text {
+  font-size: calc(23px + 1vw);
+  color: white;
+}
+
+.nav-item:hover {
+  background-color: #E3DEDE;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+}
+
+.main-odo {
+  font-size: calc(60px + 5vw);
+}
+
+.bottom-odo {
+  font-size: calc(27px + 1vw); 
+}
+
+.pfp {
+  margin-top: -60px;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.name {
+  color: #455a64;
+}
+	
+
+/* ----------------------------------------------- */
+/*                    Navbar                        */
+/* ----------------------------------------------- */
+
+ul {
+list-style-type: none;
+margin: -10px;
+padding: 0;
+color: rgb(75, 28, 28);
+width: 250px;
+background-color: #fff;
+box-shadow: 7px 2px 28px -14px;
+height: 100%;
+position: fixed; 
+overflow: hidden;
+}
+
+#shoppy-link {
+cursor:pointer;
+}
+
+.nav-title {
+padding: 0px;
+text-align: center;
+font-size: 13px;
+position: relative;
+top: 20px;
+left: -23px;
+}
+
+.nav-title2 {
+padding: 0px;
+text-align: center;
+font-size: 13px;
+position: relative;
+top: 20px;
+left: -53px;
+}
+
+.link {
+position: relative;
+left: 30px;
+top: 30px;
+font-size: 17px;
+}
+
+.link2 {
+position: relative;
+left: 27px;
+top: 30px;
+font-size: 17px;
+}
+
+.link:hover {
+color: red;
+}
+
+.link2:hover {
+color: red;
+}
+
+
+.active {
+background-color: #dddddd;
+color: black;
+}
+
+@media screen and (max-width: 1500px) {
+ul {
+  width: 200px;
+}
+}
+
+@media screen and (max-width: 1252px) {
+ul {
+  width: 0px;
+}
+}
+
+
+@media screen and (max-width: 800px) {
+ul {
+  width: 0px;
+}
+
+pre {
+  width: 0px;
+  display: none;
+}
+
+label {
+  width: 0px;
+  display: none;
+}
+}
+
+.themes{
+	margin-left:470px;
+	margin-top:20px;
+}
+
+#square-dark{
+	width:50px;
+	height:50px;
+  background:#000;
+  float:left;
+}
+#square-white{
+	width:50px;
+	height:50px;
+  background:#fff;
+  float:left;
+}
+#square-rainbow-black{
+	width:50px;
+	height:50px;
+	background-image:url('/assets/global/rainbow-black.jpg');
+  background-size:50px 50px;
+  float:left;
+}
+#square-rainbow-white{
+	width:50px;
+	height:50px;
+	background-image:url('/assets/global/rainbow-white.jpg');
+  background-size:50px 50px;
+  float:left;
+}
+
+@media(max-width:800px){
+	#square-dark{
+		display:none
+}
+	#square-white{
+		display:none
+}
+	#square-rainbow-black{
+		display:none
+}
+	#square-rainbow-white{
+    display:none
+  }
+
+  .odo-speed-text{
+		display:none
+  }
+}
+
+.rainbow-text{-webkit-animation:color-change 10s infinite;-moz-animation:color-change 10s infinite;-o-animation:color-change 10s infinite;-ms-animation:color-change 10s infinite;animation:color-change 10s infinite}@-webkit-keyframes color-change{0%{color:#d65c97}5%{color:#5cd666}10%{color:#a55cd6}15.0%{color:#5c7cd6}20%{color:#d65c7a}25%{color:#81d65c}30.0%{color:#835cd6}35%{color:#685cd6}40%{color:#5c9dd6}45%{color:#5cd670}50%{color:#d6625c}55.0%{color:#d6835c}60.0%{color:#d6605c}65%{color:#be5cd6}70%{color:#5c8dd6}75%{color:#95d65c}80%{color:#d69d5c}85.0%{color:#d65c81}90%{color:#5cd666}95%{color:#d67e5c}100%{color:#64d65c}}@-moz-keyframes color-change{0%{color:#d65c97}5%{color:#5cd666}10%{color:#a55cd6}15.0%{color:#5c7cd6}20%{color:#d65c7a}25%{color:#81d65c}30.0%{color:#835cd6}35%{color:#685cd6}40%{color:#5c9dd6}45%{color:#5cd670}50%{color:#d6625c}55.0%{color:#d6835c}60.0%{color:#d6605c}65%{color:#be5cd6}70%{color:#5c8dd6}75%{color:#95d65c}80%{color:#d69d5c}85.0%{color:#d65c81}90%{color:#5cd666}95%{color:#d67e5c}100%{color:#64d65c}}@-ms-keyframes color-change{0%{color:#d65c97}5%{color:#5cd666}10%{color:#a55cd6}15.0%{color:#5c7cd6}20%{color:#d65c7a}25%{color:#81d65c}30.0%{color:#835cd6}35%{color:#685cd6}40%{color:#5c9dd6}45%{color:#5cd670}50%{color:#d6625c}55.0%{color:#d6835c}60.0%{color:#d6605c}65%{color:#be5cd6}70%{color:#5c8dd6}75%{color:#95d65c}80%{color:#d69d5c}85.0%{color:#d65c81}90%{color:#5cd666}95%{color:#d67e5c}100%{color:#64d65c}}@-o-keyframes color-change{0%{color:#d65c97}5%{color:#5cd666}10%{color:#a55cd6}15.0%{color:#5c7cd6}20%{color:#d65c7a}25%{color:#81d65c}30.0%{color:#835cd6}35%{color:#685cd6}40%{color:#5c9dd6}45%{color:#5cd670}50%{color:#d6625c}55.0%{color:#d6835c}60.0%{color:#d6605c}65%{color:#be5cd6}70%{color:#5c8dd6}75%{color:#95d65c}80%{color:#d69d5c}85.0%{color:#d65c81}90%{color:#5cd666}95%{color:#d67e5c}100%{color:#64d65c}}@keyframes color-change{0%{color:#d65c97}5%{color:#5cd666}10%{color:#a55cd6}15.0%{color:#5c7cd6}20%{color:#d65c7a}25%{color:#81d65c}30.0%{color:#835cd6}35%{color:#685cd6}40%{color:#5c9dd6}45%{color:#5cd670}50%{color:#d6625c}55.0%{color:#d6835c}60.0%{color:#d6605c}65%{color:#be5cd6}70%{color:#5c8dd6}75%{color:#95d65c}80%{color:#d69d5c}85.0%{color:#d65c81}90%{color:#5cd666}95%{color:#d67e5c}100%{color:#64d65c}}

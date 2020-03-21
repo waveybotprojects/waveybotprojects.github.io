@@ -1,0 +1,92 @@
+body,html {
+    background-color: rgb(208, 228, 254);
+    font-family: Arial;
+    color: black;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.main-title {
+    font-size: 4.5vw;
+    margin-top: 10px;
+}
+
+.by {
+    font-size: 2.5vw;
+    margin-top: 40px;
+}
+
+.credit {
+    font-size: 2.5vw;
+}
+
+.instruction-text {
+    font-size: 3.5vw;
+    margin-top: 35px;
+}
+
+.username {
+    transition: color 2s ease;
+    font-size: 3vw;
+    display:inline-block;
+    padding: .5vw;
+}
+
+.main-odometer {
+    font-size: 14.5vw;
+    margin-top: -40px;
+}
+
+.total-views-odometer {
+    font-size: 4.5vw;
+    margin-top: 60px;
+}
+
+.bottom-channel-text {
+    font-size: 2.5vw;
+}
+
+.last-text {
+    font-style: italic;
+    margin-top: 60px;
+    font-size: 3vw
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #256;
+}
+
+#subscribeButton {
+    background-color: #0af;
+    border: none;
+    border-radius: 2px;
+    font-size: 2.5vw;
+    color: #fff;
+    padding: 1%;
+    width: 15%;
+    position: relative;
+    top: 19.5%;
+}
+
+@media only screen and (min-width: 1570px) {
+    .begone {
+        display: none;
+        opacity: 0%;
+    }
+
+    .movedown {
+        margin-top: 170px;
+    }    
+
+    .username {
+        margin-top: -20px;
+    }
+
+}
