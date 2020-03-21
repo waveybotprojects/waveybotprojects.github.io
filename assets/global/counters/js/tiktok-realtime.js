@@ -61,7 +61,7 @@ window.onload = () => {
         user = getUrlVars()["u"]
 	}
 	
-	$.post("https://api.livecounts.io/tiktok_post", {username: user}
+	$.post("https://api.livecounts.io/tiktok_post", {username: user})
 
 	$(".links").load("/assets/global/other.html");
 
