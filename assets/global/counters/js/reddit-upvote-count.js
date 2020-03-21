@@ -31,7 +31,7 @@ if(!getUrlVars()["p"]){
 setInterval(function(){
     var videoo = post.split("$$")
 
-    $.getJSON('https://csgo.cx/https://www.reddit.com/'+videoo[0].replace("--", "/")+'/comments/'+videoo[1].replace("--", "/")+"/.json?limit=1", function(data) {
+    $.getJSON('https://cors.livecounts.io/https://www.reddit.com/'+videoo[0].replace("--", "/")+'/comments/'+videoo[1].replace("--", "/")+"/.json?limit=1", function(data) {
         Reddit.UpdateManager.updateUpvote(data[0].data.children[0].data.ups)
         Reddit.UpdateManager.updateComment(data[0].data.children[0].data.num_comments)
     })
@@ -47,7 +47,7 @@ window.onload = () => {
     if (getUrlVars()["theme"] == "2") Reddit.ThemeManager.load(2)
     if (getUrlVars()["theme"] == "3") Reddit.ThemeManager.load(3)
 
-    $.getJSON('https://csgo.cx/https://www.reddit.com/'+videoo[0].replace("--", "/")+'/comments/'+videoo[1].replace("--", "/")+"/.json?limit=1", function(data) {
+    $.getJSON('https://cors.livecounts.io/https://www.reddit.com/'+videoo[0].replace("--", "/")+'/comments/'+videoo[1].replace("--", "/")+"/.json?limit=1", function(data) {
         Reddit.UpdateManager.updateTitle(data[0].data.children[0].data.title)
     })
 
