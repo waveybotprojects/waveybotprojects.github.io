@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>Livecounts.io - Reddit Live Upvote Count</title>
+	<meta name="title" content="Reddit Live Upvote Count">
+    <meta name="description" content="The best, lightest and transparent real-time Reddit Upvote Counter on the internet. View any post's statistics in real-time updated every second.">
+	<meta name="keywords" content="4">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="theme-color" content="#7289DA">
+	<link rel="shortcut icon" type="image/png" href="https://livecounts.io/assets/global/youtube-logo.png"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css" />
+    <link rel="stylesheet" href="/assets/global/css/reddit-upvote-count.css?v=1.01" />
+</head>
+<body>
+
+	<ul>
+		<li class="nav-title2">Other</li>
+		<div class="links"></div>
+	</ul>
+
+	<div class="themes">
+		<div class="hvr-bounce-in" onclick="Reddit.ThemeManager.load(1)" id="square-dark"></div>
+		<div class="hvr-bounce-in" onclick="Reddit.ThemeManager.load(0)" id="square-white"></div>
+		<div class="hvr-bounce-in" onclick="Reddit.ThemeManager.load(2)" id="square-rainbow-black"></div>
+		<div class="hvr-bounce-in" onclick="Reddit.ThemeManager.load(3)" id="square-rainbow-white"></div>
+	</div>
+
+	<div>
+
+
+
+
+    <div id="subcount-container">
+			<i class="fas fa-arrow-up"></i><br>
+			<div id="upvote" class="odometer"></div>
+
+			<i class="fas fa-comment"></i><br>
+			<div id="comment" class="odometer"></div>
+
+
+<div class="titlenav">
+        <p class="title" id="title"></p>
+
+        <div class="topnav">
+			<input style="length:100px;" type="text" name="search" id="search" placeholder="Link to the post" value="">
+			<button type="submit" id="searchbutton" onclick="search()"><i class="fa fa-search"></i></button>
+		</div>
+</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+	<script src="/assets/global/js/reddit-upvote-count.js?v=1.00"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+</body>
+</html>
