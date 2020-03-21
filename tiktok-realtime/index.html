@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - TikTok Live Follower Count</title>   
+    <meta name="title" content="livecounts.io - TikTok Live Follower Count">	
+    <meta name="description" content="Livecounts is a simple way to check any TikTok's user follower count updated in real-time!">	
+    <meta name="keywords" content="livecounts, livecounts.io, tiktok realtime, tiktok live follower count, tiktok follow count, tiktok followers count, tiktok, livecounts.io">
+    <meta name="robots" content="index, follow">	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <meta name="language" content="English">	
+    <meta name="author" content="Shaz">	
+    <link rel="icon" href="/assets/global/youtube-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/tiktok-realtime.css?v=1.02">
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h1 class="header-text"><i class="fas fa-music"></i> TikTok Follower Count</h1>
+            </div>
+        </div>
+
+        <p></p> <!-- possible place for future ads -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card m-b-0 m-t-20">
+                        <p></p>
+                        <img width="128" height="128" src="/assets/global/youtube-logo.png" class="shadow mx-auto d-block pfp rounded-circle">
+                        <p></p>
+                        <h1 class="title text-center">livecounts.io</h1>
+                        <div style="margin-top: -10px;" class="main-odo d-flex justify-content-center odometer"></div>
+                        <h6 class="text-center">Followers</h6>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                    <div class="col">
+                        <div class="card m-b-0 m-t-20">
+                            <div class="bottom-odo d-flex justify-content-center hearts-odo odometer"></div>
+                            <h4 class="text-center">Hearts</h4>
+                    </div> 
+                </div>
+
+                <div class="col">
+                        <div class="card m-b-0 m-t-20">
+                            <div class="bottom-odo d-flex justify-content-center goal-odo odometer"></div>
+                            <h4 class="text-center">Goal</h4>
+                    </div> 
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row">
+                <div class="col-sm-6 offset-3">
+                    <input type="text" id="search" class="form-control search-input" placeholder="Username" aria-describedby="inputGroup-sizing-default">
+                    <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="chart"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-sm-12">
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 id="sharing">Sharing</h3>
+                    <p>You can share YouTube Live View count by simply by sharing the link below.</p>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <ul style="position: absolute; top: 99px;">
+                <li class="nav-title">Featured Users</li>
+                <li class="stretched-link link"><i class="fas fa-user"></i><a href="/tiktok-realtime/MrBeast"> MrBeast</li></a><br>
+                <li class="stretched-link nav-title2">Meta</li>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#sharing"> Sharing</li></a><br>
+                <li class="link2"><i class="fas fa-user-friends"></i><a href="/tiktok-realtime/compare/"> Compare Followers</li></a><br><br>
+                <li class="nav-title2">Other</li>
+                <div class="links"></div>
+        </ul>
+
+   </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/assets/global/counters/js/tiktok-realtime.js?v=2.13"></script>
+    <script src="/assets/global/counters/js/tiktok-realtime-disqus.js"></script>
+
+</html>
