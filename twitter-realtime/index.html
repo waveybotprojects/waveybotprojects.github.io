@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - Twitter Live Follower Count</title>   
+    <meta name="title" content="livecounts.io - Twitter Live Follower Count">	
+    <meta name="description" content="Livecounts is a simple way to check any Twitter user's follower count, updated in real-time!">	
+    <meta name="keywords" content="livecounts, livecounts.io, livecounts.io twitter, twitter follower count, twitter realtime, twitter real, twitter live follower count, twitter live count, livecounts.io twitter live follower count, livecounts.io twitter realtime">
+    <meta name="robots" content="index, follow">	
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+    <meta name="language" content="English">	
+    <meta name="author" content="Shaz">	
+    <link rel="icon" href="/assets/global/youtube-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" id="odometer" href="https://livecounts.io/assets/global/odometer.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/global/counters/css/twitter-realtime.css?v=1.03">
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h2 class="header-text"><i class="fab fa-twitter"></i> Twitter Follower Count</h2>
+            </div>
+        </div>
+
+        <p></p> <!-- possible place for future ads -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card m-b-0 m-t-20">
+                        <p></p>
+                        <img width="128" height="128" src="/assets/global/youtube-logo.png" class="shadow mx-auto d-block pfp rounded-circle">
+                        <p></p>
+                        <h1 class="title text-center">livecounts.io</h1>
+                        <div style="margin-top: -10px;" class="main-odo d-flex justify-content-center odometer"></div>
+                        <h6 class="text-center">Followers</h6>
+                    </div>
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col-sm-12">
+                        <div class="card m-b-0 m-t-20">
+                            <div class="bottom-odo d-flex justify-content-center goal-odo odometer"></div>
+                            <h4 class="text-center">Goal</h4>
+                    </div> 
+                </div>
+            </div>
+            <p></p>
+            <div class="row">
+                <div class="col">
+                        <div class="card m-b-0 m-t-20">
+                            <div class="bottom-odo d-flex justify-content-center estimated-per-2-seconds-odo odometer"></div>
+                            <h4 class="text-center">Avg. Followers / 2 Sec.</h4>
+                    </div> 
+                </div>
+                        <div class="col">
+                            <div class="card m-b-0 m-t-20">
+                                <div class="bottom-odo d-flex justify-content-center estimated-per-1-min-odo odometer"></div>
+                                <h4 class="text-center">Avg. Followers / 1 Min.</h4>
+                        </div> 
+                    </div>
+                    <div class="col">
+                        <div class="card m-b-0 m-t-20">
+                            <div class="bottom-odo d-flex justify-content-center estimated-per-1-hr-odo odometer"></div>
+                            <h4 class="text-center">Avg. Followers / 1 Hr.</h4>
+                    </div> 
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row offset-5">
+                <div class="themes">
+                <div class="hvr-bounce-in" onclick="Twitter.ThemeManager.setTheme(1)" id="square-dark"></div>
+                <div class="hvr-bounce-in" onclick="Twitter.ThemeManager.setTheme(0)" id="square-white"></div>
+                <div class="hvr-bounce-in" onclick="Twitter.ThemeManager.setTheme(2)" id="square-rainbow-black"></div>
+                <div class="hvr-bounce-in" onclick="Twitter.ThemeManager.setTheme(3)" id="square-rainbow-white"></div>
+                <p class="odo-speed-text">Odometer Speed:</p>
+                <label>
+                <input type="checkbox" class="filled-in checkbox-odo-slow" />
+                <span>Slow</span>
+                </label>
+                <label>
+                <input type="checkbox" class="filled-in checkbox-odo-fast" />
+                <span>Fast</span>
+                </label>
+                </div>
+                </div>
+
+            <div class="row">
+                <div class="col-sm-6 offset-3">
+                    <input type="text" id="search" class="form-control search-input" placeholder="Username" aria-describedby="inputGroup-sizing-default">
+                    <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div id="chart"></div>
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row">
+                    <div class="col-sm-12">
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+
+            <div class="row">
+                    <div class="col-sm-12">
+                        <h3 id="sharing">Sharing</h3>
+                        <p>You can share Twitter Live Follower Count by simply by sharing the link below.</p>
+                        <div class="input-group flex-nowrap">
+                        <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                </div>
+            </div>
+            </div>
+            <p></p>
+        </div>
+
+        </div>
+
+
+        
+        <ul style="position: absolute; top: 100px;">
+                <li class="nav-title">Featured Users</li>
+                <li class="stretched-link link"><i class="fas fa-user"></i><a href="/twitter-realtime/?u=BarackObama"> Barack Obama</li></a><br>
+                <li class="stretched-link link"><i class="fas fa-user"></i><a href="/twitter-realtime/?u=ShazGucci"> Shaz</li></a><br><br>
+                <li class="stretched-link nav-title2">Meta</li>
+                <li class="link2"><i class="fas fa-square-full"></i><a id="embed"> Embed</li></a><br>
+                <li class="link2"><i class="fas fa-users"></i><a href="/twitter-realtime/compare/"> Compare Followers</li></a><br><br>
+                <li class="nav-title2">Other</li>
+                <div class="links"></div>
+        </ul>
+
+   </body>
+
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/assets/global/counters/js/twitter-realtime.js?v=2.29"></script>
+    <script src="/assets/global/counters/js/twitter-realtime-disqus.js"></script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</html>
