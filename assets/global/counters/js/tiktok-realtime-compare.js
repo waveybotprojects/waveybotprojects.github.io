@@ -136,7 +136,7 @@ setInterval(function() {
             }
         })
     })
-}, 3000)
+}, 5000)
 
 function search1() {
     var replaceurl = document.getElementById('search1').value.replace(" ", "");

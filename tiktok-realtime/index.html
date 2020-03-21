@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
-    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" id="odometer" href="https://livecounts.io/assets/global/odometer.css">
     <link rel="stylesheet" href="/assets/global/counters/css/tiktok-realtime.css?v=1.02">
    </head> 
 
@@ -59,11 +59,30 @@
 
             <p></p>
 
+            
+
             <div class="row">
-                <div class="col-sm-6 offset-3">
-                    <input type="text" id="search" class="form-control search-input" placeholder="Username" aria-describedby="inputGroup-sizing-default">
-                    <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
-                </div>
+                <div class="col">
+
+                            <button type="button" class="btn-block btn btn-primary btn-lg" data-toggle="modal" data-target="#optionsModal">
+                                    <i class="fas fa-wrench"></i> Options
+                            </button>
+                    </div>
+                    <div class="col">
+                            <button type="button" class="btn-block btn btn-success btn-lg" data-toggle="modal" data-target="#searchModal">
+                                    <i class="fas fa-search"></i> Change User
+                            </button>
+                    </div>
+                    <div class="col">
+                            <a class="url"><button type="button" class="btn-block btn btn-danger btn-lg">
+                                    <i class="fas fa-user"></i> Visit on TikTok
+                            </button></a>
+                    </div>
+                    <div class="col">
+                            <a href="compare"><button type="button" class="btn-block btn btn-info btn-lg">
+                                    <i class="fas fa-users"></i> Compare Followers
+                            </button></a>
+                    </div>
             </div>
 
             <p></p>
@@ -101,13 +120,66 @@
                 <div class="links"></div>
         </ul>
 
+        <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="optionsModalLabel">Options</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="text-center">Odometer Speed:</p>
+                      <div class="d-flex justify-content-center">
+
+                      <label>
+                            <input type="checkbox" onclick="document.querySelector('.checkbox-odo-fast').checked = false" class="filled-in checkbox-odo-slow" />
+                            <span>Slow</span>
+                            </label>
+                            <label>
+                            <input type="checkbox" onclick="document.querySelector('.checkbox-odo-slow').checked = false" class="filled-in checkbox-odo-fast" />
+                            <span>Fast</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="options-save-button btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="optionsModalLabel">Change User</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                                <input type="text" id="search" class="form-control search-input" placeholder="Username" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
    </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/assets/global/counters/js/tiktok-realtime.js?v=2.15"></script>
+    <script src="/assets/global/counters/js/tiktok-realtime.js?v=2.16"></script>
     <script src="/assets/global/counters/js/tiktok-realtime-disqus.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>

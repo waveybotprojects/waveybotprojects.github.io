@@ -54,11 +54,54 @@ var chart = new Highcharts.chart({
 	}]
 });
 
+document.querySelector(".options-save-button").onclick = function() {
+	if (document.querySelector(".checkbox-odo-slow").checked) {
+		window.location = window.location.href.replace("o=1", "o=0")
+	} else {
+		window.location = window.location.href.replace("o=0", "o=1")
+	}
+}
+
+TikTok.UrlManager = {
+	addUser: function() {
+		if (!getUrlVars()["u"]) {
+			if (window.location.href.indexOf("?")>-1){
+				history.pushState(null,'',window.location.href+'&u='+user)
+			} else {
+				history.pushState(null,'',window.location.href+'?u='+user);
+			}
+		}
+	},
+	
+	addOdometer: function() {
+		if (!getUrlVars()["o"]) {
+			if (window.location.href.indexOf("?")>-1){
+				history.pushState(null,'',window.location.href+'&o=0')
+			} else {
+				history.pushState(null,'',window.location.href+'?o=0');
+			}
+		}
+	}
+}
+
+
 window.onload = () => {
     if (!getUrlVars()["u"]) {
         user = "MrBeast";
     } else {
         user = getUrlVars()["u"]
+	}
+
+	TikTok.UrlManager.addUser();
+	TikTok.UrlManager.addOdometer();
+	
+	if (getUrlVars()["o"] == "1") {
+		document.getElementById('odometer').href='https://livecounts.io/assets/global/odometer-fast.css';
+		$(".checkbox-odo-slow").prop("checked", false);
+		$(".checkbox-odo-fast").prop("checked", true);
+	} else {
+		$(".checkbox-odo-slow").prop("checked", true);
+		$(".checkbox-odo-fast").prop("checked", false);
 	}
 	
 	$.post("https://api.livecounts.io/tiktok_post", {username: user})
@@ -67,19 +110,13 @@ window.onload = () => {
 
 
 	$.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user, function(data) {
+		document.querySelector(".url").href = "https://tiktok.com/@"+user
 		TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])	
 		TikTok.UpdateManager.updateName(data.body.userData.nickName)
 		TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
 		TikTok.UpdateManager.updateHearts(data.body.userData.heart)
 		TikTok.GoalManager.load(data.body.userData.fans)
 	})
-
-
-    if (window.location.href.indexOf(user) > -1) {
-        return;
-      } else {
-        history.pushState(null,'',window.location.href+'?u='+user)
-      }
 };
 
 setInterval(function () {
@@ -98,7 +135,7 @@ setInterval(function () {
 			chart.series[0].data[0].remove()
 		}
 	})
-},2500)
+}, 5000)
 
 TikTok.UpdateManager = {
 	updateAvatar: function(a) {

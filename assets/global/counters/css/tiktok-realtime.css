@@ -35,6 +35,33 @@ body {
     font-size: calc(30px + 1vw); 
 }
 
+#square-dark{
+	width:50px;
+	height:50px;
+  background:#000;
+  float:left;
+}
+#square-white{
+	width:50px;
+	height:50px;
+  background:#fff;
+  float:left;
+}
+#square-rainbow-black{
+	width:50px;
+	height:50px;
+	background-image:url('/assets/global/rainbow-black.jpg');
+  background-size:50px 50px;
+  float:left;
+}
+#square-rainbow-white{
+	width:50px;
+	height:50px;
+	background-image:url('/assets/global/rainbow-white.jpg');
+  background-size:50px 50px;
+  float:left;
+}
+
   /* ----------------------------------------------- */
 /*                    Navbar                        */
 /* ----------------------------------------------- */
