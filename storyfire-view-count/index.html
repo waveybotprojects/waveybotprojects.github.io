@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - StoryFire Live View Count</title>  
+     <meta name="title" content="StoryFire Live View Count">	
+     <meta name="description" content="Livecounts.io is a simple way to display any StoryFire's video live view count updated in real-time!">	
+     <meta name="keywords" content="livecounts, livecounts.io, live view count, view count, live count, StoryFire view count, yt, StoryFire live, StoryFire count, StoryFire live view count, StoryFire, StoryFire live, StoryFire count, StoryFire view comparison, StoryFire view vs, StoryFire view compare">	
+     <meta name="robots" content="index, follow">	
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+     <meta name="language" content="English">	
+     <meta name="author" content="Shaz">	
+     <link rel="icon" href="/assets/global/StoryFire-logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/storyfire-view-count.css?v=1.00">
+    <script data-ad-client="ca-pub-1358865196814452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+   </head> 
+
+   <body>
+
+        <div class="card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h2 class="header-text"><i class="fas fa-fire"></i> StoryFire Live View Count</h2>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row center">
+
+                <div class="col-sm-11 offset-sm-1">
+					<div class="row center">
+						<div class="col-sm-12">
+						<h4 class="text-center video-title">livecounts.io</h4>
+						</div>
+					</div>
+                    <div class="d-flex justify-content-center odometer main-odo odometer view-odo"></div> 
+                </div>
+
+                <div class="col offset-md-1">
+                    <h5 class="text-center">Likes</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo likes-odo"></div> 
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Comments</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo comments-odo"></div> 
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Total Tips</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo tips-odo"></div> 
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row center">
+                <div class="col offset-sm-1">
+                    <h5 class="text-center">Goal</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo goal-odo"></div> 
+                </div>
+        </div>
+
+        <br>
+        <div class="container">
+            <div class="row center">
+                <div class="col-sm-5 offset-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" id="search" class="form-control search-input" placeholder="Link to the Video" aria-describedby="inputGroup-sizing-default">
+                        <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 offset-md-1">
+                        <div style="opacity: 0.001;" id="player"></div>
+                    </div>
+                </div>
+                <div class="row">
+                        <div class="col-sm-12">
+                            <div style="opacity: 0.001;" id="player"></div>
+                            <div id="chart"></div>
+                        </div>
+                    </div>
+
+                <div class="row center">
+                    <div class="col-sm-11 offset-md-1">
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <h3 id="sharing">Sharing</h3>
+                        <p>You can share StoryFire Live View count by simply by sharing the link below.</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <p></p>
+                        <h3 id="embed">Embed</h3>
+                        <p>You can embed the Live View Count for any Channel/Video on your own website or in OBS by copying specified value</p>
+                        <p>Website:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="embed-website" class="form-control" onclick="this.select();" readonly>
+                        </div>
+
+                        <p>OBS:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="obsurl" class="form-control" onclick="this.select();" readonly>
+                        </div>
+                        <p>Make sure to set width to 500px and height to 180px for best results!</p>
+                </div>
+            </div>
+        </div>
+		
+			<ul style="position: absolute; top: 100px;">
+                <li class="stretched-link nav-title2">Meta</li>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#embed"> Embed</li></a><br>
+                <li class="link2"><i class="fas fa-square-full"></i><a href="#sharing"> Sharing</li></a><br>
+				<li class="link2"><i class="fas fa-eye"></i><a href="/storyfire-view-count/compare/"> Compare StoryFire Views</li></a><br><br>
+                <li class="nav-title2">Other</li>
+                <div class="links"></div>
+            </ul>
+
+
+    
+
+
+   </body>
+
+   <script src="https://livecounts.io/assets/global/odometer.js"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
+   <script src="/assets/global/counters/js/storyfire-view-count.js?v=1.00"></script>
+   <script src="/assets/global/counters/js/storyfire-view-count-disqus.js"></script>
+
+</html>
