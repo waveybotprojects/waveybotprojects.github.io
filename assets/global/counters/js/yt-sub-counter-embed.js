@@ -130,7 +130,7 @@ if (getUrlVars()["t"] == "1") {
 }
 
 if (getUrlVars()["o"] == "1" && getUrlVars()["t"] == "1") {
-    $('head').append('<link rel="stylesheet" type="text/css" href="assets/css/odometer-2.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="/assets/global/odometer-2.css">');
     document.getElementById('style').href='../../../assets/global/odometer-fast.css';
 }
 
