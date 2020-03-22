@@ -28,7 +28,6 @@
         </div>
 		
 		<p></p>
-		<noscript>Please enable JavaScript, otherwise site won't work properly!</noscript>
 		
         <div class="container">
             <div class="row">
@@ -89,50 +88,29 @@
 			<h4 class="text-center offset-md-3 estimatedText"></h4>
 
             <p></p>
-
-            <div class="row">
-                <div class="search-container col-sm-6 offset-md-4">
-                    <input type="text" id="search" class="form-control search-input" placeholder="Channel's name or link" aria-describedby="inputGroup-sizing-default">
-                    <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
-                </div>
-			</div>
 			
-			<div class="row">
-				<div class="col-sm-6 offset-1">
-					<p></p>
-				</div>
-            </div>
-
 			<div class="row md1-row">
-			    <div class="themes">
-                    <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(1)" id="square-dark"></div>
-                    <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(0)" id="square-white"></div>
-                    <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(2)" id="square-rainbow-black"></div>
-                    <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(3)" id="square-rainbow-white"></div>
-                    <p></p>
-                    <p class="odo-speed-text">Odometer Speed:</p>
-                    <label>
-                    <input type="checkbox" class="filled-in checkbox-odo-slow" />
-                    <span>Slow</span>
-                    </label>
-                    <label>
-                    <input type="checkbox" class="filled-in checkbox-odo-fast" />
-                    <span>Fast</span>
-                    </label>
-				</div>
+				<div class="col offset-md-1">
+                    <button type="button" class="btn-block btn btn-primary btn-lg" data-toggle="modal" data-target="#optionsModal">
+                        <i class="fas fa-wrench"></i> Options
+                    </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn-block btn btn-success btn-lg" data-toggle="modal" data-target="#searchModal">
+                        <i class="fas fa-search"></i> Change User
+                    </button>
+                </div>
+                <div class="col">
+                    <a class="youtube-link"><button type="button" style="color: white; background-color: #c4302b" class="btn-block btn btn-lg">
+                        <i class="fab fa-youtube"></i> Visit on YouTube
+                    </button></a>
+                </div>
+                <div class="col">
+                    <a href="compare"><button type="button" class="btn-block btn btn-info btn-lg">
+                        <i class="fas fa-users"></i> Compare
+                    </button></a>
+                </div>
             </div>
-            <div class="row md1-row">
-                    <div class="themes">
-                <p></p>
-                <p class="odo-speed-text">Style:</p>
-                <select id="theme-select" size="w">
-                    <option>Select</option>
-                    <option>livecounts.net</option>
-                </select>
-                
-                </label>
-            </div>
-        </div>
 
             <p></p>
 
@@ -239,6 +217,73 @@
 			<div class="links"></div>
         </ul>
 
+        <div class="modal fade" id="optionsModal" tabindex="-1" role="dialog" aria-labelledby="optionsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="optionsModalLabel">Options</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center">Odometer Speed:</p>
+                  <div class="d-flex justify-content-center">
+
+                  <label>
+                        <input type="checkbox" onclick="document.querySelector('.checkbox-odo-fast').checked = false" class="filled-in checkbox-odo-slow" />
+                        <span>Slow</span>
+                        </label>
+                        <label>
+                        <input type="checkbox" onclick="document.querySelector('.checkbox-odo-slow').checked = false" class="filled-in checkbox-odo-fast" />
+                        <span>Fast</span>
+                        </label>
+                    </div>
+                    <p></p>
+                    <p class="text-center">Theme:</p>
+                        <div class="d-flex justify-content-center">
+                            <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(1)" id="square-dark"></div>
+                            <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(0)" id="square-white"></div>
+                            <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(2)" id="square-rainbow-black"></div>
+                            <div class="hvr-bounce-in" onclick="YT.ThemeManager.setTheme(3)" id="square-rainbow-white"></div>
+                        </div>
+                        <p></p>
+                    <p class="text-center">Style:</p>
+                    <div class="d-flex justify-content-center">
+                        <select id="theme-select" size="w">
+                            <option>Select</option>
+                            <option>livecounts.net</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="options-save-button btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="searchModalLabel">Change User</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" id="search" class="form-control search-input" placeholder="Channel's Name / URL / Search Query" aria-describedby="inputGroup-sizing-default">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" id="searchbutton" class="options-save-button search-button btn btn-primary">Search</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
    </body>
 
     <script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
@@ -246,7 +291,9 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/assets/global/counters/js/yt-sub-counter.js?v=3.59"></script>
-	<script src="/assets/global/counters/js/yt-sub-counter-disqus.js?v=1.00"></script>
+    <script src="/assets/global/counters/js/yt-sub-counter.js?v=3.60"></script>
+    <script src="/assets/global/counters/js/yt-sub-counter-disqus.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>

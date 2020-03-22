@@ -111,8 +111,6 @@ setInterval(function() {
 		document.querySelector(".card-container").classList.remove('offset-md-1');
 		document.querySelector(".goal-container").classList.remove('offset-md-2');
 		document.querySelector(".estimatedText").classList.remove('offset-md-3');
-		document.querySelector(".search-container").classList.remove('offset-md-4');
-		document.querySelector(".search-container").classList.add('offset-md-3');
 		document.querySelector(".estimated-container").classList.remove('offset-md-2');
 		$('.md1-row').removeClass('offset-md-1');
 	}
@@ -121,8 +119,6 @@ setInterval(function() {
 		document.querySelector(".card-container").classList.add('offset-md-1');
 		document.querySelector(".goal-container").classList.add('offset-md-2');
 		document.querySelector(".estimatedText").classList.add('offset-md-3');
-		document.querySelector(".search-container").classList.add('offset-md-4');
-		document.querySelector(".search-container").classList.remove('offset-md-3');
 		document.querySelector(".estimated-container").classList.add('offset-md-2');
 		$('.md1-row').addClass('offset-md-1');
 	}
@@ -292,6 +288,7 @@ window.onload = () => {
 	$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
 			YT.UpdateManager.updateName(data.items[0].snippet.title)
 			YT.UpdateManager.updateAvatar(data.items[0].snippet.thumbnails.high.url)
+			document.querySelector('.youtube-link').href = 'https://www.youtube.com/channel/'+data.items[0].id
 			document.querySelector('.username').innerText = data.items[0].snippet.title;
 			if (data.items[0].brandingSettings.image.bannerImageUrl.toString() != "http://s.ytimg.com/yts/img/channels/c4/default_banner-vfl7DRgTn.png") {
 				YT.UpdateManager.updateBanner(data.items[0].brandingSettings.image.bannerImageUrl)
@@ -307,6 +304,8 @@ window.onload = () => {
 		$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
 			YT.UpdateManager.updateName(data.snippet.title)
 			YT.UpdateManager.updateAvatar(data.snippet.thumbnails.high.url)
+			document.querySelector('.youtube-link').href = 'https://www.youtube.com/channel/'+data.items[0].id
+			document.querySelector('.username').innerText = data.items[0].snippet.title;
 			if (data.brandingSettings.image.bannerImageUrl.toString() != "http://s.ytimg.com/yts/img/channels/c4/default_banner-vfl7DRgTn.png") {
 				YT.UpdateManager.updateBanner(data.brandingSettings.image.bannerImageUrl)
 				$.post('https://api.livecounts.io/subGainPost', {username: data.snippet.title, cid: user})
