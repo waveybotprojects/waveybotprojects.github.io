@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>	
+	<title>Livecounts.io - YouTube Live View, Like and Dislike Count</title>
+	<meta name="title" content="YouTube Live View, Like and Dislike Count">
+    <meta name="description" content="The best, lightest and transparent real-time view, like and dislike count on the web. View any video's statistics in real-time updated every second.">
+	<meta name="keywords" content="4">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="English">
+	<meta name="theme-color" content="#7289DA">
+	<link rel="shortcut icon" type="image/png" href="https://livecounts.io/assets/global/youtube-logo.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css" />
+    <link rel="stylesheet" href="/assets/global/counters/css/yt-like-counter.css?v=2.01" />
+</head>
+<body>
+
+	<ul>
+		<li class="nav-title">Featured Videos</li>
+		<li class="link"><i class="fas fa-video"></i><a href="/yt-like-counter/?q=kJQP7kiw5Fk"> Despacito</li></a><br>
+		<li class="link"><i class="fas fa-video"></i><a href="/yt-like-counter/?q=JGwWNGJdvx8"> Shape of You</li></a><br>
+		<li class="link"><i class="fas fa-video"></i><a href="/yt-like-counter/?q=RgKAFK5djSk"> See You Again</li></a><br>
+		<li class="nav-title2">Meta</li>
+		<li class="link2"><i class="fas fa-hand-spock"></i><a href="/yt-like-counter/compare/likes/"> Compare YT Likes</li></a><br>
+		<li class="link2"><i class="far fa-hand-spock"></i><a href="/yt-like-counter/compare/dislikes/"> Compare YT Dislikes</li></a><br>
+		<li class="nav-title2">Other</li>
+		<div class="links"></div>
+	</ul>
+
+	<div class="themes">
+		<div class="hvr-bounce-in" onclick="YT.ThemeManager.load(1)" id="square-dark"></div>
+		<div class="hvr-bounce-in" onclick="YT.ThemeManager.load(0)" id="square-white"></div>
+		<div class="hvr-bounce-in" onclick="YT.ThemeManager.load(2)" id="square-rainbow-black"></div>
+		<div class="hvr-bounce-in" onclick="YT.ThemeManager.load(3)" id="square-rainbow-white"></div>
+	</div>
+
+	<div>
+
+
+
+
+    <div id="subcount-container">
+			<i class="fa fa-eye"></i><br>
+			<div id="view" class="odometer"></div>
+
+			<i class="fas fa-thumbs-up"></i><br>
+			<div id="like" class="odometer"></div>
+
+			<i class="fas fa-thumbs-down"></i><br>
+			<div id="dislike" class="odometer"></div>
+
+			<i class="fas fa-comment"></i><br>
+			<div id="comment" class="odometer"></div>
+
+
+<div class="titlenav">
+        <p class="title" id="title"></p>
+
+        <div class="topnav">
+			<input style="length:100px;" type="text" name="search" id="search" placeholder="Query or Video URL" value="">
+			<button type="submit" id="searchbutton" onclick="search()"><i class="fa fa-search"></i></button>
+		</div>
+</div>
+
+	<script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+	<script src="/assets/global/counters/js/yt-like-counter.js?v=4.14"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
+</body>
+</html>
