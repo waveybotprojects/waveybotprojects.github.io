@@ -304,8 +304,8 @@ window.onload = () => {
 		$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
 			YT.UpdateManager.updateName(data.snippet.title)
 			YT.UpdateManager.updateAvatar(data.snippet.thumbnails.high.url)
-			document.querySelector('.youtube-link').href = 'https://www.youtube.com/channel/'+data.items[0].id
-			document.querySelector('.username').innerText = data.items[0].snippet.title;
+			document.querySelector('.youtube-link').href = 'https://www.youtube.com/channel/'+data.id
+			document.querySelector('.username').innerText = data.snippet.title;
 			if (data.brandingSettings.image.bannerImageUrl.toString() != "http://s.ytimg.com/yts/img/channels/c4/default_banner-vfl7DRgTn.png") {
 				YT.UpdateManager.updateBanner(data.brandingSettings.image.bannerImageUrl)
 				$.post('https://api.livecounts.io/subGainPost', {username: data.snippet.title, cid: user})
