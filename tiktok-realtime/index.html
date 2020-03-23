@@ -34,7 +34,7 @@
                         <p></p>
                         <img width="128" height="128" src="/assets/global/youtube-logo.png" class="shadow mx-auto d-block pfp rounded-circle">
                         <p></p>
-                        <h1 class="title text-center">livecounts.io</h1>
+                        <h1 class="title text-center">livecounts.io</h1> 
                         <div style="margin-top: -10px;" class="main-odo d-flex justify-content-center odometer"></div>
                         <h6 class="text-center">Followers</h6>
                     </div>
@@ -112,7 +112,7 @@
         
         <ul style="position: absolute; top: 99px;">
                 <li class="nav-title">Featured Users</li>
-                <li class="stretched-link link"><i class="fas fa-user"></i><a href="/tiktok-realtime/MrBeast"> MrBeast</li></a><br>
+                <li class="stretched-link link"><i class="fas fa-user"></i><a href="/tiktok-realtime/?u=MrBeast"> MrBeast</li></a><br>
                 <li class="stretched-link nav-title2">Meta</li>
                 <li class="link2"><i class="fas fa-square-full"></i><a href="#sharing"> Sharing</li></a><br>
                 <li class="link2"><i class="fas fa-user-friends"></i><a href="/tiktok-realtime/compare/"> Compare Followers</li></a><br><br>
@@ -171,12 +171,31 @@
                     </div>
                   </div>
 
+                  <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="optionsModalLabel">Error!</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <p class="text-center">Error! Invalid username. Avatar, Username and Count won't get updated!</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+
    </body>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.6/odometer.min.js"></script>
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="/assets/global/counters/js/tiktok-realtime.js?v=2.16"></script>
+    <script src="/assets/global/counters/js/tiktok-realtime.js?v=2.17"></script>
     <script src="/assets/global/counters/js/tiktok-realtime-disqus.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -2,6 +2,15 @@ var TikTok = {};
 var user = "";
 var goal = "";
 
+var corsProxies = [
+	"https://cors.livecounts.io/",
+	"https://nice-cors-proxy-1.glitch.me/",
+	"https://nice-cors-proxy-2.glitch.me/",
+	"https://nice-cors-proxy-3.glitch.me/"
+]
+
+
+
 function getUrlVars() {
 	var vars = {};
 	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
@@ -109,19 +118,27 @@ window.onload = () => {
 	$(".links").load("/assets/global/other.html");
 
 
-	$.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user, function(data) {
-		document.querySelector(".url").href = "https://tiktok.com/@"+user
-		TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])	
-		TikTok.UpdateManager.updateName(data.body.userData.nickName)
-		TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
-		TikTok.UpdateManager.updateHearts(data.body.userData.heart)
-		TikTok.GoalManager.load(data.body.userData.fans)
+	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
+		if (data.body.userData) {
+			document.querySelector(".url").href = "https://tiktok.com/@"+user
+			document.querySelector("#shareurl").value = window.location.href
+			TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])
+			if (data.body.userData.verified) {
+				TikTok.UpdateManager.updateName(data.body.userData.nickName + ' <img width="32" height="32" title="Verified" alt="Verified" src="/assets/global/tiktok-verified.png">')
+			} else {
+				TikTok.UpdateManager.updateName(data.body.userData.nickName)
+			}
+			TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
+			TikTok.UpdateManager.updateHearts(data.body.userData.heart)
+			TikTok.GoalManager.load(data.body.userData.fans)
+		} else {
+			$("#errorModal").modal()
+		}
 	})
 };
 
 setInterval(function () {
-	var today = new Date();
-	$.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user, function(data) {
+	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
 		TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
 		TikTok.UpdateManager.updateHearts(data.body.userData.heart)
 		TikTok.GoalManager.load(data.body.userData.fans)
@@ -135,14 +152,14 @@ setInterval(function () {
 			chart.series[0].data[0].remove()
 		}
 	})
-}, 5000)
+}, 2000)
 
 TikTok.UpdateManager = {
 	updateAvatar: function(a) {
 		document.querySelector(".pfp").src = a;
 	},
 	updateName: function(a) {
-		document.querySelector(".title").innerText = a;
+		document.querySelector(".title").innerHTML = a;
 	},
 	updateOdometer: function(a) {
 		document.querySelector(".main-odo").innerHTML=a;
@@ -236,7 +253,7 @@ TikTok.GoalManager = {
 }
 
 function search() {
-    window.location.href = '/tiktok-realtime/?u=' + document.getElementById('search').value.replace(" ", "");
+    window.location.href = '/tiktok-realtime/?u=' + document.getElementById('search').value.replace(" ", "").replace("@", "");
 }
 
 $("#searchbutton").click(function(){
