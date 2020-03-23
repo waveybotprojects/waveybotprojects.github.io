@@ -1,6 +1,14 @@
 var TikTok = {};
 var user1 = "";
 var user2 = "";
+
+var corsProxies = [
+	"https://cors.livecounts.io/",
+	"https://nice-cors-proxy-1.glitch.me/",
+	"https://nice-cors-proxy-2.glitch.me/",
+	"https://nice-cors-proxy-3.glitch.me/"
+]
+
 function getUrlVars() {
     var vars = {};
     var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
@@ -58,10 +66,15 @@ window.onload = () => {
     TikTok.UpdateManager.updateFollowButton(user1, user2)
 
 	
-	$.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
+	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
+        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
             TikTok.UpdateManager.updateName(data.body.userData.nickName, data2.body.userData.nickName)
             TikTok.UpdateManager.updatePicture(data.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
+            TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
+            chart.series[0].addPoint([                   
+                (new Date()).getTime(),
+                Math.abs(data.body.userData.fans - data2.body.userData.fans)
+            ])
         })
     })
 }
@@ -123,8 +136,8 @@ setInterval(() => {
 
 setInterval(function() {
     var today = new Date();
-    $.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON('https://cors.livecounts.io/https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
+    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
+        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
             TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
             chart.series[0].addPoint([                   
                 (new Date()).getTime(),
@@ -136,15 +149,15 @@ setInterval(function() {
             }
         })
     })
-}, 5000)
+}, 2000)
 
 function search1() {
-    var replaceurl = document.getElementById('search1').value.replace(" ", "");
+    var replaceurl = document.getElementById('search1').value.replace(" ", "").replace("@", "");
     window.location.href = '/tiktok-realtime/compare/?u1=' +replaceurl+'&u2='+user2;
 }
 
 function search2() {
-    var replaceurl = document.getElementById('search2').value.replace(" ", "");
+    var replaceurl = document.getElementById('search2').value.replace(" ", "").replace("@", "");
     window.location.href = '/tiktok-realtime/compare/?u1='+user1+'&u2='+replaceurl;
 }
 
