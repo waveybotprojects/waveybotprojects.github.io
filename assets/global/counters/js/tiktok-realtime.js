@@ -4,9 +4,7 @@ var goal = "";
 
 var corsProxies = [
 	"https://cors.livecounts.io/",
-	"https://nice-cors-proxy-1.glitch.me/",
-	"https://nice-cors-proxy-2.glitch.me/",
-	"https://nice-cors-proxy-3.glitch.me/"
+	"https://cors.upbount.com/"
 ]
 
 
