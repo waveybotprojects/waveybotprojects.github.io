@@ -1,0 +1,172 @@
+.card-header {
+	background: #000000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #0f9b0f, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #0f9b0f, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */	
+  }
+  
+  .header-text {
+	  font-size: calc(30px + 1vw);
+	  color: white;
+  }
+  
+  .nav-item:hover {
+	  background-color: #E3DEDE;
+  }
+  
+  .nav-link {
+	  text-decoration: none;
+	  color: black;
+  }
+  
+  .main-odo {
+	  font-size: calc(15px + 10vw);
+  }
+  
+  body {
+	  overflow-x: hidden;
+	  font-family: 'Roboto', sans-serif;
+	  background-color: #1d1f20;
+	}
+  
+	#sidebar-wrapper {
+	  margin-top: -258px;
+	}
+  
+  .text-center {
+	text-align: center;
+  }
+  
+  .video-title {
+	font-size: calc(20px + 2vw);
+	color: white;
+  }
+
+  .bottom-text {
+	  font-size: calc(15px + 1vw);
+	  color: white;
+  }
+  
+  .bottom-odo {
+	font-size: calc(20px + 4vw);
+  }
+  
+  @media screen and (max-width: 500px) {
+	.card-header {
+	  display: none;
+	}
+	.header-text {
+	  font-size: 0;
+	}
+  
+	.card-head {
+	  display: none;
+	}
+  }
+
+  .total-confirmed-odo {
+	  color: #ff4242;
+  }
+
+  .recovered-odo {
+	color: #ccff67;
+  }
+
+  .deaths-odo {
+	  color: white;
+  }
+
+	/* ----------------------------------------------- */
+  /*                    Navbar                        */
+  /* ----------------------------------------------- */
+  
+  ul {
+	list-style-type: none;
+	margin: -10px;
+	padding: 0;
+  color: rgb(212, 212, 212);
+	width: 250px;
+	background-color: #1d1f20;
+  box-shadow: 7px 2px 28px -14px;
+	height: 100%;
+	position: fixed; 
+	overflow: hidden;
+  }
+  
+  #shoppy-link {
+  cursor:pointer;
+  }
+  
+  .nav-title {
+  padding: 0px;
+  text-align: center;
+  font-size: 13px;
+  position: relative;
+  top: 20px;
+  left: -23px;
+  }
+  
+  .nav-title2 {
+  padding: 0px;
+  text-align: center;
+  font-size: 13px;
+  position: relative;
+  top: 20px;
+  left: -53px;
+  }
+  
+  .link {
+  position: relative;
+  left: 30px;
+  top: 30px;
+  font-size: 17px;
+  }
+  
+  .link2 {
+  position: relative;
+  left: 27px;
+  top: 30px;
+  font-size: 17px;
+  }
+  
+  .link:hover {
+  color: red;
+  }
+  
+  .link2:hover {
+  color: red;
+  }
+  
+  
+  .active {
+	background-color: #dddddd;
+	color: black;
+  }
+  
+  @media screen and (max-width: 1500px) {
+	ul {
+		  width: 200px;
+	  }
+  }
+  
+  @media screen and (max-width: 1252px) {
+	ul {
+		  width: 0px;
+	  }
+  }
+  
+  
+  @media screen and (max-width: 800px) {
+	  ul {
+		  width: 0px;
+	  }
+	  
+	  pre {
+		  width: 0px;
+		  display: none;
+	  }
+	  
+	  label {
+		  width: 0px;
+		  display: none;
+	  }
+  }
