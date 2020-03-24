@@ -68,7 +68,9 @@ var corsProxies = [
 	"https://moor-geranium.glitch.me/",
 	"https://shorthaired-sedum.glitch.me/",
 	"https://dog-trombone.glitch.me/",
-	"https://cotton-relation.glitch.me/"
+	"https://cotton-relation.glitch.me/",
+	"https://api.allorigins.win/get?url=",
+	"https://corsproxy.glitch.me/"
 ]
 
 
