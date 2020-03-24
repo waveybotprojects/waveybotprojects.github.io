@@ -281,8 +281,8 @@ if (typeOfCounter == 1) {
 						})
 					})
 				}).fail(function() {
-					$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet,brandingSettings&id='+user1, function(data) {
-						$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet,brandingSettings&id='+user2, function(data2) {
+					$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user1, function(data) {
+						$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user2, function(data2) {
 							YT.UpdateManager.updateAvatars(data.snippet.thumbnails.high.url, data2.snippet.thumbnails.high.url)
 							YT.UpdateManager.updateDisqusNames(data.snippet.title, data2.snippet.title)
 							YT.UpdateManager.updateBanners(data.brandingSettings.image.bannerImageUrl, data2.brandingSettings.image.bannerImageUrl)
