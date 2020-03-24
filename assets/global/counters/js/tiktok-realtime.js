@@ -2,7 +2,7 @@ var TikTok = {};
 var user = "";
 var goal = "";
 
-var corsProxies = [
+var NextStopStealingMyShitRetard = [
 	"https://cors.livecounts.io/",
 	"https://nice-cors-proxy-1.glitch.me/",
 	"https://nice-cors-proxy-2.glitch.me/",
@@ -159,8 +159,9 @@ TikTok.UrlManager = {
 
 
 window.onload = () => {
+
     if (!getUrlVars()["u"]) {
-        user = "MrBeast";
+        user = "charlidamelio";
     } else {
         user = getUrlVars()["u"]
 	}
@@ -182,7 +183,7 @@ window.onload = () => {
 	$(".links").load("/assets/global/other.html");
 
 
-	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
+	$.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
 		if (data.body.userData) {
 			document.querySelector(".url").href = "https://tiktok.com/@"+user
 			document.querySelector("#shareurl").value = window.location.href
@@ -202,7 +203,7 @@ window.onload = () => {
 };
 
 setInterval(function () {
-	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
+	$.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
 		TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
 		TikTok.UpdateManager.updateHearts(data.body.userData.heart)
 		TikTok.GoalManager.load(data.body.userData.fans)
