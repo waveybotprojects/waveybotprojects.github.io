@@ -10,7 +10,19 @@ var corsProxies = [
 	"https://nice-cors-proxy-4.glitch.me/",
 	"https://shazyy-cors-anywhere.glitch.me/",
 	"https://shazyy-cors-anywhere-1.glitch.me/",
-	"https://shazyy-cors-anywhere-2.glitch.me/"
+    "https://shazyy-cors-anywhere-2.glitch.me/",
+    "https://nextcounts-cors01.glitch.me/",
+    "https://nextcounts-cors02.glitch.me/",
+    "https://nextcounts-cors03.glitch.me/",
+    "https://nextcounts-cors04.glitch.me/",
+    "https://nextcounts-cors05.glitch.me/",
+    "https://nextcounts-cors06.glitch.me/",
+    "https://nextcounts-cors07.glitch.me/",
+    "https://nextcounts-cors08.glitch.me/",
+    "https://nextcounts-cors09.glitch.me/",
+    "https://nextcounts-cors10.glitch.me/",
+    "https://nextcounts-cors11.glitch.me/",
+    "https://nextcounts-cors12.glitch.me/",
 ]
 
 
