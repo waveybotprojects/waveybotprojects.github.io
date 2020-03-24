@@ -94,7 +94,7 @@ window.onload = () => {
 
 	$.getJSON('https://api.thesocialcounter.com/twitter/?name='+user, function(data) {
 		Twitter.UpdateManager.updateName(data.name)
-		Twitter.UpdateManager.updateAvatar(data.profile_image_url_https.replace("default", "400x400"))
+		Twitter.UpdateManager.updateAvatar(data.profile_image_url_https.replace("normal", "400x400"))
 	})
 };
 
