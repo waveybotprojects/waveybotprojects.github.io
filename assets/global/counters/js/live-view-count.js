@@ -30,65 +30,6 @@ gtag('config', 'UA-119417406-7');
       });
   }, 300);
 
-  var chart = new Highcharts.chart({
-    chart: {
-        renderTo: 'chart',
-        type: 'line'
-    },
-    title: {
-        text: 'Estimated View Count Graph'
-    },
-    xAxis: {
-        type: 'datetime',
-        tickPixelInterval: 150
-    },
-    yAxis: {
-        title: {
-            text: ''
-        }
-    },
-
-    credits: {
-        enabled: false
-    },
-
-    series: [{
-        name: 'Estimated View Count',
-        marker: {
-            enabled: false
-        }
-    }]
-});
-
-var tag = document.createElement('script');
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('player', {
-    height: '200',
-    width: '200',
-    videoId: 'YeLJPGPsk54',
-    playerVars: {
-      'autoplay': '1'
-    },
-    events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
-    }
-  });
-}
-function onPlayerReady(event) {
-  event.target.setVolume(0);
-  event.target.setPlaybackQuality("tiny");
-  event.target.playVideo();
-}
-function onPlayerStateChange(event) {
-  event.target.setVolume(0);
-  event.target.setPlaybackQuality("tiny");
-}
-
 window.onload = () => {
 
   if (!getUrlVars()["v"]) {
@@ -121,15 +62,6 @@ window.onload = () => {
       YT.UpdateManager.updateDislikes(data.items[0].statistics.dislikeCount)
       YT.UpdateManager.updateComments(data.items[0].statistics.commentCount)
       YT.GoalManager.load(estViewCount);
-
-      chart.series[0].addPoint([                   
-        (new Date()).getTime(),
-        estViewCount
-    ])
-
-    if (chart.series[0].data.length >= 900) {
-			chart.series[0].data[0].remove()
-		}
     
     }).fail(function() {
       if (rightKeys.includes(rightKey)) {
@@ -162,15 +94,6 @@ window.onload = () => {
             YT.UpdateManager.updateDislikes(data.statistics.dislikeCount)
             YT.UpdateManager.updateComments(data.statistics.commentCount)
             YT.GoalManager.load(estViewCount);
-      
-            chart.series[0].addPoint([                   
-              (new Date()).getTime(),
-              estViewCount
-          ])
-      
-          if (chart.series[0].data.length >= 900) {
-            chart.series[0].data[0].remove()
-          }
           
         })
       }
@@ -272,15 +195,6 @@ setInterval(function() {
       YT.UpdateManager.updateDislikes(data.items[0].statistics.dislikeCount)
       YT.UpdateManager.updateComments(data.items[0].statistics.commentCount)
       YT.GoalManager.load(estViewCount);
-
-      chart.series[0].addPoint([                   
-        (new Date()).getTime(),
-        estViewCount
-    ])
-
-    if (chart.series[0].data.length >= 900) {
-			chart.series[0].data[0].remove()
-		}
     
     }).fail(function() {
       if (rightKeys.includes(rightKey)) {
@@ -313,15 +227,6 @@ setInterval(function() {
             YT.UpdateManager.updateDislikes(data.statistics.dislikeCount)
             YT.UpdateManager.updateComments(data.statistics.commentCount)
             YT.GoalManager.load(estViewCount);
-      
-            chart.series[0].addPoint([                   
-              (new Date()).getTime(),
-              estViewCount
-          ])
-      
-          if (chart.series[0].data.length >= 900) {
-            chart.series[0].data[0].remove()
-          }
           
         })
       }
