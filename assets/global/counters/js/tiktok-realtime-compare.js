@@ -2,7 +2,9 @@ var TikTok = {};
 var user1 = "";
 var user2 = "";
 
-var corsProxies = [
+var ok = false;
+
+var NextStopStealingMyShitRetard = [
 	"https://cors.livecounts.io/",
 	"https://nice-cors-proxy-1.glitch.me/",
 	"https://nice-cors-proxy-2.glitch.me/",
@@ -70,7 +72,38 @@ var corsProxies = [
 	"https://dog-trombone.glitch.me/",
 	"https://cotton-relation.glitch.me/",
 	"https://api.allorigins.win/get?url=",
-	"https://corsproxy.glitch.me/"
+	"https://corsproxy.glitch.me/",
+	"https://shazyy-cors-anywhere-6.glitch.me/",
+	"https://shazyy-cors-anywhere-7.glitch.me/",
+	"https://shazyy-cors-anywhere-8.glitch.me/",
+	"https://shazyy-cors-anywhere-9.glitch.me/",
+	"https://shazyy-cors-anywhere-10.glitch.me/",
+	"https://ajar-patch-fox.glitch.me/",
+	"https://chestnut-almond-painter.glitch.me/",
+	"https://tested-brash-minnow.glitch.me/",
+	"https://candied-dazzling-handball.glitch.me/",
+	"https://mint-spice-bass.glitch.me/",
+	"https://futuristic-bald-citrus.glitch.me/",
+	"https://plausible-momentous-parrot.glitch.me/",
+	"https://loud-alpine-silver.glitch.me/",
+	"https://power-boat.glitch.me/",
+	"https://fresh-alert-opera.glitch.me/",
+	"https://stingy-button-cowbell.glitch.me/",
+	"https://amber-attractive-record.glitch.me/",
+	"https://grizzly-stirring-seer.glitch.me/",
+	"https://amazing-mewing-hellebore.glitch.me/",
+	"https://holy-decorous-mango.glitch.me/",
+	"https://miniature-lofty-pyroraptor.glitch.me/",
+	"https://opalescent-wirehaired-saffron.glitch.me/",
+	"https://sordid-silken-snowstorm.glitch.me/",
+	"https://waiting-foamy-cappelletti.glitch.me/",
+	"https://spotless-fortune-ground.glitch.me/",
+	"https://literate-cobalt-locust.glitch.me/",
+	"https://elderly-standing-anemone.glitch.me/",
+	"https://fluttering-deluxe-roquefort.glitch.me/",
+	"https://alder-glib-basin.glitch.me/",
+	"https://juvenile-overjoyed-meadowlark.glitch.me/",
+	"https://extreme-jumpy-caboc.glitch.me/"
 ]
 
 function getUrlVars() {
@@ -130,8 +163,8 @@ window.onload = () => {
     TikTok.UpdateManager.updateFollowButton(user1, user2)
 
 	
-	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
+	$.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
+        $.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
             TikTok.UpdateManager.updateName(data.body.userData.nickName, data2.body.userData.nickName)
             TikTok.UpdateManager.updatePicture(data.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
             TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
@@ -200,8 +233,13 @@ setInterval(() => {
 
 setInterval(function() {
     var today = new Date();
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
+    $.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
+        $.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
+            if (!ok) {
+                TikTok.UpdateManager.updateName(data.body.userData.nickName, data2.body.userData.nickName)
+                TikTok.UpdateManager.updatePicture(data.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
+                ok = true
+            }
             TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
             chart.series[0].addPoint([                   
                 (new Date()).getTime(),

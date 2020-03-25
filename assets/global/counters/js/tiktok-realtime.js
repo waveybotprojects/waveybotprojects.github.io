@@ -2,6 +2,8 @@ var TikTok = {};
 var user = "";
 var goal = "";
 
+var ok = false;
+
 var NextStopStealingMyShitRetard = [
 	"https://cors.livecounts.io/",
 	"https://nice-cors-proxy-1.glitch.me/",
@@ -70,7 +72,38 @@ var NextStopStealingMyShitRetard = [
 	"https://dog-trombone.glitch.me/",
 	"https://cotton-relation.glitch.me/",
 	"https://api.allorigins.win/get?url=",
-	"https://corsproxy.glitch.me/"
+	"https://corsproxy.glitch.me/",
+	"https://shazyy-cors-anywhere-6.glitch.me/",
+	"https://shazyy-cors-anywhere-7.glitch.me/",
+	"https://shazyy-cors-anywhere-8.glitch.me/",
+	"https://shazyy-cors-anywhere-9.glitch.me/",
+	"https://shazyy-cors-anywhere-10.glitch.me/",
+	"https://ajar-patch-fox.glitch.me/",
+	"https://chestnut-almond-painter.glitch.me/",
+	"https://tested-brash-minnow.glitch.me/",
+	"https://candied-dazzling-handball.glitch.me/",
+	"https://mint-spice-bass.glitch.me/",
+	"https://futuristic-bald-citrus.glitch.me/",
+	"https://plausible-momentous-parrot.glitch.me/",
+	"https://loud-alpine-silver.glitch.me/",
+	"https://power-boat.glitch.me/",
+	"https://fresh-alert-opera.glitch.me/",
+	"https://stingy-button-cowbell.glitch.me/",
+	"https://amber-attractive-record.glitch.me/",
+	"https://grizzly-stirring-seer.glitch.me/",
+	"https://amazing-mewing-hellebore.glitch.me/",
+	"https://holy-decorous-mango.glitch.me/",
+	"https://miniature-lofty-pyroraptor.glitch.me/",
+	"https://opalescent-wirehaired-saffron.glitch.me/",
+	"https://sordid-silken-snowstorm.glitch.me/",
+	"https://waiting-foamy-cappelletti.glitch.me/",
+	"https://spotless-fortune-ground.glitch.me/",
+	"https://literate-cobalt-locust.glitch.me/",
+	"https://elderly-standing-anemone.glitch.me/",
+	"https://fluttering-deluxe-roquefort.glitch.me/",
+	"https://alder-glib-basin.glitch.me/",
+	"https://juvenile-overjoyed-meadowlark.glitch.me/",
+	"https://extreme-jumpy-caboc.glitch.me/"
 ]
 
 
@@ -207,6 +240,17 @@ setInterval(function () {
 		TikTok.UpdateManager.updateOdometer(data.body.userData.fans)
 		TikTok.UpdateManager.updateHearts(data.body.userData.heart)
 		TikTok.GoalManager.load(data.body.userData.fans)
+
+		if (!ok) {
+			TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])
+			if (data.body.userData.verified) {
+				TikTok.UpdateManager.updateName(data.body.userData.nickName + ' <img width="32" height="32" title="Verified" alt="Verified" src="/assets/global/tiktok-verified.png">')
+			} else {
+				TikTok.UpdateManager.updateName(data.body.userData.nickName)
+			}
+
+			ok = true;
+		}
 
 		chart.series[0].addPoint([                   
 			(new Date()).getTime(),
