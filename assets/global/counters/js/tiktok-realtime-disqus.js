@@ -9,7 +9,7 @@ function getUrlVars() {
 var user = "";
 
 if (!getUrlVars()["u"]) {
-	user = "MrBeast";
+	user = "charlidamelio";
 } else {
 	user = getUrlVars()["u"]
 }
