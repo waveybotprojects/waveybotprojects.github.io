@@ -103,7 +103,20 @@ var NextStopStealingMyShitRetard = [
 	"https://fluttering-deluxe-roquefort.glitch.me/",
 	"https://alder-glib-basin.glitch.me/",
 	"https://juvenile-overjoyed-meadowlark.glitch.me/",
-	"https://extreme-jumpy-caboc.glitch.me/"
+	"https://extreme-jumpy-caboc.glitch.me/",
+	"https://cors-proxy1.herokuapp.com/",
+	"https://livecountsio-cors-1.herokuapp.com/",
+	"https://next-is-thief-1.herokuapp.com/",
+	"https://next-is-thief-2.herokuapp.com/",
+	"https://next-is-thief-3.herokuapp.com/",
+	"https://next-is-thief-4.herokuapp.com/",
+	"https://next-is-thief-5.herokuapp.com/",
+	"https://next-is-thief-6.herokuapp.com/",
+	"https://next-is-thief-7.herokuapp.com/",
+	"https://next-is-thief-8.herokuapp.com/",
+	"https://next-is-thief-9.herokuapp.com/",
+	"https://next-is-thief-10.herokuapp.com/",
+	"https://next-is-thief-11.herokuapp.com/"
 ]
 
 function getUrlVars() {
