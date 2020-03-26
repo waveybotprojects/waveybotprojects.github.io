@@ -1,16 +1,87 @@
-.text-center {
-    text-align: center;
+* {
+    box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+font-family: 'Rubik';
+background: rgb(190, 190, 190);
 }
 
-.link {
-    font-size: 20px;
+/* Cool Scroll Bar */
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(104, 104, 104);
+}
+::-webkit-scrollbar-track{
+    background: rgb(0,0,0);
+}
+/**/
+
+/* Top Nav */
+.top-nav { 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  background: #1b262c;
+  color: #fff;
+  padding: 16px;
+  text-align: center;
 }
 
-hr {
-    border: 0;
-    clear:both;
-    display:block;
-    width: 96%;               
-    background-color:rgb(173, 169, 169);
-    height: 1px;
+.top-nav h1 {
+    display: inline;
 }
+/**/
+
+/* Main Nav */
+.nav-items a {
+  width: 100%;
+  text-decoration: none;
+  display: block;
+  padding: 7px;
+  font-size: 18px;
+  color: #0f4c75;
+  transition: color .2s;
+}
+
+.nav-items a:hover {
+color: rgb(255, 255, 255);
+background: #0f4c75;
+}
+
+.nav-head {
+  text-align: center;
+    font-size: 22px;
+    color: #000;
+}
+/**/
+
+.content {
+  margin-top: 70px;
+}
+
+.card {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 12px;
+  font-family: 'Rubik';
+  font-size: 24px;
+  margin-top: 6px;
+  text-align: center;
+  background: white;
+}
+
+p {
+  font-family: 'Rubik';
+  font-size: 18px;
+}
+
+
+
+
+  
