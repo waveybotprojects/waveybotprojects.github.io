@@ -254,7 +254,8 @@ var normalCountRefresh = setInterval(function() {
 	});
 }, 60000)
 
-window.onload = () => {
+setTimeout(function() {
+
 	YT.UrlManager.addUser();
 	YT.UrlManager.addTheme();
 	YT.UrlManager.addOdometer();
@@ -335,7 +336,8 @@ window.onload = () => {
 			$('.channelPromotions').append(HTML); 
 		})
 	})
-}
+
+}, 1)
 
 YT.GoalManager = {
 	load: function(a) {
