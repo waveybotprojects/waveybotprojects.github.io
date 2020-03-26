@@ -70,7 +70,7 @@ window.onload = () => {
       }
 
       if (rightKeys.length == 0) {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,snippet&id='+video, function(data) {
             var channelId = actualChannelID;
             var views = parseInt(data.statistics.viewCount);
             var likes = parseInt(data.statistics.likeCount);

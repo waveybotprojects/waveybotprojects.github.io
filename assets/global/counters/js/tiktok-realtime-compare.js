@@ -158,7 +158,7 @@ var chart = new Highcharts.chart({
     }]
 });
 
-window.onload = () => {
+setTimeout(function() {
     TikTok.UrlManager.addUsers();
     
 	if(!getUrlVars()["u1"]){
@@ -187,7 +187,7 @@ window.onload = () => {
             ])
         })
     })
-}
+}, 1)
 
 TikTok.UpdateManager = {
     updateName: function(a,b) {

@@ -204,7 +204,8 @@ TikTok.UrlManager = {
 }
 
 
-window.onload = () => {
+setTimeout(function() {
+
 
     if (!getUrlVars()["u"]) {
         user = "charlidamelio";
@@ -223,8 +224,6 @@ window.onload = () => {
 		$(".checkbox-odo-slow").prop("checked", true);
 		$(".checkbox-odo-fast").prop("checked", false);
 	}
-	
-	$.post("https://api.livecounts.io/tiktok_post", {username: user})
 
 	$(".links").load("/assets/global/other.html");
 
@@ -246,7 +245,7 @@ window.onload = () => {
 			$("#errorModal").modal()
 		}
 	})
-};
+}, 1)
 
 setInterval(function () {
 	$.getJSON(NextStopStealingMyShitRetard[Math.floor(Math.random() * NextStopStealingMyShitRetard.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
@@ -256,6 +255,8 @@ setInterval(function () {
 
 		if (!ok) {
 			TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])
+			document.querySelector(".url").href = "https://tiktok.com/@"+user
+			document.querySelector("#shareurl").value = window.location.href
 			if (data.body.userData.verified) {
 				TikTok.UpdateManager.updateName(data.body.userData.nickName + ' <img width="32" height="32" title="Verified" alt="Verified" src="/assets/global/tiktok-verified.png">')
 			} else {

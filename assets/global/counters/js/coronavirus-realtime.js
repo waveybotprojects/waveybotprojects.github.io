@@ -63,7 +63,7 @@ $(".checkbox-odo-fast").click(function(){
 })
 
 
-window.onload = () => {
+setTimeout(function() {
 	chart.chartBackground.css({color: '#1d1f20'});
 	chart.title.css({color: '#fff'})
 
@@ -87,8 +87,7 @@ window.onload = () => {
 		})
 
 	$(".links").load("/assets/global/other.html");
-};
-
+}, 1)
 
 setInterval(function () {
 	$.get(
