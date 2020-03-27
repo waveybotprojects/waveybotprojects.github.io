@@ -18,3 +18,5 @@ Array.prototype.shuffle = function () {
     return this;
 }
 var YT = {};
+
+YT.live.start()
