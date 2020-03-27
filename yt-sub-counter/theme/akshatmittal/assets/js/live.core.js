@@ -2,9 +2,8 @@ YT.live = {
     channelID: "",
     update: function () {
         $.getJSON('https://api.livecounts.io/yt_subs', function(data) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+this.channelID, function (e) {
-                console.log(e, result[0])
-                var result = data.filter(x => x.cid === this.channelID);
+            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+YT.live.channelID, function (e) {
+                var result = data.filter(x => x.cid === YT.live.channelID);
                 if (result.length != 0) {
                     YT.updateManager.updateSubscribers(result[0].subscriberCount)
                     YT.updateManager.updateViews(e.statistics.viewCount);
