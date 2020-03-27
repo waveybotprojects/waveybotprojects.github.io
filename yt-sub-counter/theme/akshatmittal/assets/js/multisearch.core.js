@@ -1,6 +1,6 @@
 YT.multisearch = {
     getResults: function (e) {
-        $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + encodeURIComponent(e) + "&type=channel&maxResults=5&key=" + YT.keyManager.getKey(), function (e) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&q='+encodeURIComponent(e), function (e) {
             $er = $("#results");
             $er.html("");
             e.items.forEach(function (f) {
