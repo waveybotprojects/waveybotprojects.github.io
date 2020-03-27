@@ -50,7 +50,7 @@ YT.query = {
         $.getJSON("https://www.googleapis.com/youtube/v3/channels?part=brandingSettings&id=" + encodeURIComponent(e) + "&key=" + YT.keyManager.getKey(), function (e) {
             YT.updateManager.updateCover(e.items[0].brandingSettings.image.bannerImageUrl);
         }).fail(function() {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&q='+encodeURIComponent(e), function(e) {
+            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=brandingSettings&q='+encodeURIComponent(e), function(e) {
                 YT.updateManager.updateCover(e.brandingSettings.image.bannerImageUrl);
             })
         })

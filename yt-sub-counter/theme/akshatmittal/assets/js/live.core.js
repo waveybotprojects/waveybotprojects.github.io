@@ -9,13 +9,9 @@ YT.live = {
                     YT.updateManager.updateViews(e.items[0].statistics.viewCount);
                     YT.updateManager.updateVideos(e.items[0].statistics.videoCount);
                 } else {
-                    if (e.pageInfo.totalResults > 0) {
-                        YT.updateManager.updateSubscribers(e.items[0].statistics.subscriberCount);
-                        YT.updateManager.updateViews(e.items[0].statistics.viewCount);
-                        YT.updateManager.updateVideos(e.items[0].statistics.videoCount);
-                    } else {
-                        YT.query.newSearch(YT.live.channelID);
-                    }
+                    YT.updateManager.updateSubscribers(e.items[0].statistics.subscriberCount);
+                    YT.updateManager.updateViews(e.items[0].statistics.viewCount);
+                    YT.updateManager.updateVideos(e.items[0].statistics.videoCount);
                 }
             }).fail(function() {
                 $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+this.channelID, function(e) {
