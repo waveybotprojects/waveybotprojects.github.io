@@ -6,11 +6,6 @@ YT.query = {
         YT.live.stop();
         if (e.trim().substr(0, 2).toUpperCase() == "UC" && e.trim().length >= 24) {
             $.getJSON("https://www.googleapis.com/youtube/v3/channels?part=snippet&id=" + encodeURIComponent(e) + "&key=" + YT.keyManager.getKey(), function (e) {
-                if (e.pageInfo.totalResults < 1) {
-                    alert("No results found!");
-                    location.href = baseURL;
-                    return;
-                }
                 var gsnippet = e.items[0];
                 YT.updateManager.updateChannelID(gsnippet.id);
                 YT.query.getCover(gsnippet.id);
@@ -20,11 +15,6 @@ YT.query = {
                 YT.live.start();
             }).fail(function() {
                 $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+encodeURIComponent(e), function(e) {
-                    if (e.pageInfo.totalResults < 1) {
-                        alert("No results found!");
-                        location.href = baseURL;
-                        return;
-                    }
 
                     YT.updateManager.updateChannelID(e.id);
                     YT.query.getCover(e.id);
@@ -36,11 +26,6 @@ YT.query = {
             });
         } else {
             $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + encodeURIComponent(e) + "&type=channel&maxResults=1&key=" + YT.keyManager.getKey(), function (e) {
-                if (e.pageInfo.totalResults < 1) {
-                    alert("No results found!");
-                    location.href = baseURL;
-                    return;
-                }
                 var snippet = e.items[0].snippet;
                 YT.updateManager.updateChannelID(snippet.channelId);
                 YT.query.getCover(snippet.channelId);
@@ -50,11 +35,6 @@ YT.query = {
                 YT.live.start();
             }).fail(function() {
                 $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=snippet&q='+encodeURIComponent(e), function(e) {
-                    if (e.pageInfo.totalResults < 1) {
-                        alert("No results found!");
-                        location.href = baseURL;
-                        return;
-                    }
                     var snippet = e.snippet;
                     YT.updateManager.updateChannelID(snippet.channelId);
                     YT.query.getCover(snippet.channelId);
