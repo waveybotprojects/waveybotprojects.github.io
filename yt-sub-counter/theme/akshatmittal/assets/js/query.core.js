@@ -47,7 +47,7 @@ YT.query = {
         }
     },
     getCover: function (e) {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&q='+encodeURIComponent(e), function(e) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+encodeURIComponent(e), function(e) {
             YT.updateManager.updateCover(e.brandingSettings.image.bannerImageUrl);
         })
     },

@@ -1,6 +1,6 @@
 YT.multisearch = {
     getResults: function (e) {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&q='+encodeURIComponent(e), function (e) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=channel&q='+encodeURIComponent(e), function (e) {
             $er = $("#results");
             $er.html("");
             e.items.forEach(function (f) {
