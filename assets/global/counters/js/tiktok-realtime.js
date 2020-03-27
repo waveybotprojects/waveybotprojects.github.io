@@ -233,6 +233,8 @@ setTimeout(function() {
 			document.querySelector(".url").href = "https://tiktok.com/@"+user
 			document.querySelector("#shareurl").value = window.location.href
 			TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])
+			document.querySelector("#embed-website").value = '<iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/tiktok-realtime/embed/?u='+user+'" allowfullscreen></iframe>'
+			document.querySelector("#obs-url").value = 'https://livecounts.io/tiktok-realtime/embed/?u='+user
 			if (data.body.userData.verified) {
 				TikTok.UpdateManager.updateName(data.body.userData.nickName + ' <img width="32" height="32" title="Verified" alt="Verified" src="/assets/global/tiktok-verified.png">')
 			} else {
@@ -257,6 +259,8 @@ setInterval(function () {
 			TikTok.UpdateManager.updateAvatar(data.body.userData.coversMedium[0])
 			document.querySelector(".url").href = "https://tiktok.com/@"+user
 			document.querySelector("#shareurl").value = window.location.href
+			document.querySelector("#embed-website").value = '<iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/tiktok-realtime/embed/?u='+user+'" allowfullscreen></iframe>'
+			document.querySelector("#obs-url").value = 'https://livecounts.io/tiktok-realtime/embed/?u='+user
 			if (data.body.userData.verified) {
 				TikTok.UpdateManager.updateName(data.body.userData.nickName + ' <img width="32" height="32" title="Verified" alt="Verified" src="/assets/global/tiktok-verified.png">')
 			} else {
