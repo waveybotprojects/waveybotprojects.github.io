@@ -34,7 +34,7 @@ YT.query = {
                 YT.urls.pushState(snippet.channelId);
                 YT.live.start();
             }).fail(function() {
-                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=snippet&q='+encodeURIComponent(e), function(e) {
+                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&q='+encodeURIComponent(e), function(e) {
                     var snippet = e.snippet;
                     YT.updateManager.updateChannelID(snippet.channelId);
                     YT.query.getCover(snippet.channelId);

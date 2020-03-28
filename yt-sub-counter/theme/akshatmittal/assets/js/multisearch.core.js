@@ -3,7 +3,7 @@ YT.multisearch = {
         $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&q='+encodeURIComponent(e), function (e) {
             $er = $("#results");
             $er.html("");
-            var snippet = f.snippet;
+            var snippet = e.snippet;
             if (snippet.channelId == YT.live.channelID) return;
             $er.append(YT.multisearch.giveHtml(snippet.channelTitle, snippet.thumbnails.default.url, snippet.channelId));
         });
