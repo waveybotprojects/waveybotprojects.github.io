@@ -29,7 +29,3 @@ ga('send', 'pageview', {
     'page': location.pathname + location.search + location.hash,
     'title': document.title
 });
-var disqus_config = function () {
-    this.page.url = "";
-    this.page.identifier = "";
-};

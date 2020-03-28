@@ -20,15 +20,6 @@ YT.urls = {
             f = c;
         }
         history.pushState(null, null, "#!/" + e + "$$" + f);
-        setTimeout(function () {
-            DISQUS.reset({
-                reload: true,
-                config: function () {
-                    this.page.identifier = YT.live.vs1 + "$$" + YT.live.vs2;
-                    this.page.url = baseURL + "compare/#!/" + YT.live.vs1 + "$$" + YT.live.vs2;
-                }
-            });
-        }, 500)
         YT.live.setVS(e, f)
     },
     getCurrent: function () {
