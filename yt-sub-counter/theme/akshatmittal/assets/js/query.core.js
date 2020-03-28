@@ -15,7 +15,6 @@ YT.query = {
                 YT.live.start();
             }).fail(function() {
                 $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+encodeURIComponent(e), function(e) {
-
                     YT.updateManager.updateChannelID(e.id);
                     YT.query.getCover(e.id);
                     YT.updateManager.updateName(e.snippet.title);
@@ -25,24 +24,14 @@ YT.query = {
                 })
             });
         } else {
-            $.getJSON("https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + encodeURIComponent(e) + "&type=channel&maxResults=1&key=" + YT.keyManager.getKey(), function (e) {
-                var snippet = e.items[0].snippet;
+            $.getJSON("https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&q=" +encodeURIComponent(e), function (e) {
+                var snippet = e.snippet;
                 YT.updateManager.updateChannelID(snippet.channelId);
                 YT.query.getCover(snippet.channelId);
                 YT.updateManager.updateName(snippet.channelTitle);
                 YT.updateManager.updateProfile(snippet.thumbnails.high.url ? snippet.thumbnails.high.url : snippet.thumbnails.default.url);
                 YT.urls.pushState(snippet.channelId);
-                YT.live.start();
-            }).fail(function() {
-                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&q='+encodeURIComponent(e), function(e) {
-                    var snippet = e.snippet;
-                    YT.updateManager.updateChannelID(snippet.channelId);
-                    YT.query.getCover(snippet.channelId);
-                    YT.updateManager.updateName(snippet.channelTitle);
-                    YT.updateManager.updateProfile(snippet.thumbnails.high.url ? snippet.thumbnails.high.url : snippet.thumbnails.default.url);
-                    YT.urls.pushState(snippet.channelId);
-                    YT.live.start();  
-                })
+                YT.live.start();  
             })
         }
     },
