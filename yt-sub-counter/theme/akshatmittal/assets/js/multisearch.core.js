@@ -3,11 +3,9 @@ YT.multisearch = {
         $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&q='+encodeURIComponent(e), function (e) {
             $er = $("#results");
             $er.html("");
-            e.items.forEach(function (f) {
-                var snippet = f.snippet;
-                if (snippet.channelId == YT.live.channelID) return;
-                $er.append(YT.multisearch.giveHtml(snippet.channelTitle, snippet.thumbnails.default.url, snippet.channelId));
-            })
+            var snippet = f.snippet;
+            if (snippet.channelId == YT.live.channelID) return;
+            $er.append(YT.multisearch.giveHtml(snippet.channelTitle, snippet.thumbnails.default.url, snippet.channelId));
         });
     },
     giveHtml: function (name, image, id) {
