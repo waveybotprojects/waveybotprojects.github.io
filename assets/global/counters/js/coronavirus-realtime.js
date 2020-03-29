@@ -87,6 +87,14 @@ setTimeout(function() {
 		})
 
 	$(".links").load("/assets/global/other.html");
+
+	$.getJSON('https://cors.livecounts.io/https://corona.lmao.ninja/countries',function(data) {
+    	data.forEach(d => {
+			//var country = d.country.split(",")
+			//console.log(country[0].replace(/ /g, "-"))
+			$('.selectCountry').append("<option>"+d.country+"</option>")
+		})
+	})
 }, 1)
 
 setInterval(function () {

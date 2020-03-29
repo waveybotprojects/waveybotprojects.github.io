@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+    <title>livecounts.io - TikTok Live View Count</title>  
+     <meta name="title" content="Livecounts.io - TikTok Live View Count">	
+     <meta name="description" content="Livecounts.io is a simple way to check any TikTok's video Live View, Like and Comment Count updated in real-time!">	
+     <meta name="keywords" content="livecounts, livecounts.io, tiktok,tiktok cringe,tiktok memes,tiktok app,tiktok followers,tiktok influencer marketing,tiktoks,tik tok,most popular tiktok accounts,top 10 tiktok stars,how to make money on tiktok live,top 10 tiktok stars in the world,tiktok thots,how to monetize tiktok,how to make money on tiktok,tiktok star,tiktok dans,tiktok tips,tiktok analytics,most liked tiktok,exposing fortnite stats on tiktok">	
+     <meta name="robots" content="index, follow">	
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">	
+     <meta name="language" content="English">	
+     <meta name="author" content="Shaz">	
+     <link rel="icon" href="/assets/global/youtube-logo.png">
+     <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/tiktok-live-view-count.css?v=1">
+   </head> 
+
+   <body>
+
+        <div class="card sticky-top card card-header">
+            <div class="card-head d-flex justify-content-center">
+                <h1 class="header-text"><i class="fas fa-music"></i> Tiktok Live View Count</h1>
+            </div>
+        </div>
+
+        <div class="container-fluid d-flex justify-content-center">
+            <div class="row center">
+
+                <div class="col-sm-11 offset-sm-1">
+					<div class="row center">
+						<div class="col-sm-12">
+						<h4 class="text-center video-title">livecounts.io</h4>
+						</div>
+					</div>
+                    <div class="d-flex justify-content-center odometer main-odo odometer view-odo"></div> 
+                </div>
+
+                <div class="col offset-md-1">
+                    <h5 class="text-center">Likes</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo likes-odo"></div> 
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Comments</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo comments-odo"></div> 
+                </div>
+
+                <div class="col">
+                    <h5 class="text-center">Goal</h5>
+                    <div class="d-flex justify-content-center odometer bottom-odo goal-odo"></div> 
+                </div>
+            </div>
+        </div>
+        <div style="min-height: 100px;" class="d-flex justify-content-center" id="53748-1"><script src="//ads.themoneytizer.com/s/gen.js?type=1"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=53748&formatId=1"></script></div>
+
+        <br>
+        <div class="container">
+            <div class="row center">
+                <div class="col-sm-5 offset-md-4">
+                    <div class="input-group mb-3">
+                        <input type="text" id="search" class="form-control search-input" placeholder="Full Video URL (Confused? See Guide)" aria-describedby="inputGroup-sizing-default">
+                        <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="row center">
+                    <div class="col-sm-11 offset-md-1">
+                        <h4 class="text-center">What do you think about video by <span class="video-author">.</span>?</h4>
+                        <div id="disqus_thread"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row center">
+                <div class="col-sm-12 offset-md-1">
+                    <h3 id="about">About</h3>
+                    <p>TikTok Live Video Statistics shows you View, Like and Comment count from any video on this platform! Often data like View, Like or Comment displayed on TikTok are either incorrect or abbreviated, that's why Livecounts.io Team decided to create this free tool!</p>
+                    <p>Data is directly taken from TikTok's Official API Service and is guaranteed to be as accurate as possible.</p>
+                    <p>To get started simply copy and paste Video's URL into search box on Livecounts.io and you're good to go! Don't know how to obtain Video URL? Check our <a href="#guide">Guide!</a></p>
+                </div>
+            </div>
+                <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <p></p>
+                        <h3 id="sne">Sharing & Embeds</h3>
+                        <p>You can embed the TikTok Live Video Statistics on your own website or in OBS by copying specified value</p>
+                        <p>Website:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="embed-website" class="form-control" onclick="this.select();" readonly>
+                        </div>
+
+                        <p>OBS:</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="obsurl" class="form-control" onclick="this.select();" readonly>
+                        </div>
+                        <p>Make sure to set width to 500px and height to 180px for best results!</p>
+                        <p></p>
+                        <p>You can share TikTok Live Video Statistics by simply by sharing the link below.</p>
+                        <div class="input-group flex-nowrap">
+                            <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
+                        </div>
+                </div>
+            </div>
+
+            <p></p>
+
+            <div class="row center">
+                    <div class="col-sm-12 offset-md-1">
+                        <h3 id="guide">Guide</h3>
+                        <p>Unfortunately due to TikTok API Limitations we're forced to use search function by Direct Video URL. Guide below will help you with obtaining one.</p>
+                        <p>1. Go to your favorite creator's profile and click on video</p>
+                        <p>2. At the very bottom you should see option to copy link to this video. Click on "copy" button in order to copy URL</p>
+                        <img class="mx-auto d-block" src="https://i.imgur.com/3FJtrJt.png">
+                        <p>3. Once you have URL copied simply paste it into search box on Livecounts.io and press Search button.</p>
+                </div>
+            </div>
+        </div>
+		
+			<ul>
+                <li class="stretched-link nav-title2">Meta</li>
+                <li class="link2"><a href="#about"><i class="navbar-icon fas fa-info-circle"></i> <span class="navbar-text"> About</span></a></li><br>
+                <li class="link2"><a href="#sne"><i class="navbar-icon fas fa-share-square"></i> <span class="navbar-text"> Sharing & Embeds</span></li></a><br>
+                <li class="link2"><a href="#guide"><i class="navbar-icon fas fa-list"></i> <span class="navbar-text"> Guide</span></a></li><br>
+                <li class="nav-title2">Other</li>
+                <div class="links"></div>
+            </ul>
+
+
+    
+
+
+   </body>
+
+   <script src="https://livecounts.io/assets/global/odometer.js"></script>
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script src="/assets/global/counters/js/tiktok-live-view-count.js?v=1"></script>
+   <script src="/assets/global/counters/js/tiktok-live-view-count-disqus.js"></script>
+
+</html>
