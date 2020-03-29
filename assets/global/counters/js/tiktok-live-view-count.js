@@ -328,7 +328,7 @@ function search() {
     alert("Invalid Video URL! Check our Guide down below!")
   } else {
     var url = replaceurl.split("/")
-    window.location.href = "/tiktok-video-stats/?u="+url[3].replace("@", "")+"&id="+url[5]
+    window.location.href = "/tiktok-live-view-count/?u="+url[3].replace("@", "")+"&id="+url[5]
   }
 }
 
