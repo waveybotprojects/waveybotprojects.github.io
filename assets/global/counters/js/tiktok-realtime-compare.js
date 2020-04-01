@@ -5,6 +5,11 @@ var startRefresh;
 
 var TikTokURL = "https://www.tiktok.com/node/share/user/@"
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119417406-7');
+
 TikTok.updateManager = {
   updateAvatar: function(a,b) {
     document.querySelector(".profile-picture-1").src = a;

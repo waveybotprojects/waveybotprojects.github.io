@@ -3,6 +3,11 @@ var user;
 var startRefresh;
 var TikTokURL = "https://www.tiktok.com/node/share/user/@"
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119417406-7');
+
 var chart = new Highcharts.chart({
 	chart: {
 		renderTo: 'chart',
