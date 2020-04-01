@@ -1,8 +1,66 @@
 var TikTok = {};
-var user1 = "";
-var user2 = "";
+var user1;
+var user2
+var startRefresh;
 
-var ok = false;
+var TikTokURL = "https://www.tiktok.com/node/share/user/@"
+
+TikTok.updateManager = {
+  updateAvatar: function(a,b) {
+    document.querySelector(".profile-picture-1").src = a;
+    document.querySelector(".profile-picture-2").src = b;
+  },
+  updateUsername: function(a,b) {
+    let items1 = document.querySelectorAll(".username-1");
+    let items2 = document.querySelectorAll(".username-2");
+    
+    for (let i=0; i < items1.length; i++) {
+      items1[i].innerHTML = a
+    }
+    
+    for (let i=0; i < items2.length; i++) {
+      items2[i].innerHTML = b
+    }
+    
+    document.querySelector(".tiktok-button-1").href = "https://tiktok.com/@"+user1
+    document.querySelector(".tiktok-button-2").href = "https://tiktok.com/@"+user2
+    
+    //SEO
+    document.title = "Livecounts.io - "+a+" vs "+b+" TikTok Follower Comparison"
+    document.querySelector('meta[name="title"]').setAttribute("content", "Livecounts.io - "+a+" vs "+b+" TikTok Follower Comparison");
+    document.querySelector('meta[name="description"]').setAttribute("content", "Livecounts.io is the simple way to compare "+a+" and "+b+"'s TikTok Follower Count, updated in real-time!");
+  },
+  updateFollowerCount: function(a,b) {
+    document.querySelector(".main-odometer-1").innerHTML = a;
+    document.querySelector(".main-odometer-2").innerHTML = b;
+    
+    //Update Difference
+    document.querySelector(".difference-odometer").innerHTML = a - b
+  }
+}
+
+TikTok.corsManager = {
+  get: function() {
+    return corsProxies[Math.floor(Math.random() * corsProxies.length)];
+  }
+}
+
+TikTok.refreshManager = {
+  start: function() {
+    startRefresh = setInterval(function() {
+     $.getJSON(TikTok.corsManager.get() + TikTokURL + user1, function(data1) {
+       $.getJSON(TikTok.corsManager.get() + TikTokURL + user2, function(data2) {
+          TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
+       })
+      })
+    }, 2000)
+  },
+  stop: function() {
+    clearInterval(startRefresh)
+  }
+}
+
+// ---------------------------------- //
 
 function getUrlVars() {
     var vars = {};
@@ -12,173 +70,109 @@ function getUrlVars() {
     return vars
 }
 
+function getData() {
+  $.getJSON(TikTok.corsManager.get() + TikTokURL + user1, function(data1) {
+     $.getJSON(TikTok.corsManager.get() + TikTokURL + user2, function(data2) {
+       TikTok.updateManager.updateAvatar(data1.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
+       TikTok.updateManager.updateUsername(data1.body.userData.nickName, data2.body.userData.nickName)
+       TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
+     }).fail(function() {
+       setTimeout(function() {
+         getData();
+       }, 1000)
+     })
+  }).fail(function() {
+    setTimeout(function() {
+      getData();
+    }, 1000)
+  })
+}
 
-var chart = new Highcharts.chart({
-    chart: {
-        renderTo: 'chart',
-        type: 'line'
-    },
-    title: {
-        text: 'Follower Difference Graph'
-    },
-    xAxis: {
-        type: 'datetime',
-        tickPixelInterval: 150
-    },
-    yAxis: {
-        title: {
-            text: ''
-        }
-    },
+function searchUser1() {
+  var change_user = document.querySelector(".change-user-1-search").value
+  if (change_user.length == 0) {
+    alert("Invalid Username!")
+  } else {
+    window.location.href = "/tiktok-realtime/?user1="+change_user+"&user2="+user2
+  }
+}
 
-    credits: {
-        enabled: false
-    },
+function searchUser2() {
+  var change_user = document.querySelector(".change-user-2-search").value
+  if (change_user.length == 0) {
+    alert("Invalid Username!")
+  } else {
+    window.location.href = "/tiktok-realtime/?user1="+user1+"&user2="+change_user
+  }
+}
 
-    series: [{
-        name: 'Follower Difference',
-        marker: {
-            enabled: false
-        }
-    }]
-});
+
+// ---------------------------------- //
+
+if (!getUrlVars()["user1"]) {
+    user1 = "charlidamelio";
+    
+} else {
+    user1 = getUrlVars()["user1"];
+}
+
+if (!getUrlVars()["user2"]) {
+    user2 = "lorengray";
+} else {
+    user2 = getUrlVars()["user2"];
+}
 
 setTimeout(function() {
-    TikTok.UrlManager.addUsers();
-    
-	if(!getUrlVars()["u1"]){
-		user1="LorenGray";
-	} else {
-		user1=getUrlVars()["u1"];
+  if (!getUrlVars()["user1"]) {
+    history.pushState(null,'',window.location.href+'?user1='+user1)
+  }
+  
+  setTimeout(function() {
+    if (!getUrlVars()["user2"]) {
+      history.pushState(null,'',window.location.href+'&user2='+user2)
     }
-
-    if(!getUrlVars()["u2"]){
-		user2="TikTok";
-	} else {
-		user2=getUrlVars()["u2"];
-    }
-
-    TikTok.UpdateManager.updateFollowButton(user1, user2)
-
-	
-	$.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
-            TikTok.UpdateManager.updateName(data.body.userData.nickName, data2.body.userData.nickName)
-            TikTok.UpdateManager.updatePicture(data.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
-            TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
-            chart.series[0].addPoint([                   
-                (new Date()).getTime(),
-                Math.abs(data.body.userData.fans - data2.body.userData.fans)
-            ])
-        })
-    })
+  }, 500)
+  
+  getData();
+  TikTok.refreshManager.start();
 }, 1)
 
-TikTok.UpdateManager = {
-    updateName: function(a,b) {
-        document.querySelector(".username1").innerText = a;
-        document.querySelector(".username2").innerText = b;
-    },
+// ---------------------------------- //
 
-    updatePicture: function(a,b) {
-        document.querySelector('.pfp1').src = a;
-        document.querySelector('.pfp2').src = b;
-    },
+// Change User Handler
 
-    updateFollowers: function(a,b,c) {
-        document.querySelector(".odo1").innerHTML=a;
-        document.querySelector(".odo2").innerHTML=b;
-        document.querySelector(".difference-odo").innerHTML=c;
-    },
+$(".change-user-search-button-1").click(function() {
+  searchUser1();
+})
 
-    updateFollowButton: function(a,b) {
-        document.querySelector(".followbutton1").innerHTML = "Follow @"+a;
-        document.querySelector(".followbutton2").innerHTML = "Follow @"+b;
-        document.querySelector(".followhref1").href = "https://tiktok.com/@"+a;
-        document.querySelector(".followhref2").href = "https://tiktok.com/@"+b;
+$(".change-user-1-search").keyup(function(event) {
+    if (event.keyCode === 13) {
+        searchUser1()
     }
+});
+
+// Compare User Handler
+
+$(".change-user-search-button-2").click(function() {
+  searchUser2();
+})
+
+$(".change-user-2-search").keyup(function(event) {
+    if (event.keyCode === 13) {
+        searchUser2();
+    }
+});
+
+
+var disqus_config = function() {
+    this.page.url = 'https://livecounts.io/tiktok-realtime/compare/?u1='+user1+'&u2='+user2;
+    this.page.identifier = 'tiktok-compare-'+user1+'-'+user2;
 };
 
-TikTok.UrlManager = {
-    addUsers: function() {
-        if (!getUrlVars()["u1"]) {
-            if (window.location.href.indexOf("?")>-1){
-                history.pushState(null,'',window.location.href+'&u1='+user1)
-            } else {
-                history.pushState(null,'',window.location.href+'?u1='+user1);
-            }
-        }
-
-        if (!getUrlVars()["u2"]) {
-            if (window.location.href.indexOf("?")>-1){
-                history.pushState(null,'',window.location.href+'&u2='+user2)
-            } else {
-                history.pushState(null,'',window.location.href+'?u2='+user2);
-            }
-        }
-    }
-}
-
-//hide disqus ads
-setInterval(() => {
-    $.each($('iframe'), (arr,x) => {
-        let src = $(x).attr('src');
-        if (src && src.match(/(ads-iframe)|(disqusads)/gi)) {
-            $(x).remove();
-        }
-    });
-}, 300);
-
-setInterval(function() {
-    var today = new Date();
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user1,function(data) {
-        $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user2,function(data2) {
-            if (!ok) {
-                TikTok.UpdateManager.updateName(data.body.userData.nickName, data2.body.userData.nickName)
-                TikTok.UpdateManager.updatePicture(data.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
-                ok = true
-            }
-            TikTok.UpdateManager.updateFollowers(data.body.userData.fans, data2.body.userData.fans, data.body.userData.fans - data2.body.userData.fans)
-            chart.series[0].addPoint([                   
-                (new Date()).getTime(),
-                Math.abs(data.body.userData.fans - data2.body.userData.fans)
-            ])
-
-            if (chart.series[0].data.length >= 900) {
-                chart.series[0].data[0].remove()
-            }
-        })
-    })
-}, 2000)
-
-function search1() {
-    var replaceurl = document.getElementById('search1').value.replace(" ", "").replace("@", "");
-    window.location.href = '/tiktok-realtime/compare/?u1=' +replaceurl+'&u2='+user2;
-}
-
-function search2() {
-    var replaceurl = document.getElementById('search2').value.replace(" ", "").replace("@", "");
-    window.location.href = '/tiktok-realtime/compare/?u1='+user1+'&u2='+replaceurl;
-}
-
-$("#searchbutton1").click(function(){
-	search1();
-})
-
-$("#searchbutton2").click(function(){
-	search2();
-})
-
-document.getElementById("search1").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        search1()
-    }
-})
-
-document.getElementById("search2").addEventListener("keyup", function(event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        search2()
-    }
-})
+(function() {
+    var d = document,
+        s = d.createElement('script');
+    s.src = 'https://livecounts-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();

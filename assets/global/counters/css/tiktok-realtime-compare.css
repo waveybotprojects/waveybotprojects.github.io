@@ -1,149 +1,47 @@
-.card-header {
-  background: #ff00cc;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */  
-}
-
-
-.header-text {
-    font-size: calc(30px + 1vw);
-    color: white;
-}
-
-.main-odo {
-    font-size: calc(15px + 4vw);
-    margin-top: -10px;
-}
-
-.username {
-  font-size: calc(20px + 1vw);
-  margin-top: 5px;
-}
-
 body {
-    overflow-x: hidden;
-    font-family: 'Roboto', sans-serif;
-  }
-
-.text-center {
-  text-align: center;
+  background-color: #eef5f9;
 }
 
-.difference-odo {
-  font-size: calc(20px + 1vw);
+.navbar {
+  background: #e96443;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  flex-direction: row;
 }
 
-@media screen and (max-width: 800px) {
-  .difference-card {
-    width: 200px;
-  }
+p,h1,h2,h3,h4,h5 {
+  font-family: "Roboto";
+  font-weight: 300;
 }
 
-@media screen and (max-width: 500px) {
-  .card-header {
-    display: none;
-  }
-  .header-text {
-    font-size: 0;
-  }
+iframe[src*="ads-iframe"] { display: none; }
 
-  .card-head {
-    display: none;
-  }
+.navbar h2 {
+width: 100%;
 }
 
-  /* ----------------------------------------------- */
-/*                    Navbar                        */
-/* ----------------------------------------------- */
-
-ul {
-  list-style-type: none;
-  margin: -10px;
-  padding: 0;
-color: rgb(75, 28, 28);
-  width: 250px;
-  background-color: #fff;
-box-shadow: 7px 2px 28px -14px;
-  height: 100%;
-  position: fixed; 
-  overflow: hidden;
+.navbar-text {
+color: white;
 }
 
-#shoppy-link {
-cursor:pointer;
+.odometer {
+font-family: "Roboto";
+font-weight: 500;
 }
 
-.nav-title {
-padding: 0px;
-text-align: center;
-font-size: 13px;
-position: relative;
-top: 20px;
-left: -23px;
+.main-odometer {
+font-size: calc(30px + 4vw);
 }
 
-.nav-title2 {
-padding: 0px;
-text-align: center;
-font-size: 13px;
-position: relative;
-top: 20px;
-left: -53px;
+.bottom-odometer {
+font-size: calc(40px + 1vw)
 }
 
-.link {
-position: relative;
-left: 30px;
-top: 30px;
-font-size: 17px;
+.tiktok-button {
+background-color: #EE1D52;
+color: white;
 }
 
-.link2 {
-position: relative;
-left: 27px;
-top: 30px;
-font-size: 17px;
-}
-
-.link:hover {
-color: red;
-}
-
-.link2:hover {
-color: red;
-}
-
-
-.active {
-  background-color: #dddddd;
-  color: black;
-}
-
-@media screen and (max-width: 1500px) {
-  ul {
-		width: 200px;
-	}
-}
-
-@media screen and (max-width: 1252px) {
-  ul {
-		width: 0px;
-	}
-}
-
-
-@media screen and (max-width: 800px) {
-	ul {
-		width: 0px;
-	}
-	
-	pre {
-		width: 0px;
-		display: none;
-	}
-	
-	label {
-		width: 0px;
-		display: none;
-	}
+.text-card {
+  margin: 15px 15px 0 15px
 }
