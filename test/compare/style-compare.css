@@ -1,0 +1,45 @@
+body {
+    background-color: #eef5f9;
+}
+
+.navbar {
+    background: #e96443;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    flex-direction: row;
+}
+
+p,h1,h2,h3,h4,h5 {
+    font-family: "Roboto";
+    font-weight: 300;
+}
+
+.navbar h2 {
+  width: 100%;
+}
+
+.navbar-text {
+  color: white;
+}
+
+.odometer {
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+.main-odometer {
+  font-size: calc(30px + 4vw);
+}
+
+.bottom-odometer {
+  font-size: calc(40px + 1vw)
+}
+
+.tiktok-button {
+  background-color: #EE1D52;
+  color: white;
+}
+
+.text-card {
+    margin: 15px 15px 0 15px
+}
