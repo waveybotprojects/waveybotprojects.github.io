@@ -25,7 +25,7 @@ window.onload = () => {
 
     $.getJSON('https://api.thesocialcounter.com/twitter/?name='+user, function(data) {
       Twitch.UpdateManager.updateName(data.name)
-      Twitter.UpdateManager.updateAvatar(data.profile_image_url_https.replace("default", "400x400").replace("default", "400x400"))
+      Twitch.UpdateManager.updateAvatar(data.profile_image_url_https.replace("default", "400x400").replace("default", "400x400"))
     })
     
     if (window.location.href.indexOf(user) > -1) {
