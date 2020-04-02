@@ -47,7 +47,7 @@ TikTok.updateManager = {
     
     document.querySelector(".tiktok-url").href = "https://tiktok.com/@"+user
     document.querySelector("#shareurl").value = window.location.href
-    document.querySelector("#embed-website").value = '<iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/tiktok-realtime/embed?u="'+user+' style="border: 0; width:300px; height:80px; background-color: #FFF;"></iframe>'
+    document.querySelector("#embed-website").value = '<iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/tiktok-realtime/embed?u='+user+'" style="border: 0; width:300px; height:80px; background-color: #FFF;"></iframe>'
     document.querySelector("#obs-url").value = 'https://livecounts.io/tiktok-realtime/embed/?u='+user
     
     //SEO
