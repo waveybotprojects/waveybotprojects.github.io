@@ -29,11 +29,6 @@ TikTok.updateManager = {
     
     document.querySelector(".tiktok-button-1").href = "https://tiktok.com/@"+user1
     document.querySelector(".tiktok-button-2").href = "https://tiktok.com/@"+user2
-    
-    //SEO
-    document.title = "Livecounts.io - "+a+" vs "+b+" TikTok Follower Comparison"
-    document.querySelector('meta[name="title"]').setAttribute("content", "Livecounts.io - "+a+" vs "+b+" TikTok Follower Comparison");
-    document.querySelector('meta[name="description"]').setAttribute("content", "Livecounts.io is the simple way to compare "+a+" and "+b+"'s TikTok Follower Count, updated in real-time!");
   },
   updateFollowerCount: function(a,b) {
     document.querySelector(".main-odometer-1").innerHTML = a;
