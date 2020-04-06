@@ -111,9 +111,23 @@ iframe[src*="ads-iframe"] { display: none; }
 width: 225px;
 }
 
-.lc_ads {
-  max-width: 100%;
-  height: auto;
+.lc_ads { width: 320px; height: 100px; margin: 0 auto; }
+
+/* SMARTPHONES LANDSCAPE */
+@media (min-width: 480px) {
+  .lc_ads { width: 380px; }
 }
+
+/* TABLETS PORTRAIT */
+@media (min-width: 768px) {
+  .lc_ads{width: 668px;}
+}
+
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media (min-width: 1024px) {
+  .lc_ads{width: 769px;}
+}  
+
 
   
