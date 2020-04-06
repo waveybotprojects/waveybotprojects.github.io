@@ -112,7 +112,7 @@ width: 225px;
 }
 
 .lc_ads {
-  width: 100%;
+  max-width: 100%;
   height: auto;
 }
 
