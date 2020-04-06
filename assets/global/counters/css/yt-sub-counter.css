@@ -115,18 +115,18 @@ width: 225px;
 
 /* SMARTPHONES LANDSCAPE */
 @media (min-width: 480px) {
-width: 380px;
+  .lc_ads { width: 380px; }
 }
 
 /* TABLETS PORTRAIT */
 @media (min-width: 768px) {
-width: 668px;
+  .lc_ads{width: 668px;}
 }
 
 
 /* TABLET LANDSCAPE / DESKTOP */
 @media (min-width: 1024px) {
-width: 769px;
+  .lc_ads{width: 769px;}
 }  
 
 
