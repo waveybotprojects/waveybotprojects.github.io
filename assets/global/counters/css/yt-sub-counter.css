@@ -110,3 +110,10 @@ iframe[src*="ads-iframe"] { display: none; }
 .sidebar-expand {
 width: 225px;
 }
+
+.lc_ads {
+  max-width: 100%;
+  height: auto;
+}
+
+  
