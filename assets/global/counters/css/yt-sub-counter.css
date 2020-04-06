@@ -117,10 +117,10 @@ width: 225px;
 }
 
 @media(min-width: 500px) { 
-  .example_responsive_1 { width: 468px; height: 60px; } 
+  .lc_ads { width: 468px; height: 60px; } 
 }
 
 @media(min-width: 800px) { 
-  .example_responsive_1 { width: 728px; height: 90px; } 
+  .lc_ads { width: 728px; height: 90px; } 
 }
   
