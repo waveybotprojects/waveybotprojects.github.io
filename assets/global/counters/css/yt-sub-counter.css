@@ -112,15 +112,8 @@ width: 225px;
 }
 
 .lc_ads {
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: auto;
 }
 
-@media(min-width: 500px) { 
-  .lc_ads { width: 468px; height: 60px; } 
-}
-
-@media(min-width: 800px) { 
-  .lc_ads { width: 728px; height: 90px; } 
-}
   
