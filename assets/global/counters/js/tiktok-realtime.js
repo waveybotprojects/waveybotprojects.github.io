@@ -118,10 +118,9 @@ function getData() {
       TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
       TikTok.updateManager.updateHeartCount(data.body.userData.heart)
   }).fail(function() {
-    //retry in case of failure
       setTimeout(function() {
         getData();
-      }, 2000)
+      }, 500)
   })
 }
 
