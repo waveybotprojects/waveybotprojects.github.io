@@ -98,3 +98,5 @@ iframe[src*="ads-iframe"] { display: none; }
 .sidebar-expand {
 width: 225px;
 }
+
+.lc_ads { width: 100%; margin: 0 auto; }
