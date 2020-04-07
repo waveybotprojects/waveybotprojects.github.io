@@ -328,6 +328,8 @@ YT.GoalManager = {
 YT.UpdateManager = {
   updateTitle: function(a) {
     document.querySelector(".video-title").innerText = a;
+    document.title = "Livecounts.io - "+a.split(/ +/).slice(0, 3).join(" ")+" Youtube Live View Count"
+   document.querySelector('meta[name="description"]').setAttribute("content", "Livecounts is a simple way to check "+a.split(/ +/).slice(0, 3).join(" ")+"'s Youtube Live View Count updated in real-time!");
   },
   updateViews: function(a) {
     document.querySelector(".view-odo").innerHTML=a;
