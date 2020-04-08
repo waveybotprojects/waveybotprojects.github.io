@@ -1,0 +1,103 @@
+body {
+    background-color: #eef5f9;
+  }
+  
+  .navbar {
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    flex-direction: row;
+  }
+  
+  p,h1,h2,h3,h4,h5 {
+    font-family: "Roboto";
+    font-weight: 300;
+  }
+  
+  .text-card {
+    margin: 15px 15px 0 15px
+  }
+  
+  .main-odometer {
+    font-size: calc(30px + 6vw)
+  }
+  
+  .mainWrapper {
+  margin-top: 50px;
+  margin-left: 225px;
+  }
+  
+  .odometer {
+    font-family: 'Roboto';
+    font-weight: 400;
+  }
+  
+  .navbar-text {
+    color: white;
+  }
+  
+  .social-button {
+    background-color: #833AB4;
+    color: white;
+  }
+  
+  .sidebar {
+    position: fixed;
+    width: 225px;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    padding-top: 25px;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    background-color: white;
+  }
+  
+  .navbar-button {
+  outline: none;
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  display: none;
+  }
+  
+  iframe[src*="ads-iframe"] { display: none; }
+  
+  .bottom-odometer {
+    font-size: calc(20px + 1vw)
+  }
+  
+  .m-row {
+    margin-top: 20px;
+  }
+  
+  .nav-item {
+    font-size: 17px;
+    margin-left: 10px;
+  }
+  
+  .nav-title-text {
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 946px) {
+  .sidebar {
+      width: auto;
+  }
+  .mainWrapper {
+    margin-left: 70px;
+  }
+  .navbar-text-gone {
+      font-size: 0px;
+  }
+  .navbar-button {
+    display: inline-block;
+  }
+  }
+  
+  .sidebar-expand {
+  width: 225px;
+  }
+  
+  .lc_ads { width: 100%; margin: 0 auto; }

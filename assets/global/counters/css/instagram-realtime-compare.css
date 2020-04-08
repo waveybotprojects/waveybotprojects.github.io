@@ -1,0 +1,58 @@
+body {
+    background-color: #eef5f9;
+  }
+  
+  .navbar {
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    flex-direction: row;
+  }
+  
+  p,h1,h2,h3,h4,h5 {
+    font-family: "Roboto";
+    font-weight: 400;
+  }
+  
+  iframe[src*="ads-iframe"] { display: none; }
+  
+  .navbar h2 {
+  width: 100%;
+  }
+  
+  .navbar-text {
+  color: white;
+  }
+  
+  .odometer {
+  font-family: "Roboto";
+  font-weight: 400;
+  }
+  
+  .main-odometer {
+  font-size: calc(30px + 4vw);
+  }
+  
+  .bottom-odometer {
+  font-size: calc(40px + 1vw)
+  }
+  
+  .social-button {
+  background-color: #833AB4;
+  color: white;
+  }
+  
+  .text-card {
+    margin: 15px 15px 0 15px
+  }
+
+  @media only screen and (max-width: 767px) {
+    .main-odometer {
+      font-size: 15vw;
+    }
+
+    .bottom-odometer {
+      font-size: 7vw;
+    }
+  }
