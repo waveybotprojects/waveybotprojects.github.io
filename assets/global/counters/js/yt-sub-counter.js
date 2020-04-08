@@ -88,7 +88,7 @@ function searchUser() {
 
 function searchCompareUser() {
 	var value = document.querySelector(".compare-search").value
-	$(".channel-list").html("");
+	$(".channel-list-compare").html("");
 	$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&maxResults=5&q='+value,function(data) {
 		for (let i = 0; i < data.items.length; i++) {
 			$(".channel-list-compare").append('<a href="/yt-sub-counter/compare/?c1='+user+'&c2='+data.items[i].id.channelId+'" class="mt-2 card"><div class="d-flex"><img class="rounded-circle" width="64" height="64" src="'+data.items[i].snippet.thumbnails.default.url+'"><h5 style="margin-top: 20px;" class="ml-2">'+data.items[i].snippet.title+'</h5></div></a>');
