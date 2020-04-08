@@ -112,7 +112,7 @@ Twitter.UpdateManager = {
         document.querySelector(".username2").innerText = b;
     },
 
-    updatePicture: function(a,b) {
+    updateAvatar: function(a,b) {
         document.querySelector('.pfp1').src = a;
         document.querySelector('.pfp2').src = b;
     },
