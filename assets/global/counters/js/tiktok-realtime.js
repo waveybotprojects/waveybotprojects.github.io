@@ -212,6 +212,91 @@ $('.navbar-button').click(() => {
   }
 })
 
-if (getUrlVars()["o"] == 1) {
+//------------------------------------------------//
+
+$('.theme-options').on('change', function(){
+	if (getUrlVars()["t"]) {
+		window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
+	} else {
+		window.location = window.location.href + $(this).val()
+	}
+})
+
+$('.style-options').on('change', function(){
+	if ($(this).val().includes("https")) {
+		window.location = $(this).val()
+	} else {
+		if (getUrlVars()["t"]) {
+			window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
+		} else {
+			window.location = window.location.href + $(this).val()
+		}
+	}
+})
+
+if (getUrlVars()["t"] == 1) {
+	$("body").css("background-color", "rgb(29, 31, 32)");
+	$("a").css("color", "rgb(76, 176, 253)");
+	$("h1,h2,h3,h4,h5,h6,p, .odometer, .form-control").css("color", "#D8D6D0");
+	$(".card, input, nav, .modal-content").css({
+		'background-color': 'rgb(24, 26, 27)',
+		'border-top-color': 'rgba(102, 102, 102, 0.13)',
+		'border-right-color': 'rgba(102, 102, 102, 0.13)',
+		'border-bottom-color': 'rgba(102, 102, 102, 0.13)',
+		'border-left-color': 'rgba(102, 102, 102, 0.13)'
+	});
+	chart.chartBackground.css({color: 'rgb(24, 26, 27)'})
+}
+
+if (getUrlVars()["t"] == 2) {
+	$('head').append('<link rel="stylesheet" type="text/css" href="https://livecounts.io/assets/global/rainbow.css">');
+	$("body").css("background-color", "rgb(29, 31, 32)");
+	$("a,h1,h2,h3,h4,h5,h6,p, .odometer, .form-control, button").addClass("rainbow-text")
+	$(".card, input, nav, .modal-content").css({
+		'background-color': 'rgb(24, 26, 27)',
+		'border-top-color': 'rgba(102, 102, 102, 0.13)',
+		'border-right-color': 'rgba(102, 102, 102, 0.13)',
+		'border-bottom-color': 'rgba(102, 102, 102, 0.13)',
+		'border-left-color': 'rgba(102, 102, 102, 0.13)'
+	});
+	chart.chartBackground.css({color: 'rgb(24, 26, 27)'})
+}
+
+if (getUrlVars()["t"] == 3) {
+	$('head').append('<link rel="stylesheet" type="text/css" href="https://livecounts.io/assets/global/rainbow.css">');
+	$("a,h1,h2,h3,h4,h5,h6,p, .odometer, .form-control, button").addClass("rainbow-text")
+}
+
+if (getUrlVars()["t"] == 4) {
 	$('head').append('<link rel="stylesheet" type="text/css" href="https://livecounts.io/assets/global/odometer-fast.css">');
+	$("h1,h3,h4,h5,h6,p, .username").css({
+		"font-weight": "400",
+		"color": "#455A64"
+	});
+	$(".odometer").css({
+		"font-weight": "300",
+		"color": "#455A64"
+	});
+}
+
+if (getUrlVars()["t"] == 5) {
+	$('head').append('<link rel="stylesheet" type="text/css" href="https://livecounts.io/assets/global/odometer-fast.css">');
+	$("body").css("background-color", "rgb(29, 31, 32)");
+	$("h1,h3,h4,h5,h6,p, .odometer, .form-control, a, .year, .navbar-text-gone, .username").css("color", "rgb(199, 195, 186)");
+
+	$("h1,h3,h4,h5,h6,p, .username").css({
+		"font-weight": "400",
+	});
+	$(".odometer").css({
+		"font-weight": "300",
+	});
+
+	$(".card, input, nav, .modal-content").css({
+		'background-color': 'rgb(24, 26, 27)',
+		'border-top-color': 'rgba(102, 102, 102, 0.13)',
+		'border-right-color': 'rgba(102, 102, 102, 0.13)',
+		'border-bottom-color': 'rgba(102, 102, 102, 0.13)',
+		'border-left-color': 'rgba(102, 102, 102, 0.13)'
+	});
+	chart.chartBackground.css({color: 'rgb(24, 26, 27)'})
 }
