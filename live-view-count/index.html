@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
    <head>   
-    <title>livecounts.io - YouTube Live View Count</title>  
+    <title>livecounts.io - YouTube Live View Count</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="title" content="YouTube Live View Count">	
      <meta name="description" content="Livecounts.io is a simple way to display any YouTube's video live view count updated in real-time!">	
      <meta name="keywords" content="livecounts, livecounts.io, live view count, view count, live count, youtube view count, yt, youtube live, youtube count, youtube live view count, youtube, youtube live, youtube count, youtube view comparison, youtube view vs, youtube view compare">	
@@ -10,157 +11,363 @@
      <meta name="language" content="English">	
      <meta name="author" content="Shaz">	
      <link rel="icon" href="/assets/global/youtube-logo.png">
-     <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
-    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count.css?v=1.01">
+    <link rel="stylesheet" href="/assets/global/loader.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count.css">
+     
    </head> 
 
    <body>
+     
+    <div class="loader">
+      <div class="la-line-scale la-dark la-2x">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="load-text">
+        Taking a while to load? <a class="close-loader">Click here to close</a>
+      </div>
+    </div>
+     
+    <div class="content">
+      <nav class="navbar fixed-top">
+        <button class="navbar-button" type="button" data-sidebar="false">
+            <i class="fa fa-bars"></i>
+        </button>
+        <h2 class="mx-auto navbar-text mb-0"><i class="fab fa-youtube"></i> Live View Count</h2>
+    </nav>
 
-        <div class="card card-header">
-            <div class="card-head d-flex justify-content-center">
-                <h1 class="header-text"><i style="color: #fff;" class="fab fa-youtube"></i> YouTube Live View Count</h1>
-            </div>
-        </div>
-
-        <div class="container-fluid d-flex justify-content-center">
-            <div class="row center">
-
-                <div class="col-sm-11 offset-sm-1">
-					<div class="row center">
-						<div class="col-sm-12">
-						<h4 class="text-center video-title">livecounts.io</h4>
-						</div>
-					</div>
-                    <div class="d-flex justify-content-center odometer main-odo odometer view-odo"></div> 
-                </div>
-
-                <div class="col offset-md-1">
-                    <h5 class="text-center">Likes</h5>
-                    <div class="d-flex justify-content-center odometer bottom-odo likes-odo"></div> 
-                </div>
-
-                <div class="col">
-                    <h5 class="text-center">Dislikes</h5>
-                    <div class="d-flex justify-content-center odometer bottom-odo dislikes-odo"></div> 
-                </div>
-
-                <div class="col">
-                    <h5 class="text-center">Comments</h5>
-                    <div class="d-flex justify-content-center odometer bottom-odo comments-odo"></div> 
-                </div>
-            </div>
-        </div>
-
-        <div class="row center">
-                <div class="col offset-sm-1">
-                    <h5 class="text-center">Goal</h5>
-                    <div class="d-flex justify-content-center odometer bottom-odo goal-odo"></div> 
-                </div>
-        </div>
-
-
-        <br>
-        <div class="container">
-            <div class="row">
-                <div style="min-height: 60px;" class="col-sm-5 offset-md-3">
-                    <ins class="adsbygoogle"
-                        style="display:inline-block;width:728px;height:50px"
-                        data-ad-client="ca-pub-1358865196814452"
-                        data-ad-slot="9843844353"></ins>
-                   <script>
-                        (adsbygoogle = window.adsbygoogle || []).push({});
-                   </script>
-                </div>
-            </div>
-            <div class="row center">
-                <div class="col-sm-5 offset-md-4">
-                    <div class="input-group mb-3">
-                        <input type="text" id="search" class="form-control search-input" placeholder="Query / Video Link" aria-describedby="inputGroup-sizing-default">
-                        <button type="button" id="searchbutton" class="btn btn-primary search-button">Search</button>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                 <div style="min-height: 90px;" class="col-sm-5 offset-md-2">
-                        <ins class="adsbygoogle"
-                            style="display:inline-block;width:970px;height:90px"
-                            data-ad-client="ca-pub-1358865196814452"
-                            data-ad-slot="5902575820"></ins>
-                        <script>
-                            (adsbygoogle = window.adsbygoogle || []).push({});
-                        </script>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-                <div class="row center">
-                    <div class="col-sm-11 offset-md-1">
-                        <div id="disqus_thread"></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-                <div class="row center">
-                    <div class="col-sm-12 offset-md-1">
-                            <div class="img-fluid d-flex justify-content-center m-row" style="min-height: 250px; text-align:center;" id="53748-31"><script src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=53748&formatId=31"></script></div>
-                            
-                        <h3 id="sharing">Sharing</h3>
-                        <p>You can share YouTube Live View count by simply by sharing the link below.</p>
-                        <div class="input-group flex-nowrap">
-                            <input type="text" id="shareurl" class="form-control" onclick="this.select();" readonly>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-                <div class="row center">
-                    <div class="col-sm-12 offset-md-1">
-                        <p></p>
-                        <h3 id="embed">Embed</h3>
-                        <p>You can embed the Live View Count for any Channel/Video on your own website or in OBS by copying specified value</p>
-                        <p>Website:</p>
-                        <div class="input-group flex-nowrap">
-                            <input type="text" id="embed-website" class="form-control" onclick="this.select();" readonly>
-                        </div>
-
-                        <p>OBS:</p>
-                        <div class="input-group flex-nowrap">
-                            <input type="text" id="obsurl" class="form-control" onclick="this.select();" readonly>
-                        </div>
-                        <p>Make sure to set width to 500px and height to 180px for best results!</p>
-                </div>
-            </div>
-        </div>
-		
-			<ul style="position: absolute; top: 100px;">
-                <li class="nav-title">Featured Videos</li>
-                <li class="stretched-link link"><i class="fab fa-youtube"></i><a href="/live-view-count/?v=kJQP7kiw5Fk"> Despacito</li></a><br>
-                <li class="stretched-link nav-title2">Meta</li>
-                <li class="link2"><i class="fas fa-square-full"></i><a href="#embed"> Embed</li></a><br>
-                <li class="link2"><i class="fas fa-square-full"></i><a href="#sharing"> Sharing</li></a><br>
-				<li class="link2"><i class="fas fa-eye"></i><a href="/live-view-count/compare/"> Compare YouTube Views</li></a><br><br>
-                <li class="nav-title2">Other</li>
-                <div class="links"></div>
+    <nav class="d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span class="navbar-text-gone" style="margin-top: 40px;">Featured Users</span>
+                    </h6>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/live-view-count/?v=kJQP7kiw5Fk">
+                        <i class="fas fa-user"></i>
+                        <span class="navbar-text-gone">Despacito</span>
+                    </a>
+                </li>
             </ul>
 
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span class="navbar-text-gone" style="margin-left: 10px;">Meta</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="#sne">
+                        <i class="fas fa-share-square"></i>
+                        <span class="navbar-text-gone">Sharing & Embeds</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="compare">
+                        <i class="fas fa-user-friends"></i>
+                        <span class="navbar-text-gone">Compare Followers</span>
+                    </a>
+                </li>
+            </ul>
 
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span class="navbar-text-gone" style="margin-left: 10px;">Other</span>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://twitter.com/livecountsio">
+                        <i class="fab fa-twitter"></i>
+                        <span class="navbar-text-gone">Our Twitter</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        <i class="fas fa-hashtag"></i>
+                        <span class="navbar-text-gone">Other Counters</span>
+                    </a>
+                </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span class="navbar-text-gone" style="margin-left: 10px;"><i class="far fa-copyright"></i> <span
+                        class="year"></span> <a href="https://twitter.com/livecountsio">Livecounts.io</a></span>
+            </h6>
+        </div>
+    </nav>
+
+    <div class="mainWrapper">
+        <div class="container">
+            <div style="min-height: 90px;" class="row m-row d-flex justify-content-center">
+                <div class="col-12">
+                    <ins class="adsbygoogle lc_ads" style="position: relative; top: 17px; display:block; height:90px"
+                        data-ad-client="ca-pub-1358865196814452" data-ad-slot="5902575820"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
+            </div>
+            <div class="row justify-content-around m-row">
+                <div class="col-xs-6 col-md-12 col-md-offset-2">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img class="thumbnail-img p-2 img-fluid" src="https://i.ytimg.com/vi/hHW1oY26kxQ/mqdefault_live.jpg" alt="Thumbnail">
+                            </div>
+                            <div class="col-md-7 text-center">
+                                <div class="content p-2 d-flex flex-column justify-content-between" style="height: 100%;">
+                                    <h1 style="margin-top: 5px;" class="username">livecounts.io</h1>
+                                    <div class="main-odometer odometer"></div>
+                                    <h6 class="">Views</h6>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-row">
+                        <div class="col m-1">
+                            <button type="button" data-toggle="modal" data-target="#change-user-modal"
+                                class="btn-block btn btn-lg btn-primary"><i class="fas fa-search"></i>
+                                Change Video</button>
+                        </div>
+                        <div class="col m-1">
+                            <button type="button" data-toggle="modal" data-target="#compare-modal"
+                                class="btn-block btn btn-lg btn-success"><i class="fas fa-user-friends"></i>
+                                Compare</button>
+                        </div>
+                        <div class="col m-1">
+                            <a class="youtube-url"><button type="button" class="btn-block btn btn-lg bg-danger social-button text-white"><i
+                                        class="fas fa-music"></i> Visit on Youtube</button></a>
+                        </div>
+
+                        <div class="col m-1">
+                            <button type="button" data-toggle="modal"
+                            data-target="#customize-modal" class="btn-block btn-info btn btn-lg"><i class="fas fa-paint-brush"></i> Customize</button>
+                        </div>
+                    </div>
+
+                    <div class="row m-row">
+                        <div style="min-height: 90px;" class="col d-flex justify-content-center">
+                            <ins class="adsbygoogle lc_ads"
+                                style="position: relative; top: -12px; display:block; height: 90px;"
+                                data-ad-client="ca-pub-1358865196814452" data-ad-slot="5902575820"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md m-1">
+                            <div class="card bott-card p-3">
+                                <div class="text-center likes-odometer bottom-odometer odometer"></div>
+                                <h5 class="text-center bott-text">Likes</h5>
+                            </div>
+                        </div>
+                        <div class="col-md m-1">
+                            <div class="card bott-card p-3">
+                                <div class="text-center dislikes-odometer bottom-odometer odometer"></div>
+                                <h5 class="text-center bott-text">Dislikes</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md m-1">
+                            <div class="card bott-card p-3">
+                                <div class="text-center comments-odometer bottom-odometer odometer"></div>
+                                <h5 class="text-center bott-text">Comments</h5>
+                            </div>
+                        </div>
+                        <div class="col-md m-1">
+                            <div class="card bott-card p-3">
+                                <div class="text-center goal-odometer bottom-odometer odometer"></div>
+                                <h5 class="text-center bott-text">Goal</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-card">
+                                    <div id="chart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-row">
+                        <div style="min-height: 200px;" class="col">
+                            <ins class="adsbygoogle lc_ads" style="display: block; height: 200px;"
+                                data-ad-client="ca-pub-1358865196814452" data-ad-slot="5108368901"></ins>
+                            <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                            </script>
+                        </div>
+                    </div>
+                    <div class="row m-row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-card" id="#disqus">
+                                    <div class="text-center disqus-heading">What do you think about <span class="username">.</span>?
+                                    </div>
+                                    <div id="disqus_thread"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row m-row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-card" id="#about">
+                                    <h3>About</h3>
+                                    <p>Live View Count is the best way to check any youtube video's view count updated
+                                        in 
+                                        real-time!</p>
+                                    <p>All data (Thumbnail, Title, View count) comes from official Youtube API Service. All counts are updated every 3 seconds and are guaranteed to be as accurate as possible!</p>
+                                    <p></p>
+                                    <p>To search for specific channel simply click "Change Video" button below the View Count
+                                        Box, type your favorite video's name and you're good to go! This IS NOT
+                                        case-sensitive thus you type for example "Despacito" or "desPacIto" and it should
+                                        still
+                                        work!</p>
+                                    <p>
+                                      If you're interested in watching View Count comparision then navigate to <a
+                                            href="compare">Compare Page</a> below View Count Box or on Navigation
+                                        Bar.
+                                    </p>
+                                    <p>Thanks for using Live View Count! If you have any idea to improve the website
+                                        then
+                                        feel free
+                                        to get in touch with us it on our <a
+                                            href="https://twitter.com/livecountsio">Twitter</a>
+                                        page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row m-row">
+                        <div class="col">
+                            <div class="card">
+                                <div class="text-card" id="#sne">
+                                    <h3>Sharing & Embeds</h3>
+                                    <p>You can share Instagram Follower Count by simply by sharing the link below.</p>
+                                    <div class="input-group flex-nowrap">
+                                        <input type="text" id="shareurl" class="form-control" onclick="this.select();"
+                                            readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="m-row"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
     
 
+    <div class="modal fade" id="change-user-modal" tabindex="-1" role="dialog" aria-labelledby="change-user-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="change-user-modal-label">Change User</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group flex-nowrap">
+                        <input type="text" placeholder="Username" aria-describedby="inputGroup-sizing-default"
+                            class="changeuser-search form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="change-user-search-button btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="modal fade" id="compare-modal" tabindex="-1" role="dialog" aria-labelledby="compare-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="compare-modal-label">Compare</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h4 class="text-center">Compare <span class="username">.</span> with?</h4>
+                    <div class="input-group flex-nowrap">
+                        <input type="text" placeholder="Username" aria-describedby="inputGroup-sizing-default"
+                            class="compare-search form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="compare-search-button btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="customize-modal" tabindex="-1" role="dialog" aria-labelledby="customize-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customize-modal-label">Customize Options</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="text-center mx-auto modal-body">
+                    <h5>Theme:</h5>
+                    <select class="theme-options">
+                        <option>Select</option>
+                        <option value="&t=1">Dark Mode</option>
+                        <option value="&t=2">Rainbow Text Dark Background Mode</option>
+                        <option value="&t=3">Rainbow Text White Background Mode</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        
    </body>
    
    <script data-ad-client="ca-pub-1358865196814452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
    <script src="https://livecounts.io/assets/global/odometer.js"></script>
+   <script src="https://code.highcharts.com/stock/highstock.js"></script>
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
-   <script src="/assets/global/counters/js/live-view-count.js?v=3.31"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <script src="/assets/global/counters/js/live-view-count.js?v=0.1"></script>
    <script src="/assets/global/counters/js/live-view-count-disqus.js"></script>
-
+ 
 </html>
