@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
    <head>   
     <title>livecounts.io - YouTube View Comparison</title>   
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="livecounts.io - YouTube Live View Count">	
     <meta name="description" content="Livecounts is a simple way to check any YouTube's video view, like and dislike count updated in real-time!">	
     <meta name="keywords" content="livecounts, livecounts.io, live view count, view count, live count, youtube view count, youtube live, youtube count, youtube live view count, youtube, youtube live, youtube count">
@@ -12,84 +13,261 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
-    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count-compare.css?v=1.02">
+    <link rel="stylesheet" href="/assets/global/loader.css">
+    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count-compare.css?v=1.03">
    </head> 
 
    <body>
+     
+    <div class="loader">
+      <div class="la-line-scale la-dark la-2x">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="load-text">
+        Taking a while to load? <a class="close-loader">Click here to close</a>
+      </div>
+    </div>
+     
+     
+    <div class="content">
+    <nav class="navbar fixed-top">
+        <h2 class="mx-auto text-center navbar-text"><i class="fab fa-youtube"></i> YouTube View Comparison</h2>
+    </nav>
 
-        <div class="card card-header">
-            <div class="card-head d-flex justify-content-center">
-                <h1 class="header-text"><i style="color: #fff;" class="fab fa-youtube"></i> YouTube Live View Comparison</h1>
-            </div>
+    <div style="margin-top: 75px;" class="container-fluid">
+        <div class="row d-flex justify-content-center">
+          <div style="min-height: 60px;" class="col-12 col-md-6">
+              <ins class="adsbygoogle lc_ads"
+                  style="display:block; height: 60px;"
+                  data-ad-client="ca-pub-1358865196814452"
+                  data-ad-slot="9843844353"></ins>
+            <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+          </div>
         </div>
 
-        <p></p> <!-- possible place for future ads -->
-
-        <div class="container">
-            <div class="row">
-                <div class="col s12 col-md-6">
-                    <div class="card m-b-0 m-t-20">
-                        <img class="thumbnail1 img-fluid" width="539" height="300" src="http://i3.ytimg.com/vi/-RZjoHj78fM/maxresdefault.jpg">
-                        <h4 class="text-truncate text-center title1">livecounts.io</h4>
-                        <div class="odometer odo1 d-flex justify-content-center main-odo"></div>
-                        <h6 class="text-center">Views</h6>
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img class="thumbnail-img-1 p-2 img-fluid" src="https://i.ytimg.com/vi/hHW1oY26kxQ/mqdefault_live.jpg" alt="Thumbnail">
+                    </div>
+                    <div class="col-md-7 text-center">
+                        <div class="content p-2 d-flex flex-column justify-content-between" style="height: 100%;">
+                            <h1 style="margin-top: 5px;" class="username-1">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+                            <div class="main-odometer-1 odometer"></div>
+                            <h6 class="">Views</h6>
+                        </div>
+                        
                     </div>
                 </div>
-                <div class="col s12 col-md-6">
-                        <div class="card m-b-0 m-t-20">
-                            <img class="thumbnail2 img-fluid" width="539" height="300" src="http://i3.ytimg.com/vi/-RZjoHj78fM/maxresdefault.jpg">
-                            <h4 class="text-truncate text-center title2">livecounts.io</h4>
-                            <div class="odometer odo2 d-flex justify-content-center main-odo"></div>
-                            <h6 class="text-center">Views</h6>
+            </div>
+             <div class="row">
+                <div class="col-md">
+                 <a class="social-button-1"><button type="button" class="btn-block btn btn-lg social-button my-2"><i class="fab fa-youtube"></i> Visit on YouTube</button></a>
+                </div>
+                <div class="col-md">
+                  <button type="button" class="btn-block btn btn-lg btn-primary change-user-button change-user-1-button my-2" data-toggle="modal" data-target="#change-user-1-modal"><i class="fas fa-search"></i> Change View</button>
+                </div>
+              </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img class="thumbnail-img-2 p-2 img-fluid" src="https://i.ytimg.com/vi/hHW1oY26kxQ/mqdefault_live.jpg" alt="Thumbnail">
+                    </div>
+                    <div class="col-md-7 text-center">
+                        <div class="content p-2 d-flex flex-column justify-content-between" style="height: 100%;">
+                            <h1 style="margin-top: 5px;" class="username-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h1>
+                            <div class="main-odometer-2 odometer"></div>
+                            <h6 class="">Views</h6>
                         </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md">
+                  <a class="social-button-2"><button type="button" class="btn-block btn btn-lg social-button my-2"><i class="fab fa-youtube"></i> Visit on YouTube</button></a>
+                </div>
+                <div class="col-md">
+                  <button type="button" class="btn-block btn btn-lg btn-primary change-user-button change-user-1-button my-2" data-toggle="modal" data-target="#change-user-2-modal"><i class="fas fa-search"></i> Change Video</button>
+                </div>
+              </div>
+          </div>
+          
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-3">
+              <button type="button" class="btn-block btn btn-lg btn-info mt-2" data-toggle="modal" data-target="#customize-modal"><i class="fas fa-palette"></i> Customize</button>
+            </div>
+          </div>
+          
+        <div class="p-4 row d-flex justify-content-center">
+          <div class="col-md-5">
+            <div class="card bott-card p-3">
+              <div class="text-center bottom-odometer difference-odometer odometer"></div>
+              <h5 class="text-center mt-2">View Difference</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div style="min-height: 90px;" class="col-12 col-md-6">
+                <ins class="adsbygoogle lc_ads"
+                style="position:relative; top: -12px; display:block; height: 90px;"
+                data-ad-client="ca-pub-1358865196814452"
+                data-ad-slot="5902575820"></ins>
+           <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+           </script>
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center">
+              <div class="col-12 col-md-9">
+                 <div class="card">
+                    <div class="text-card">
+                       <div id="chart"></div>
                     </div>
                  </div>
+              </div>
+          </div>
+  
+          <div class="mt-2 row d-flex justify-content-center">
+              <div style="min-height: 200px;" class="col-12 col-md-9">
+                <ins class="adsbygoogle lc_ads"
+                  style="display:block; height:200px"
+                  data-ad-client="ca-pub-1358865196814452"
+                  data-ad-slot="5108368901"></ins>
+             <script>
+                  (adsbygoogle = window.adsbygoogle || []).push({});
+             </script>
+              </div>
+          </div>
+        
+        <div class="mt-2 row d-flex justify-content-center">
+          <div class="col-12 col-md-9">
+            <div class="card">
+              <div class="text-card">
+                <h3 class="text-center disqus-heading">What do you think about <span class="username-1">.</span> vs <span class="username-2">.</span>?</h3>
+                <div id="disqus_thread"></div>
+              </div>
             </div>
+          </div>
         </div>
-
-        <p></p>
-
-        <div class="container">
-                <div class="row">
-                        <div class="col">
-                                <div class="input-group mb-1">
-                                    <input type="text" id="search1" class="form-control" placeholder="Query / Link" aria-label="Query / Link" aria-describedby="basic-addon2">
-                                    <button type="button" id="searchbutton1" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                    <div class="col">
-                            <div class="input-group mb-1">
-                                <input type="text" id="search2" class="form-control" placeholder="Query / Link" aria-label="Query / Link" aria-describedby="basic-addon2">
-                                <button type="button" id="searchbutton2" class="btn btn-primary">Submit</button>
-                            </div>
-                        </div>
-                </div>
-
-                <p></p>
-
-                <div class="row">
-                        <div class="col s6 col-md-4 offset-md-4">
-                                <div class="card">
-                                    <div class="odometer d-flex justify-content-center difference-odo"></div>
-                                    <h6 class="text-center">View Difference</h6>
-                                </div>
-                            </div>
-                </div>
-
-                <p></p>
-
-                        <div class="row">
-                                <div class="col-sm-12">
-                                    <div id="chart"></div>
-                                </div>
-                            </div>
-
-                <div class="row">
-                    <div class="col s12">
-                        <div id="disqus_thread"></div>
-                    </div>
-                </div>
+        
+        <div class="mt-2 row d-flex justify-content-center">
+          <div class="col-12 col-md-9">
+            <div class="card">
+              <div class="text-card">
+                <h3>About</h3>
+                  <p>Live View Count Comparision is the best way to compare any 2 youtube videos' view count updated
+                      in 
+                      real-time!</p>
+                  <p>All data (Thumbnail, Title, View count) comes from official Youtube API Service. All counts are updated every 3 seconds and are guaranteed to be as accurate as possible!</p>
+                  <p></p>
+                  <p>To search for specific channel simply click "Change Video" button below the View Count
+                      Box, type your favorite video's name and you're good to go! This IS NOT
+                      case-sensitive thus you type for example "Despacito" or "desPacIto" and it should
+                      still
+                      work!</p>
+                  
+                  <p>Thanks for using Live View Count Comparision! If you have any idea to improve the website
+                      then
+                      feel free
+                      to get in touch with us it on our <a
+                          href="https://twitter.com/livecountsio">Twitter</a>
+                      page.</p>
+              </div>
+            </div>
+          </div> 
         </div>
+        <div class="mt-2 row"></div>
+      </div>
+      </div>
+      
+      <div class="modal fade" id="change-user-1-modal" tabindex="-1" role="dialog" aria-labelledby="change-user-1-modal-label"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="change-user-1-modal-label">Change User</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="input-group flex-nowrap">
+                          <input type="text" placeholder="Channel Name / Link / Search Query" aria-describedby="inputGroup-sizing-default"
+                              class="change-user-1-search form-control">
+                      </div>
+                      <div class="channel-list-compare-1"></div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="change-user-search-button-1 btn btn-primary">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+        <div class="modal fade" id="change-user-2-modal" tabindex="-1" role="dialog" aria-labelledby="change-user-2-modal-label"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title" id="change-user-2-modal-label">Change User</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <div class="input-group flex-nowrap">
+                          <input type="text" placeholder="Channel Name / Link / Search Query" aria-describedby="inputGroup-sizing-default"
+                              class="change-user-2-search form-control">
+                      </div>
+                      <div class="channel-list-compare-2"></div>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="change-user-search-button-2 btn btn-primary">Submit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="modal fade" id="customize-modal" tabindex="-1" role="dialog" aria-labelledby="customize-modal-label"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="customize-modal-label">Customize</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body d-flex justify-content-center">
+                    <h5>Style:</h5><p></p>
+                    <select class="style-options">
+                        <option>Select</option>
+                        <option value="&t=4">Akshat Mittal (YouTube Realtime)</option>
+                    </select>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
 
    </body>
 
@@ -98,8 +276,11 @@
     <script src="https://code.highcharts.com/stock/highstock.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://livecounts.io/assets/global/APIKeys.js?cache"></script>
-    <script src="/assets/global/counters/js/live-view-count-compare.js?v=3.25"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/assets/global/counters/js/live-view-count-compare.js?v=3.26"></script>
     <script src="/assets/global/counters/js/live-view-count-compare-disqus.js"></script>
+   
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
 </html>
