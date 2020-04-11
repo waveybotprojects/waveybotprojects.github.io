@@ -18,7 +18,7 @@ body {
 }
 
 .navbar h2 {
-  font-size: calc(10px + 2vw);
+  font-size: calc(3px + 2vw);
 }
 
 .navbar-button {
@@ -92,7 +92,7 @@ h1.username {
 /* Counter */
 
 .main-odometer {
-  font-size: calc(24px + 2vw);
+  font-size: calc(13px + 4vw);
 }
 
 .odometer {
@@ -102,7 +102,7 @@ h1.username {
 }
 
 .bottom-odometer {
-  font-size: calc(14px + 1vw)
+  font-size: calc(10px + 2vw);
 }
 
 .thumbnail-img {
@@ -163,3 +163,14 @@ h1.username {
 }
 
 .lc_ads { width: 100%; margin: 0 auto; }
+
+
+@media only screen and (max-width: 767px) {
+  .main-odometer {
+    font-size: 9vw;
+  }
+
+  .bottom-odometer {
+    font-size: 6vw;
+  }
+}

@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
     <link rel="stylesheet" href="/assets/global/loader.css">
-    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count.css?v=0.1">
+    <link rel="stylesheet" href="/assets/global/counters/css/live-view-count.css?v=0.2">
      
    </head> 
 
@@ -65,9 +65,9 @@
             </h6>
             <ul class="nav flex-column mb-2">
                 <li class="nav-item">
-                    <a class="nav-link" href="#sne">
+                    <a class="nav-link" href="#sharing">
                         <i class="fas fa-share-square"></i>
-                        <span class="navbar-text-gone">Sharing & Embeds</span>
+                        <span class="navbar-text-gone">Sharing</span>
                     </a>
                 </li>
                 <li class="nav-item">
@@ -259,9 +259,9 @@
                     <div class="row m-row">
                         <div class="col">
                             <div class="card">
-                                <div class="text-card" id="#sne">
-                                    <h3>Sharing & Embeds</h3>
-                                    <p>You can share Instagram Follower Count by simply by sharing the link below.</p>
+                                <div class="text-card" id="sharing">
+                                    <h3>Sharing</h3>
+                                    <p>You can share YouTube Live View Count by simply by sharing the link below.</p>
                                     <div class="input-group flex-nowrap">
                                         <input type="text" id="shareurl" class="form-control" onclick="this.select();"
                                             readonly>
@@ -284,14 +284,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="change-user-modal-label">Change User</h5>
+                    <h5 class="modal-title" id="change-user-modal-label">Change Video</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="input-group flex-nowrap">
-                        <input type="text" placeholder="Username" aria-describedby="inputGroup-sizing-default"
+                        <input type="text" placeholder="Video Title / Video URL / Search Query" aria-describedby="inputGroup-sizing-default"
                             class="changeuser-search form-control">
                     </div>
                 </div>
@@ -328,7 +328,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="customize-modal" tabindex="-1" role="dialog" aria-labelledby="customize-modal-label"
+    <!--<div class="modal fade" id="customize-modal" tabindex="-1" role="dialog" aria-labelledby="customize-modal-label"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -352,7 +352,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 
 
 
