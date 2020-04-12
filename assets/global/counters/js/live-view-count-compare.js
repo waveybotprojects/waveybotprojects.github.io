@@ -159,12 +159,12 @@ YT.updateManager = {
     $(".username-2").html(b);
 	},
 	updateViewCount: function(a, b) {
-    $(".main-odometer-1").html(a);
-    $(".main-odometer-2").html(b);
+    document.querySelector(".main-odometer-1").innerHTML = a;
+    document.querySelector(".main-odometer-2").innerHTML = b;
     this.updateViewDifference(a, b);
   },
   updateViewDifference: function(a , b) {
-      $(".difference-odometer").html(a-b);
+      document.querySelector(".difference-odometer").innerHTML = a - b;
       chart.series[0].addPoint([                   
         (new Date()).getTime(),
         Math.abs(a-b)
