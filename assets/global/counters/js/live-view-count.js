@@ -174,13 +174,13 @@ YT.updateManager = {
 		])
     },
     updateComments: function(a) {
-        document.querySelector(".comments-odometer")innerHTML = a;
+        document.querySelector(".comments-odometer").innerHTML = a;
     },
     updateLikes: function(a) {
-         document.querySelector(".likes-odometer")innerHTML = a;
+         document.querySelector(".likes-odometer").innerHTML = a;
     },
     updateDislikes: function(a) {
-         document.querySelector(".dislikes-odometer")innerHTML = a;
+         document.querySelector(".dislikes-odometer").innerHTML = a;
     }
 }
 
