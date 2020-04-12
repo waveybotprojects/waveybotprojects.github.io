@@ -60,19 +60,19 @@ YT.manager = {
     var channelId2 = data.items[1].snippet.channelId;
     var views2 = parseInt(data.items[1].statistics.viewCount);
     var likes2 = parseInt(data.items[1].statistics.likeCount);
-    var localLikeCount2 = parseInt(localStorage.getItem('likeCount-' + channelId2))
-    var localViewCount2 = parseInt(localStorage.getItem('viewCount-' + channelId2))
+    var localLikeCount2 = parseInt(localStorage.getItem('likeCount2-' + channelId2))
+    var localViewCount2 = parseInt(localStorage.getItem('viewCount2-' + channelId2))
     var ratio2 = views2 / likes2;
   
     if (!localViewCount2) {
-      localStorage.setItem('likeCount-' + channelId, parseInt(likes));
-      localStorage.setItem('viewCount-' + channelId, parseInt(views));
+      localStorage.setItem('likeCount2-' + channelId2, parseInt(likes2));
+      localStorage.setItem('viewCount2-' + channelId2, parseInt(views2));
     }
 
-    if (localViewCount2 != views) {
-      localStorage.setItem('viewCount-' + channelId, parseInt(views));
-      localStorage.setItem('likeCount-' + channelId, parseInt(likes));
-      return views;
+    if (localViewCount2 != views2) {
+      localStorage.setItem('viewCount2-' + channelId2, parseInt(views2));
+      localStorage.setItem('likeCount2-' + channelId2, parseInt(likes2));
+      return views2;
     }
     
     var estViewCount2 = Math.round(views2 + (likes2 - localLikeCount2) * ratio2);
@@ -116,19 +116,19 @@ YT.manager = {
           var channelId2 = data2.snippet.channelId;
           var views2 = parseInt(data2.statistics.viewCount);
           var likes2 = parseInt(data2.statistics.likeCount);
-          var localLikeCount2 = parseInt(localStorage.getItem('likeCount-' + channelId2))
-          var localViewCount2 = parseInt(localStorage.getItem('viewCount-' + channelId2))
+          var localLikeCount2 = parseInt(localStorage.getItem('likeCount2-' + channelId2))
+          var localViewCount2 = parseInt(localStorage.getItem('viewCount2-' + channelId2))
           var ratio2 = views2 / likes2;
         
           if (!localViewCount2) {
-            localStorage.setItem('likeCount-' + channelId, parseInt(likes));
-            localStorage.setItem('viewCount-' + channelId, parseInt(views));
+            localStorage.setItem('likeCount2-' + channelId2, parseInt(likes2));
+            localStorage.setItem('viewCount2-' + channelId2, parseInt(views2));
           }
     
-          if (localViewCount2 != views) {
-            localStorage.setItem('viewCount-' + channelId, parseInt(views));
-            localStorage.setItem('likeCount-' + channelId, parseInt(likes));
-            return views;
+          if (localViewCount2 != views2) {
+            localStorage.setItem('viewCount2-' + channelId2, parseInt(views2));
+            localStorage.setItem('likeCount2-' + channelId2, parseInt(likes2));
+            return views2;
           }
           
           var estViewCount2 = Math.round(views2 + (likes2 - localLikeCount2) * ratio2);
@@ -167,12 +167,12 @@ YT.updateManager = {
     $(".username-2").html(b);
 	},
 	updateViewCount: function(a, b) {
-    document.querySelector(".main-odometer-1").innerHTML = a;
-    document.querySelector(".main-odometer-2").innerHTML = b;
+    $(".main-odometer-1").html(a);
+    $(".main-odometer-2").html(b);
     this.updateViewDifference(a, b);
   },
   updateViewDifference: function(a , b) {
-      document.querySelector(".difference-odometer").innerHTML = a - b;
+      $(".difference-odometer").html(a-b);
       chart.series[0].addPoint([                   
         (new Date()).getTime(),
         Math.abs(a-b)

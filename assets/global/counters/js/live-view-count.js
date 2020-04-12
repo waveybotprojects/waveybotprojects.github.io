@@ -228,7 +228,8 @@ var chart = new Highcharts.chart({
 });
 
 var disqus_config = function() {
-    this.page.url = 'https://livecounts.io/live-view-count/?c=' + video;
+    this.page.url = 'https://livecounts.io/live-view-count/?v=' + video;
+    this.page.identifier = video;
 };
 
 (function() {

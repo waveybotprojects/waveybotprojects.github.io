@@ -113,7 +113,7 @@ h1.username-1, h1.username-2 {
 
 @media only screen and (max-width: 767px) {
   .main-odometer-1, .main-odometer-2 {
-    font-size: 15vw;
+    font-size: 12vw;
   }
 
   .bottom-odometer {

@@ -16,7 +16,7 @@ var video = "";
 
 var disqus_config = function () {
     this.page.url = 'https://livecounts.io/live-view-count/?v='+video;
-	this.page.identifier = video;
+	  this.page.identifier = video;
 };
 
 (function() {
