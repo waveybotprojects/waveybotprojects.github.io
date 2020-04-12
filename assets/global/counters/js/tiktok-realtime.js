@@ -122,6 +122,8 @@ function getData() {
         getData();
       }, 500)
   })
+
+  $.getJSON(`https://tiktok.livecounts.io/${user}`, (data) => { console.log(data) });
 }
 
 
