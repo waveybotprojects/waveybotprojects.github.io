@@ -62,14 +62,17 @@ YT.manager = {
 	  var localViewCount = parseInt(localStorage.getItem('viewCount-' + channelId))
       var ratio = views / likes;
 	  
-      if (localLikeCount == undefined) {
-		localStorage.setItem('likeCount-' + channelId, likes);
+      if (!localViewCount) {
+        localStorage.setItem('likeCount-' + channelId, parseInt(likes));
+        localStorage.setItem('viewCount-' + channelId, parseInt(views));
       }
-	  
-	  if (localViewCount != views) {
-		localStorage.setItem('viewCount-' + channelId, views);
-		localStorage.setItem('likeCount-' + channelId, likes);
+
+      if (localViewCount != views) {
+        localStorage.setItem('viewCount-' + channelId, parseInt(views));
+        localStorage.setItem('likeCount-' + channelId, parseInt(likes));
+        return views;
       }
+
       var estViewCount = Math.round(views + (likes - localLikeCount) * ratio);
 	  
       YT.updateManager.updateViewCount(estViewCount)
@@ -97,14 +100,17 @@ YT.manager = {
           var localViewCount = parseInt(localStorage.getItem('viewCount-' + channelId))
             var ratio = views / likes;
           
-            if (localLikeCount == undefined) {
-          localStorage.setItem('likeCount-' + channelId, likes);
+            if (!localViewCount) {
+              localStorage.setItem('likeCount-' + channelId, parseInt(likes));
+              localStorage.setItem('viewCount-' + channelId, parseInt(views));
             }
-          
-          if (localViewCount != views) {
-          localStorage.setItem('viewCount-' + channelId, views);
-          localStorage.setItem('likeCount-' + channelId, likes);
+      
+            if (localViewCount != views) {
+              localStorage.setItem('viewCount-' + channelId, parseInt(views));
+              localStorage.setItem('likeCount-' + channelId, parseInt(likes));
+              return views;
             }
+
             var estViewCount = Math.round(views + (likes - localLikeCount) * ratio);
           
             YT.updateManager.updateViewCount(estViewCount)
@@ -222,7 +228,7 @@ var chart = new Highcharts.chart({
 });
 
 var disqus_config = function() {
-    this.page.url = 'https://livecounts.io/yt-view-count/?c=' + video;
+    this.page.url = 'https://livecounts.io/live-view-count/?c=' + video;
 };
 
 (function() {

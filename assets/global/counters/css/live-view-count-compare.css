@@ -40,7 +40,7 @@ font-weight: 400;
 }
 
 .main-odometer-1, .main-odometer-2 {
-font-size: calc(24px + 1vw);
+font-size: calc(7px + 3vw);
 }
 
 .bottom-odometer {
@@ -105,8 +105,14 @@ h1.username-1, h1.username-2 {
 
 .lc_ads { width: 100%; margin: 0 auto; }
 
+@media only screen and (max-width: 991px) {
+  .main-odometer-1, .main-odometer-2 {
+    font-size: 6vw;
+  }
+}
+
 @media only screen and (max-width: 767px) {
-  .main-odometer {
+  .main-odometer-1, .main-odometer-2 {
     font-size: 15vw;
   }
 
