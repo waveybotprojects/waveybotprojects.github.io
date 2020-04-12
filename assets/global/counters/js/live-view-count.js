@@ -161,12 +161,12 @@ YT.updateManager = {
 	    $(".username").html(a);
 	},
 	updateViewCount: function(a) {
-		$(".main-odometer").html(a);
+		document.querySelector(".main-odometer").innerHTML = a;
 
 		const exponent = Math.floor(Math.log10(a));
 		const factor = Math.ceil(a / 10**exponent);
 		const final = factor * 10**exponent;
-		$(".goal-odometer").html(final - a);
+		document.querySelector(".goal-odometer").innerHTML = final - a;
 
 		chart.series[0].addPoint([                   
 			(new Date()).getTime(),
@@ -174,13 +174,13 @@ YT.updateManager = {
 		])
     },
     updateComments: function(a) {
-        $(".comments-odometer").html(a);
+        document.querySelector(".comments-odometer")innerHTML = a;
     },
     updateLikes: function(a) {
-        $(".likes-odometer").html(a);
+         document.querySelector(".likes-odometer")innerHTML = a;
     },
     updateDislikes: function(a) {
-        $(".dislikes-odometer").html(a);
+         document.querySelector(".dislikes-odometer")innerHTML = a;
     }
 }
 
