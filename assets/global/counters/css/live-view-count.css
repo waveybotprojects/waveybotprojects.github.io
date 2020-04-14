@@ -5,10 +5,6 @@ body {
   font-family: "Montserrat";
 }
 
-.content {
-  display: none;
-}
-
 /* Top Nav */
 .navbar {
   background: #ff00cc;  /* fallback for old browsers */
@@ -124,16 +120,6 @@ h1.username {
   .navbar-button {
     display: inline-block;
   }
-  }
-
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translate(-50%, -50%)
 }
 
 .navbar {

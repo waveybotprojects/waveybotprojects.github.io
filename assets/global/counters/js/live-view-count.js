@@ -353,7 +353,7 @@ if (getUrlVars()["t"] == 5) {
 	chart.chartBackground.css({color: 'rgb(24, 26, 27)'})
 }
 
-setTimeout(()=> { 
+/*setTimeout(()=> { 
   if(!loaderDone) { 
   $('.load-text').fadeIn(2000); 
   }
@@ -361,5 +361,5 @@ setTimeout(()=> {
 
 $('.close-loader').click(()=> { loaded(); })
 
-const loaded = () => { $('.loader').fadeOut(2000); $('.content').fadeIn(1000) };
+const loaded = () => { $('.loader').fadeOut(2000); $('.content').fadeIn(1000) };*/
 
