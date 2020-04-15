@@ -1,7 +1,7 @@
 var TikTok = {};
 var user;
 var startRefresh;
-var TikTokURL = "https://www.tiktok.com/node/share/user/@"
+var TikTokURL = "https://tiktok.livecounts.io/single/"
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -81,18 +81,12 @@ TikTok.updateManager = {
   }
 };
 
-TikTok.corsManager = {
-  get: function() {
-    return corsProxies[Math.floor(Math.random() * corsProxies.length)];
-  }
-}
-
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-      $.getJSON(TikTok.corsManager.get() + TikTokURL + user, function(data) {
-        TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
-        TikTok.updateManager.updateHeartCount(data.body.userData.heart)
+      $.getJSON(TikTokURL + user, function(data) {
+        TikTok.updateManager.updateFollowerCount(data.followCount)
+        TikTok.updateManager.updateHeartCount(data.heartCount)
       })
     }, 2000)
   },
@@ -112,11 +106,11 @@ function getUrlVars() {
 }
 
 function getData() {
-    $.getJSON(TikTok.corsManager.get() + TikTokURL + user, function(data) {
-      TikTok.updateManager.updateUsername(data.body.userData.nickName)
-      TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])
-      TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
-      TikTok.updateManager.updateHeartCount(data.body.userData.heart)
+    $.getJSON(TikTokURL + user, function(data) {
+      TikTok.updateManager.updateUsername(data.username)
+      TikTok.updateManager.updateAvatar(data.avatar)
+      TikTok.updateManager.updateFollowerCount(data.followCount)
+      TikTok.updateManager.updateHeartCount(data.heartCount)
   }).fail(function() {
       setTimeout(function() {
         getData();
