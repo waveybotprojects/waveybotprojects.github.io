@@ -48,10 +48,8 @@ TikTok.corsManager = {
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-     $.getJSON(TikTok.corsManager.get() + TikTokURL + user1, function(data1) {
-       $.getJSON(TikTok.corsManager.get() + TikTokURL + user2, function(data2) {
-          TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
-       })
+      $.getJSON('https://tiktok.livecounts.io/multi/'+user1+'/'+user2, function(data) {
+        TikTok.updateManager.updateFollowerCount(data[0].followCount, data[1].followCount)
       })
     }, 2000)
   },
@@ -71,21 +69,15 @@ function getUrlVars() {
 }
 
 function getData() {
-  $.getJSON(TikTok.corsManager.get() + TikTokURL + user1, function(data1) {
-     $.getJSON(TikTok.corsManager.get() + TikTokURL + user2, function(data2) {
-       TikTok.updateManager.updateAvatar(data1.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
-       TikTok.updateManager.updateUsername(data1.body.userData.nickName, data2.body.userData.nickName)
-       TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
+  $.getJSON('https://tiktok.livecounts.io/multi/'+user1+'/'+user2, function(data) {
+       TikTok.updateManager.updateAvatar(data[0].avatar, data[1].avatar)
+       TikTok.updateManager.updateUsername(data[0].username, data[1].username)
+       TikTok.updateManager.updateFollowerCount(data[0].followCount, data[1].followCount)
      }).fail(function() {
        setTimeout(function() {
          getData();
        }, 1000)
      })
-  }).fail(function() {
-    setTimeout(function() {
-      getData();
-    }, 1000)
-  })
 }
 
 function searchUser1() {
