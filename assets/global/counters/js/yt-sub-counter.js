@@ -48,7 +48,7 @@ function getData() {
 }
 
 function getDataBackup() {
-	$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=snippet,statistics&id='+user,function(data) {
+	$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet,statistics&id='+user,function(data) {
 		if (!data.brandingSettings.image.bannerImageUrl.toString() != "http://s.ytimg.com/yts/img/channels/c4/default_banner-vfl7DRgTn.png") {
 			YT.updateManager.updateBanner(data.brandingSettings.image.bannerImageUrl)
 		}
@@ -75,7 +75,7 @@ function getDataBackup() {
 function searchUser() {
 	var value = document.querySelector(".changeuser-search").value
 	$(".channel-list").html("");
-	$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=channel&maxResults=5&q='+value,function(data) {
+	$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&maxResults=5&q='+value,function(data) {
 		for (let i = 0; i < data.items.length; i++) {
 			$(".channel-list").append('<a href="/yt-sub-counter/?c='+data.items[i].id.channelId+'" class="mt-2 card"><div class="d-flex"><img class="rounded-circle" width="64" height="64" src="'+data.items[i].snippet.thumbnails.default.url+'"><h5 style="margin-top: 20px;" class="ml-2">'+data.items[i].snippet.title+'</h5></div></a>');
 		}
@@ -89,7 +89,7 @@ function searchUser() {
 function searchCompareUser() {
 	var value = document.querySelector(".compare-search").value
 	$(".channel-list-compare").html("");
-	$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=channel&maxResults=5&q='+value,function(data) {
+	$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&maxResults=5&q='+value,function(data) {
 		for (let i = 0; i < data.items.length; i++) {
 			$(".channel-list-compare").append('<a href="/yt-sub-counter/compare/?user1='+user+'&user2='+data.items[i].id.channelId+'" class="mt-2 card"><div class="d-flex"><img class="rounded-circle" width="64" height="64" src="'+data.items[i].snippet.thumbnails.default.url+'"><h5 style="margin-top: 20px;" class="ml-2">'+data.items[i].snippet.title+'</h5></div></a>');
 		}
@@ -147,7 +147,7 @@ YT.refreshManager = {
 				$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
 					YT.updateManager.updateSubscriberCount(data.items[0].statistics.subscriberCount)
 				}).fail(function() {
-					$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user,function(data) {
+					$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user,function(data) {
 						YT.updateManager.updateSubscriberCount(data.statistics.subscriberCount)
 					})
 				})
@@ -170,7 +170,7 @@ YT.refreshManager = {
 			$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
 				YT.updateManager.updateTotalVideoViewsCount(data.items[0].statistics.viewCount)
 			}).fail(function() {
-				$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user,function(data) {
+				$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user,function(data) {
 					YT.updateManager.updateTotalVideoViewsCount(data.statistics.viewCount)
 				})
 			})

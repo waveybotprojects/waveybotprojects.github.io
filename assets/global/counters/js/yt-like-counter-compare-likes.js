@@ -105,8 +105,8 @@ window.onload = () => {
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
         if (rightKeys.length == 0) {
-            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video1, function(data) {
-                $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video2, function(data2) {
+            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video1, function(data) {
+                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video2, function(data2) {
                     YT.UpdateManager.updateLikes(data.statistics.likeCount, data2.statistics.likeCount, parseInt(data.statistics.likeCount - data2.statistics.likeCount))
 
                     chart.series[0].addPoint([                   
@@ -132,8 +132,8 @@ window.onload = () => {
 
         YT.UpdateManager.updateThumbnail('https://i3.ytimg.com/vi/'+video1+'/maxresdefault.jpg', 'https://i3.ytimg.com/vi/'+video2+'/maxresdefault.jpg')
     }).fail(function() {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=snippet&id='+video1, function(data) {
-            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=snippet&id='+video2, function(data2) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video1, function(data) {
+            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video2, function(data2) {
                 YT.UpdateManager.updateTitle(data.snippet.title, data.snippet.title) 
             })
         })
@@ -210,8 +210,8 @@ setInterval(function () {
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
         if (rightKeys.length == 0) {
-            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video1, function(data) {
-                $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video2, function(data2) {
+            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video1, function(data) {
+                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video2, function(data2) {
                     YT.UpdateManager.updateLikes(data.statistics.likeCount, data2.statistics.likeCount, parseInt(data.statistics.likeCount - data2.statistics.likeCount))
 
                     chart.series[0].addPoint([                   
@@ -267,7 +267,7 @@ function search1() {
     $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + replaceurl + '&key=' + rightKey, function(data) {
         window.location.href = '/yt-like-counter/compare/likes/?v1=' + data.items[0].id.videoId + '&v2=' + video2;
     }).fail(function() {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
             window.location.href = '/yt-like-counter/compare/likes/?v1=' + data.id.videoId + '&v2=' + video2;
         })
     })
@@ -279,7 +279,7 @@ function search2() {
     $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + replaceurl + '&key=' + rightKey, function(data) {
         window.location.href = '/yt-like-counter/compare/likes/?v1=' + video1 + '&v2=' + data.items[0].id.videoId;
     }).fail(function() {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
             window.location.href = '/yt-like-counter/compare/likes/?v1=' + video1 + '&v2=' + data.id.videoId;
         })
     })

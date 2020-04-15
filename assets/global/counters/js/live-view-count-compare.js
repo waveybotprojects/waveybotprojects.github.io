@@ -93,8 +93,8 @@ YT.manager = {
   })
   },
   getDataBackup: function() {
-      $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics,snippet&id='+video1, function(data) {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics,snippet&id='+video2, function(data2) {
+      $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,snippet&id='+video1, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,snippet&id='+video2, function(data2) {
           var channelId = data.snippet.channelId;
           var views = parseInt(data.statistics.viewCount);
           var likes = parseInt(data.statistics.likeCount);
@@ -188,7 +188,7 @@ YT.searchManager = {
       $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + searchQuery + '&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
           window.location.href = '/live-view-count/compare/?v1=' + data.items[0].id.videoId + '&v2='+ video2;
         }).fail(function() {
-          $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
+          $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
             window.location.href = '/live-view-count/compare/?v1=' + data.id.videoId + '&v2='+ video2;
           })
         })
@@ -198,7 +198,7 @@ YT.searchManager = {
       $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + searchQuery + '&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
         window.location.href = '/live-view-count/compare/?v1=' + video1 + '&v2='+ data.items[0].id.videoId;
         }).fail(function() {
-          $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
+          $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
            window.location.href = '/live-view-count/compare/?v1=' + video1 + '&v2='+ data.id.videoId;
           })
         })

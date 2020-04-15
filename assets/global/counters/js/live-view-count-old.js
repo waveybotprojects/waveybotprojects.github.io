@@ -73,7 +73,7 @@ window.onload = () => {
       }
 
       if (rightKeys.length == 0) {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics,snippet&id='+video, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,snippet&id='+video, function(data) {
             var channelId = actualChannelID;
             var views = parseInt(data.statistics.viewCount);
             var likes = parseInt(data.statistics.likeCount);
@@ -113,7 +113,7 @@ window.onload = () => {
           YT.UpdateManager.updateTitle(data.items[0].snippet.title)
           actualChannelID = data.items[0].snippet.channelId
         }).fail(function() {
-          $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=snippet&id='+video, function(data) {
+          $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video, function(data) {
             if (data.snippet.title.length >=52) {
               $(".video-title").css("font-size", "calc(7px + 1vw)");
             }
@@ -206,7 +206,7 @@ setInterval(function() {
       }
 
       if (rightKeys.length == 0) {
-        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video, function(data) {
+        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video, function(data) {
             var channelId = actualChannelID;
             var views = parseInt(data.statistics.viewCount);
             var likes = parseInt(data.statistics.likeCount);
@@ -362,7 +362,7 @@ function search() {
   $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + replaceurl + '&key=' + rightKey, function(data) {
       window.location.href = '/live-view-count/?v=' + data.items[0].id.videoId;
     }).fail(function() {
-      $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+      $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
         window.location.href = '/live-view-count/?v='+data.id.videoId;
       })
     })
