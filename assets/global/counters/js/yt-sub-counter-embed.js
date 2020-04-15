@@ -57,7 +57,7 @@ window.onload = () => {
 			clearInterval(normalCountRefresh)
 		} else {
 			clearInterval(estimatedCountRefresh)
-			$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user, function(data) {
+			$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user, function(data) {
 				document.querySelector("#odometer").innerHTML = data.statistics.subscriberCount;
 			})
 		}
@@ -69,19 +69,19 @@ window.onload = () => {
 		var image = document.querySelector('#user_pic');
 		image.src = data.items[0].snippet.thumbnails.default.url
 	}).fail(function() {
-		$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
+		$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=snippet&id='+user, function(data) {
 			document.getElementById("name").innerHTML = data.snippet.title;
 			var image = document.querySelector('#user_pic');
 			image.src = data.snippet.thumbnails.default.url
 		})
 	}).fail(function() {
-		$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
+		$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=snippet&id='+user, function(data) {
 			document.getElementById("name").innerHTML = data.snippet.title;
 			var image = document.querySelector('#user_pic');
 			image.src = data.snippet.thumbnails.default.url
 		})
 	}).fail(function() {
-		$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
+		$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=snippet&id='+user, function(data) {
 			document.getElementById("name").innerHTML = data.snippet.title;
 			var image = document.querySelector('#user_pic');
 			image.src = data.snippet.thumbnails.default.url
@@ -105,7 +105,7 @@ var normalCountRefresh = setInterval(function() {
 		rightKeys.pop(rightKey)
 		console.log("Invalid key detected in right keys array, removing it...")
 		if (rightKeys.length == 0) {
-			$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user, function(data) {
+			$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user, function(data) {
 				document.querySelector("#odometer").innerHTML = data.statistics.subscriberCount;
 			})
 		}

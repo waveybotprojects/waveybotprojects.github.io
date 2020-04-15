@@ -112,7 +112,7 @@ setInterval(function () {
       console.log("Invalid key detected in right key array, removing it...")
     }
 
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=comment&id=' + comment, function (data) {
+    $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=comment&id=' + comment, function (data) {
       YT.UpdateManager.updateMain(data.snippet.likeCount)
       YT.GoalManager.load(data.snippet.likeCount)
 
@@ -145,7 +145,7 @@ window.onload = () => {
     }
     YT.UpdateManager.updateTitle(data.items[0].snippet.textOriginal)
   }).fail(function () {
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=comment&id=' + comment, function (data) {
+    $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=comment&id=' + comment, function (data) {
       if (data.snippet.textOriginal >= 52) {
         $(".comment-title").css("font-size", "calc(7px + 1vw)");
       }
@@ -174,7 +174,7 @@ window.onload = () => {
       console.log("Invalid key detected in right key array, removing it...")
     }
 
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=comment&id=' + comment, function (data) {
+    $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=comment&id=' + comment, function (data) {
       YT.UpdateManager.updateMain(data.snippet.likeCount)
       YT.GoalManager.load(data.snippet.likeCount)
 

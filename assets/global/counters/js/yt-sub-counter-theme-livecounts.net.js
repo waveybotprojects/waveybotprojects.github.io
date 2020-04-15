@@ -74,7 +74,7 @@ function checkKeys() {
 $(".user-box").click(function(){
     var og = window.prompt("Enter channel name, username, ID, or URL:")
     if (og != null) {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&q='+og, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=channel&q='+og, function(data) {
             window.location.href = 'https://livecounts.io/yt-sub-counter/theme/livecounts.net/?c='+data.snippet.channelId
         })
     }
@@ -87,7 +87,7 @@ window.onload = () => {
 	$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=snippet,brandingSettings&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
         YT.UpdateManager.updateName(data.items[0].snippet.title)
     }).fail(function() {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=snippet&id='+user, function(data) {
             YT.UpdateManager.updateName(data.snippet.title)
         })
     })
@@ -95,7 +95,7 @@ window.onload = () => {
     $.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics,snippet&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
         YT.UpdateManager.updateTotalViews(parseInt(data.items[0].statistics.viewCount))
     }).fail(function() {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user, function(data) {
             YT.UpdateManager.updateTotalViews(parseInt(data.statistics.viewCount)) 
         }) 
     })
@@ -108,7 +108,7 @@ window.onload = () => {
 		} else {
 			clearInterval(estimatedCountRefresh);
 			if (rightKeys.length == 0) {
-				$.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user, function(data) {
+				$.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user, function(data) {
 					YT.UpdateManager.updateSubs(data.statistics.subscriberCount)
 				})
 			}
@@ -174,7 +174,7 @@ $.getJSON('https://www.googleapis.com/youtube/v3/channels?part=statistics,snippe
 }).fail(function() {
     rightKeys.pop(rightKey)
     console.log("Invalid key detected in right keys array, removing it...")
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=channel&part=statistics&id='+user, function(data) {
             YT.UpdateManager.updateSubs(data.statistics.subscriberCount)
             YT.GoalManager.load(data.statistics.subscriberCount)
         })

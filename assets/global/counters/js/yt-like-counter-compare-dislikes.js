@@ -92,8 +92,8 @@ window.onload = () => {
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
 
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video1, function(data) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video2, function(data2) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video1, function(data) {
+            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video2, function(data2) {
                 YT.UpdateManager.updateDislikes(data.statistics.dislikeCount, data2.statistics.dislikeCount, parseInt(data.statistics.dislikeCount - data2.statistics.dislikeCount))
 
                 chart.series[0].addPoint([                   
@@ -114,8 +114,8 @@ window.onload = () => {
         YT.UpdateManager.updateThumbnail('https://i3.ytimg.com/vi/'+video1+'/maxresdefault.jpg', 'https://i3.ytimg.com/vi/'+video2+'/maxresdefault.jpg')
     }).fail(function() {
         if (rightKeys.length == 0) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video1, function(data) {
-                $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video2, function(data2) {
+            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=snippet&id='+video1, function(data) {
+                $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=snippet&id='+video2, function(data2) {
                     YT.UpdateManager.updateTitle(data.snippet.title, data2.snippet.title)
                 })
             })
@@ -182,8 +182,8 @@ setInterval(function () {
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
 
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video1, function(data) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics&id='+video2, function(data2) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video1, function(data) {
+            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics&id='+video2, function(data2) {
                 YT.UpdateManager.updateDislikes(data.statistics.dislikeCount, data2.statistics.dislikeCount, parseInt(data.statistics.dislikeCount - data2.statistics.dislikeCount))
 
                 chart.series[0].addPoint([                   
@@ -234,7 +234,7 @@ function search1() {
     $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + replaceurl + '&key=' + rightKey, function(data) {
         window.location.href = '/yt-like-counter/compare/dislikes/?v1=' + data.items[0].id.videoId + '&v2=' + video2;
     }).fail(function() {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
             window.location.href = '/yt-like-counter/compare/dislikes/?v1=' + data.id.videoId + '&v2=' + video2;
         })
     })
@@ -246,7 +246,7 @@ function search2() {
     $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + replaceurl + '&key=' + rightKey, function(data) {
         window.location.href = '/yt-like-counter/compare/dislikes/?v1=' + video1 + '&v2=' + data.items[0].id.videoId;
     }).fail(function() {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
             window.location.href = '/yt-like-counter/compare/dislikes/?v1=' + video1 + '&v2=' + data.id.videoId;
         })
     })

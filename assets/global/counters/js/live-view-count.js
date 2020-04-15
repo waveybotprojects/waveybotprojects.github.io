@@ -92,7 +92,7 @@ YT.manager = {
     })
     },
     getDataBackup: function() {
-        $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,snippet&id='+video, function(data) {
+        $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=video&part=statistics,snippet&id='+video, function(data) {
             var channelId = data.snippet.channelId;
             var views = parseInt(data.statistics.viewCount);
             var likes = parseInt(data.statistics.likeCount);
@@ -141,7 +141,7 @@ YT.searchManager = {
         $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + searchQuery + '&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
             window.location.href = '/live-view-count/?v=' + data.items[0].id.videoId;
           }).fail(function() {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
+            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
               window.location.href = '/live-view-count/?v='+data.id.videoId;
             })
           })
@@ -152,7 +152,7 @@ YT.searchManager = {
         $.getJSON('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&type=video&q=' + searchQuery + '&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
             window.location.href = 'compare/?v1='+ video + '&v2=' + data.items[0].id.videoId;
           }).fail(function() {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
+            $.getJSON('https://ytdata-livecounts-io.glitch.me/yt_data?type=search&part=video&q='+ searchQuery, function(data) {
               window.location.href = 'compare/?v1='+ video + '&v2=' + data.id.videoId;
             })
           })

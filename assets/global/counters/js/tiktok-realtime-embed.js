@@ -6,21 +6,21 @@ gtag('config', 'UA-119417406-7');
 var ok;
 
 window.onload = () => {
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
-        document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
-        document.querySelector('#name').innerHTML = data.body.userData.nickName
-        document.querySelector('#odometer').innerHTML = data.body.userData.fans
+    $.getJSON('https://tiktok.livecounts.io/single/'+user, function(data) {
+        document.querySelector('#user_pic').src = data.avatar
+        document.querySelector('#name').innerHTML = data.username
+        document.querySelector('#odometer').innerHTML = data.followCount
     })
 }
 
 setInterval(function() {
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+'https://www.tiktok.com/node/share/user/@'+user, function(data) {
+    $.getJSON('https://tiktok.livecounts.io/single/'+user, function(data) {
         if (!ok) {
-            document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
-            document.querySelector('#name').innerHTML = data.body.userData.nickName
+            document.querySelector('#user_pic').src = data.avatar
+            document.querySelector('#name').innerHTML = data.username
             ok = true;  
         }
-        document.querySelector('#odometer').innerHTML = data.body.userData.fans
+        document.querySelector('#odometer').innerHTML = data.followCount
     })
 }, 2000)
 
