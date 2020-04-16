@@ -1,7 +1,7 @@
 var TikTok = {};
 var user;
 var startRefresh;
-var TikTokURL = "https://tiktok.livecounts.io/single/"
+var ok;
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -91,6 +91,13 @@ TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
       $.getJSON(TikTok.corsManager.get() + user, function(data) {
+        if (!ok) {
+          TikTok.updateManager.updateUsername(data.body.userData.nickName)
+          TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])
+          TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
+          TikTok.updateManager.updateHeartCount(data.body.userData.heart) 
+          ok = true;       
+        }
         TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
         TikTok.updateManager.updateHeartCount(data.body.userData.heart)
       })
