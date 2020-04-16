@@ -41,7 +41,7 @@ setTimeout(function() {
     video = getUrlVars()["id"];
 }
 
-  $.getJSON(corsProxies[Math.floor(Math.random() *corsProxies.length)] + 'https://www.tiktok.com/node/share/video/@'+user+'/'+video, function(data) {
+  $.getJSON(corsProxies[Math.floor(Math.random() *corsProxies.length)] + 'views/'+user+'/'+video, function(data) {
     if (data.body.videoData.itemInfos.text.length >=52) {
       $(".video-title").css("font-size", "calc(7px + 1vw)");
     }  
@@ -79,7 +79,7 @@ setTimeout(function() {
 }, 1)
 
 setInterval(function() {
-  $.getJSON(corsProxies[Math.floor(Math.random() *corsProxies.length)] + 'https://www.tiktok.com/node/share/video/@'+user+'/'+video, function(data) {
+  $.getJSON(corsProxies[Math.floor(Math.random() *corsProxies.length)] + 'views/'+user+'/'+video, function(data) {
     if (!ok) {
       TikTok.UpdateManager.updateTitle(data.body.videoData.itemInfos.text)
       document.querySelector(".video-author").innerHTML = data.body.videoObjectPageProps.videoProps.creator.name
