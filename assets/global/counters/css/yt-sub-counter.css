@@ -20,7 +20,7 @@ p,h1,h2,h3,h4,h5 {
 }
 
 .main-odometer {
-  font-size: calc(30px + 6vw)
+  font-size: calc(30px + 4vw)
 }
 
 .profile-picture {
