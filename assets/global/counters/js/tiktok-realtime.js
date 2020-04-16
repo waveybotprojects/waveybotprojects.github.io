@@ -81,14 +81,20 @@ TikTok.updateManager = {
   }
 };
 
+TikTok.corsManager = {
+  get: function() {
+    return corsProxies[Math.floor(Math.random() * corsProxies.length)];
+  }
+}
+
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-      $.getJSON(TikTokURL + user, function(data) {
-        TikTok.updateManager.updateFollowerCount(data.followCount)
-        TikTok.updateManager.updateHeartCount(data.heartCount)
+      $.getJSON(TikTok.corsManager.get() + user, function(data) {
+        TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
+        TikTok.updateManager.updateHeartCount(data.body.userData.heart)
       })
-    }, 2000)
+    }, 3000)
   },
   stop: function() {
     clearInterval(startRefresh)
@@ -106,11 +112,11 @@ function getUrlVars() {
 }
 
 function getData() {
-    $.getJSON(TikTokURL + user, function(data) {
-      TikTok.updateManager.updateUsername(data.username)
-      TikTok.updateManager.updateAvatar(data.avatar)
-      TikTok.updateManager.updateFollowerCount(data.followCount)
-      TikTok.updateManager.updateHeartCount(data.heartCount)
+    $.getJSON(TikTok.corsManager.get() + user, function(data) {
+      TikTok.updateManager.updateUsername(data.body.userData.nickName)
+      TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])
+      TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
+      TikTok.updateManager.updateHeartCount(data.body.userData.heart)
   }).fail(function() {
       setTimeout(function() {
         getData();

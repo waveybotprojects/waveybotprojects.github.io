@@ -6,23 +6,23 @@ gtag('config', 'UA-119417406-7');
 var ok;
 
 window.onload = () => {
-    $.getJSON('https://tiktok.livecounts.io/single/'+user, function(data) {
-        document.querySelector('#user_pic').src = data.avatar
-        document.querySelector('#name').innerHTML = data.username
-        document.querySelector('#odometer').innerHTML = data.followCount
+    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+user, function(data) {
+        document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
+        document.querySelector('#name').innerHTML = data.body.userData.nickName
+        document.querySelector('#odometer').innerHTML = data.body.userData.fans
     })
 }
 
 setInterval(function() {
-    $.getJSON('https://tiktok.livecounts.io/single/'+user, function(data) {
+    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+user, function(data) {
         if (!ok) {
-            document.querySelector('#user_pic').src = data.avatar
-            document.querySelector('#name').innerHTML = data.username
+            document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
+            document.querySelector('#name').innerHTML = data.body.userData.nickName
             ok = true;  
         }
-        document.querySelector('#odometer').innerHTML = data.followCount
+        document.querySelector('#odometer').innerHTML = data.body.userData.fans
     })
-}, 2000)
+}, 3000)
 
 //---------------------------------------------------------------//
 //  ______ _    _ _   _  _____ _______ _____ ____  _   _  _____  //
