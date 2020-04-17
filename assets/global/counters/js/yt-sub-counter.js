@@ -152,10 +152,16 @@ YT.refreshManager = {
 					})
 				})
 			} else {
-				$.getJSON('https://api.livecounts.io/yt_subs', function(data) {
-					var result = data.filter(x => x.cid === user);
-					YT.updateManager.updateSubscriberCount(result[0].subscriberCount)	
-				})
+				if (user == 'UCaEk4apVOqy-sFVh3xnpJyw') {
+					$.getJSON('https://amazing-app-aww-man.glitch.me/getShazCount', function(data) {
+						YT.updateManager.updateSubscriberCount(data.count)	
+					})	
+				} else {
+					$.getJSON('https://api.livecounts.io/yt_subs', function(data) {
+						var result = data.filter(x => x.cid === user);
+						YT.updateManager.updateSubscriberCount(result[0].subscriberCount)	
+					})
+				}
 			}
 
 				
