@@ -20,7 +20,7 @@ p,h1,h2,h3,h4,h5 {
 }
 
 .main-odometer {
-  font-size: calc(30px + 4vw)
+  font-size: calc(30px + 3vw)
 }
 
 .profile-picture {
@@ -118,6 +118,12 @@ iframe[src*="ads-iframe"] { display: none; }
 .navbar-button {
   display: inline-block;
 }
+}
+
+@media (max-width: 567px) {
+  .main-odometer {
+    font-size: calc(18px + 2.5vw);
+  }
 }
 
 .sidebar-expand {
