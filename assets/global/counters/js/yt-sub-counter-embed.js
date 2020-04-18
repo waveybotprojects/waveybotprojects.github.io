@@ -90,12 +90,18 @@ window.onload = () => {
 }
 
 var estimatedCountRefresh = setInterval(function() {
-	$.getJSON('https://api.livecounts.io/yt_subs', function(data2) {
-		var result = data2.filter(x => x.cid === user);
-		if (result.length != 0) {
-			document.querySelector("#odometer").innerHTML = result[0].subscriberCount;
-		}
-	})
+	if (user == 'UCaEk4apVOqy-sFVh3xnpJyw') {
+		$.getJSON('https://amazing-app-aww-man.glitch.me/getShazCount', function(data) {
+			document.querySelector("#odometer").innerHTML = data.count	
+		})
+	} else {
+		$.getJSON('https://api.livecounts.io/yt_subs', function(data2) {
+			var result = data2.filter(x => x.cid === user);
+			if (result.length != 0) {
+				document.querySelector("#odometer").innerHTML = result[0].subscriberCount;
+			}
+		})
+	}
 }, 2000)
 
 var normalCountRefresh = setInterval(function() {
