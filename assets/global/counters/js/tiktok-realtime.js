@@ -84,13 +84,17 @@ TikTok.updateManager = {
 TikTok.corsManager = {
   get: function() {
     return corsProxies[Math.floor(Math.random() * corsProxies.length)];
+  },
+  getV2: function() {
+    return corsProxiesV2[Math.floor(Math.random() * corsProxiesV2.length)];
   }
+
 }
 
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-      $.getJSON(TikTok.corsManager.get() + user, function(data) {
+      $.getJSON(TikTok.corsManager.getV2() + user, function(data) {
         if (!ok) {
           TikTok.updateManager.updateUsername(data.body.userData.nickName)
           TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])

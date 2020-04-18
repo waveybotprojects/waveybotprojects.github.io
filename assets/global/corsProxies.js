@@ -1,5 +1,4 @@
-var corsProxies = [
-    "https://kaput-classic-explanation.glitch.me/",
+const corsProxies = [
     "https://kaput-classic-explanation.glitch.me/",
     "https://magnificent-mint-dog.glitch.me/",
     "https://efficacious-resisted-shear.glitch.me/",
@@ -9,7 +8,20 @@ var corsProxies = [
     "https://calico-guttural-feather.glitch.me/",
     "https://fallacious-agreeable-filament.glitch.me/",
     "https://wise-daffodil-brisket.glitch.me/",
-    "https://ossified-polydactyl-sprout.glitch.me/",
+	"https://ossified-polydactyl-sprout.glitch.me/"
+]
+	
+const corsProxiesV2 = [
+	"https://kaput-classic-explanation.glitch.me/",
+    "https://magnificent-mint-dog.glitch.me/",
+    "https://efficacious-resisted-shear.glitch.me/",
+    "https://magnetic-lucky-gecko.glitch.me/",
+    "https://feather-bald-hawk.glitch.me/",
+    "https://animated-fast-wolfberry.glitch.me/",
+    "https://calico-guttural-feather.glitch.me/",
+    "https://fallacious-agreeable-filament.glitch.me/",
+    "https://wise-daffodil-brisket.glitch.me/",
+	"https://ossified-polydactyl-sprout.glitch.me/",
 	"https://solstice-wise-grade.glitch.me/",
 	"https://steady-accidental-brush.glitch.me/",
 	"https://hill-billowy-rock.glitch.me/",
