@@ -20,7 +20,7 @@ function getUrlVars() {
 function search() {
     var replaceurl = document.getElementById('search').value.replace("%20", " ");
     var rightKey = rightKeys[Math.floor(Math.random()*rightKeys.length)];
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=video&q='+replaceurl, function(data) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=search&part=video&q='+replaceurl, function(data) {
         window.location.href = '/yt-like-counter/?q='+data.id.videoId;
     })
 }
@@ -96,7 +96,7 @@ setInterval(function(){
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
         if (rightKeys.length == 0) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,liveStreamingDetails&id='+video, function(data) {
+            $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=video&part=statistics,liveStreamingDetails&id='+video, function(data) {
                 if (!data.liveStreamingDetails) {
                     var channelId = actualChannelId;
                     var views = parseInt(data.statistics.viewCount);
@@ -163,7 +163,7 @@ window.onload = () => {
         rightKeys.pop(rightKey)
         console.log("Invalid key detected in right keys array, removing it...")
         if (rightKeys.length == 0) {
-            $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=statistics,liveStreamingDetails&id='+video, function(data) {
+            $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=video&part=statistics,liveStreamingDetails&id='+video, function(data) {
                 if (!data.liveStreamingDetails) {
                     var channelId = actualChannelId;
                     var views = parseInt(data.statistics.viewCount);
@@ -192,7 +192,7 @@ window.onload = () => {
         }
     })
 
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=video&part=snippet&id='+video, function(data) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=video&part=snippet&id='+video, function(data) {
         YT.UpdateManager.updateTitle(data.snippet.title)
         actualChannelId = data.snippet.channelId
     })

@@ -106,8 +106,8 @@ function getData() {
 }
 
 function getDataBackup() {
-  $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user1, function(data1) {
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=snippet&id='+user2, function(data2) {
+  $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=snippet&id='+user1, function(data1) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=snippet&id='+user2, function(data2) {
       YT.updateManager.updateBanner(data1.brandingSettings.image.bannerImageUrl, data2.brandingSettings.image.bannerImageUrl)
       YT.updateManager.updateAvatar(data1.snippet.thumbnails.high.url, data2.snippet.thumbnails.high.url)
       YT.updateManager.updateName(data1.snippet.title, data2.snippet.title)   
@@ -135,7 +135,7 @@ function getSubData() {
 
   if (isUsingEstimatedCounters1 && !isUsingEstimatedCounters2) {
     $.getJSON("https://api.livecounts.io/yt_subs", function(data) {
-      $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user2, function(data2) {
+      $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=statistics&id='+user2, function(data2) {
         var result = data.filter(x => x.cid === user1);
         YT.updateManager.updateSubscriberCount(result[0].subscriberCount, data2.statistics.subscriberCount)
       })
@@ -144,7 +144,7 @@ function getSubData() {
 
   if (!isUsingEstimatedCounters1 && isUsingEstimatedCounters2) {
     $.getJSON("https://api.livecounts.io/yt_subs", function(data) {
-      $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user1, function(data2) {
+      $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=statistics&id='+user1, function(data2) {
         var result = data.filter(x => x.cid === user2);
         YT.updateManager.updateSubscriberCount(data2.statistics.subscriberCount, result[0].subscriberCount)
       })
@@ -152,8 +152,8 @@ function getSubData() {
   }
 
   if (!isUsingEstimatedCounters1 && !isUsingEstimatedCounters2) {
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user1, function(data) {
-      $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=channel&part=statistics&id='+user2, function(data2) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=statistics&id='+user1, function(data) {
+      $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=channel&part=statistics&id='+user2, function(data2) {
         YT.updateManager.updateSubscriberCount(data.statistics.subscriberCount, data2.statistics.subscriberCount)
       })
     })
@@ -164,7 +164,7 @@ function searchUser1() {
   $(".channel-list-compare-1").html("");
   var change_user = document.querySelector(".change-user-1-search").value
   if (change_user.value != 0) {
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&maxResults=5&q='+change_user,function(data) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=search&part=channel&maxResults=5&q='+change_user,function(data) {
       for (let i = 0; i < data.items.length; i++) {
         $(".channel-list-compare-1").append('<a href="/yt-sub-counter/compare/?user1='+data.items[i].id.channelId+'&user2='+user2+'" class="mt-2 card"><div class="d-flex"><img class="rounded-circle" width="64" height="64" src="'+data.items[i].snippet.thumbnails.default.url+'"><h5 style="margin-top: 20px;" class="ml-2">'+data.items[i].snippet.title+'</h5></div></a>');
       }
@@ -180,7 +180,7 @@ function searchUser2() {
   $(".channel-list-compare-2").html("");
   var change_user = document.querySelector(".change-user-2-search").value
   if (change_user.value != 0) {
-    $.getJSON('https://reeeeeeeeee.livecounts.io/yt_data?type=search&part=channel&maxResults=5&q='+change_user,function(data) {
+    $.getJSON('https://amazing-app-aww-man.glitch.me/yt_data?type=search&part=channel&maxResults=5&q='+change_user,function(data) {
       for (let i = 0; i < data.items.length; i++) {
         $(".channel-list-compare-2").append('<a href="/yt-sub-counter/compare/?user1='+user1+'&user2='+data.items[i].id.channelId+'" class="mt-2 card"><div class="d-flex"><img class="rounded-circle" width="64" height="64" src="'+data.items[i].snippet.thumbnails.default.url+'"><h5 style="margin-top: 20px;" class="ml-2">'+data.items[i].snippet.title+'</h5></div></a>');
       }
