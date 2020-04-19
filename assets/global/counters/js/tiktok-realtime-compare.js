@@ -39,17 +39,11 @@ TikTok.updateManager = {
   }
 }
 
-TikTok.corsManager = {
-  get: function() {
-    return corsProxies[Math.floor(Math.random() * corsProxies.length)];
-  }
-}
-
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-     $.getJSON(TikTok.corsManager.get() + user1, function(data1) {
-       $.getJSON(TikTok.corsManager.get() + user2, function(data2) {
+     $.getJSON('https://tiktok.livecounts.io/tiktok/' + user1, function(data1) {
+       $.getJSON('https://tiktok.livecounts.io/tiktok/' + user2, function(data2) {
           TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
        })
       })
@@ -71,8 +65,8 @@ function getUrlVars() {
 }
 
 function getData() {
-  $.getJSON(TikTok.corsManager.get() + user1, function(data1) {
-     $.getJSON(TikTok.corsManager.get() + user2, function(data2) {
+  $.getJSON('https://tiktok.livecounts.io/tiktok/' + user1, function(data1) {
+     $.getJSON('https://tiktok.livecounts.io/tiktok/', function(data2) {
        TikTok.updateManager.updateAvatar(data1.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
        TikTok.updateManager.updateUsername(data1.body.userData.nickName, data2.body.userData.nickName)
        TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)

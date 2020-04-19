@@ -6,7 +6,7 @@ gtag('config', 'UA-119417406-7');
 var ok;
 
 window.onload = () => {
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+user, function(data) {
+    $.getJSON('https://tiktok.livecounts.io/tiktok/' +user, function(data) {
         document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
         document.querySelector('#name').innerHTML = data.body.userData.nickName
         document.querySelector('#odometer').innerHTML = data.body.userData.fans
@@ -14,7 +14,7 @@ window.onload = () => {
 }
 
 setInterval(function() {
-    $.getJSON(corsProxies[Math.floor(Math.random() * corsProxies.length)]+user, function(data) {
+    $.getJSON('https://tiktok.livecounts.io/tiktok/'+user, function(data) {
         if (!ok) {
             document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
             document.querySelector('#name').innerHTML = data.body.userData.nickName
