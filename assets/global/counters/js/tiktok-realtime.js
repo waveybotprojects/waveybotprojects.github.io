@@ -2,7 +2,7 @@ var TikTok = {};
 var user;
 var startRefresh;
 var ok;
-var tiktokUrl = 'https://tiktok.livecounts.io/';
+var tiktokUrl = 'https://tiktok.livecounts.io/tiktok/';
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
