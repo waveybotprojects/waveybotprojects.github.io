@@ -7,20 +7,20 @@ var ok;
 
 window.onload = () => {
     $.getJSON('https://tiktok.livecounts.io/tiktok/' +user, function(data) {
-        document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
-        document.querySelector('#name').innerHTML = data.body.userData.nickName
-        document.querySelector('#odometer').innerHTML = data.body.userData.fans
+        document.querySelector('#user_pic').src = data.avatar
+        document.querySelector('#name').innerHTML = data.username
+        document.querySelector('#odometer').innerHTML = data.followCount
     })
 }
 
 setInterval(function() {
     $.getJSON('https://tiktok.livecounts.io/tiktok/'+user, function(data) {
         if (!ok) {
-            document.querySelector('#user_pic').src = data.body.userData.coversMedium[0]
-            document.querySelector('#name').innerHTML = data.body.userData.nickName
+            document.querySelector('#user_pic').src = data.avatar
+            document.querySelector('#name').innerHTML = data.username
             ok = true;  
         }
-        document.querySelector('#odometer').innerHTML = data.body.userData.fans
+        document.querySelector('#odometer').innerHTML = data.followCount
     })
 }, 3000)
 

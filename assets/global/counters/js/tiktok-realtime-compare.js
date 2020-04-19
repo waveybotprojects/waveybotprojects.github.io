@@ -3,7 +3,7 @@ var user1;
 var user2
 var startRefresh;
 
-var TikTokURL = "https://www.tiktok.com/node/share/user/@"
+var TikTokURL = "https://tiktok.livecounts.io/tiktok/"
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -42,9 +42,9 @@ TikTok.updateManager = {
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-     $.getJSON('https://tiktok.livecounts.io/tiktok/' + user1, function(data1) {
-       $.getJSON('https://tiktok.livecounts.io/tiktok/' + user2, function(data2) {
-          TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
+     $.getJSON(TikTokURL + user1, function(data1) {
+       $.getJSON(TikTokURL + user2, function(data2) {
+          TikTok.updateManager.updateFollowerCount(data1.followCount, data2.followCount)
        })
       })
     }, 3000)
@@ -65,11 +65,11 @@ function getUrlVars() {
 }
 
 function getData() {
-  $.getJSON('https://tiktok.livecounts.io/tiktok/' + user1, function(data1) {
-     $.getJSON('https://tiktok.livecounts.io/tiktok/', function(data2) {
-       TikTok.updateManager.updateAvatar(data1.body.userData.coversMedium[0], data2.body.userData.coversMedium[0])
-       TikTok.updateManager.updateUsername(data1.body.userData.nickName, data2.body.userData.nickName)
-       TikTok.updateManager.updateFollowerCount(data1.body.userData.fans, data2.body.userData.fans)
+  $.getJSON(TikTokURL + user1, function(data1) {
+     $.getJSON(TikTokURL +user2, function(data2) {
+       TikTok.updateManager.updateAvatar(data1.avatar, data2.avatar)
+       TikTok.updateManager.updateUsername(data1.username, data2.username)
+       TikTok.updateManager.updateFollowerCount(data1.followCount, data2.followCount)
      }).fail(function() {
        setTimeout(function() {
          getData();
