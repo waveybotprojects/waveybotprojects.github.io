@@ -2,6 +2,7 @@ var TikTok = {};
 var user;
 var startRefresh;
 var ok;
+var tiktokUrl = 'https://tiktok.livecounts.io/';
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -94,16 +95,16 @@ TikTok.corsManager = {
 TikTok.refreshManager = {
   start: function() {
     startRefresh = setInterval(function() {
-      $.getJSON(TikTok.corsManager.getV2() + user, function(data) {
+      $.getJSON(tiktokUrl + user, function(data) {
         if (!ok) {
-          TikTok.updateManager.updateUsername(data.body.userData.nickName)
-          TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])
-          TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
-          TikTok.updateManager.updateHeartCount(data.body.userData.heart) 
+          TikTok.updateManager.updateUsername(data.username)
+          TikTok.updateManager.updateAvatar(data.avatar)
+          TikTok.updateManager.updateFollowerCount(data.followCount)
+          TikTok.updateManager.updateHeartCount(data.heartCount) 
           ok = true;       
         }
-        TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
-        TikTok.updateManager.updateHeartCount(data.body.userData.heart)
+        TikTok.updateManager.updateFollowerCount(data.followCount)
+        TikTok.updateManager.updateHeartCount(data.heartCount)
       })
     }, 3000)
   },
@@ -123,11 +124,11 @@ function getUrlVars() {
 }
 
 function getData() {
-    $.getJSON(TikTok.corsManager.get() + user, function(data) {
-      TikTok.updateManager.updateUsername(data.body.userData.nickName)
-      TikTok.updateManager.updateAvatar(data.body.userData.coversMedium[0])
-      TikTok.updateManager.updateFollowerCount(data.body.userData.fans)
-      TikTok.updateManager.updateHeartCount(data.body.userData.heart)
+    $.getJSON(tiktokUrl+user, function(data) {
+      TikTok.updateManager.updateUsername(data.username)
+      TikTok.updateManager.updateAvatar(data.avatar)
+      TikTok.updateManager.updateFollowerCount(data.followCount)
+      TikTok.updateManager.updateHeartCount(data.heartCount)
   }).fail(function() {
       setTimeout(function() {
         getData();
