@@ -1,12 +1,32 @@
 body {
-  background-color: #eef5f9;
+  background-color: #ebeef0;
 }
 
+/* Cool Scroll Bar */
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-thumb{
+  background: rgb(212, 211, 211);
+}
+::-webkit-scrollbar-track{
+  background: rgb(0,0,0);
+}
+/**/  
+
+
 .navbar {
-  background: #e96443;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #000000;  /* fallback for old browsers */
   flex-direction: row;
+}
+
+.navbar-logo {
+  height: 50px;
+  vertical-align: middle;
+}
+
+.topnav-text {
+  vertical-align: middle;
 }
 
 p,h1,h2,h3,h4,h5 {
@@ -48,8 +68,24 @@ margin-left: 225px;
   bottom: 0;
   z-index: 100;
   padding-top: 25px;
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+  overflow-y: auto;
   background-color: white;
+}
+
+.more-users {
+  display: none;
+  opacity: 0;
+  transition: opacity 5s ease-in-out;
+}
+
+.fa-arrow-down {
+  transition: transform .6s ease-in-out;
+}
+
+.featured-pic {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
 }
 
 .navbar-button {
@@ -73,11 +109,29 @@ iframe[src*="ads-iframe"] { display: none; }
 
 .nav-item {
   font-size: 17px;
-  margin-left: 10px;
+  margin: 0 10px;
+}
+
+.nav-item:hover {
+  background-color: black;
+  
+}
+
+.nav-item:hover .navbar-text-gone {
+  color: white;
+}
+
+.nav-item:hover i {
+  color: white;
 }
 
 .nav-title-text {
   margin-top: 40px;
+}
+
+.card {
+  border: 0;
+  box-shadow: 0px 0px 5px 1px rgb(219, 219, 219);
 }
 
 @media (max-width: 946px) {
@@ -85,7 +139,7 @@ iframe[src*="ads-iframe"] { display: none; }
     width: auto;
 }
 .mainWrapper {
-  margin-left: 70px;
+  margin-left: 74px;
 }
 .navbar-text-gone {
     font-size: 0px;

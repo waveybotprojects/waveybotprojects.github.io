@@ -11,13 +11,13 @@
 	<link rel="icon" href="https://livecounts.io/assets/global/youtube-logo.png">
     <meta name="language" content="English">
   
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500&display=swap">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="stylesheet" href="https://livecounts.io/assets/global/odometer.css">
 
-    <link rel="stylesheet" href="/assets/global/counters/css/tiktok-realtime.css?v=12">
+    <link rel="stylesheet" href="/assets/global/counters/css/tiktok-realtime.css?v=14">
 </head>
 
 <body>
@@ -25,24 +25,67 @@
       <button class="navbar-button" type="button" data-sidebar="false">
         <i class="fa fa-bars"></i>
       </button>
-      <h2 class="mx-auto navbar-text mb-0"><i class="fas fa-music"></i> TikTok Realtime</h2>
+      <h2 class="mx-auto navbar-text mb-0"><img src="../assets/images/tiktok.svg" class="navbar-logo"> <span class="topnav-text">TikTok Realtime</span></h2>
     </nav>
 
     <nav class="d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span class="navbar-text-gone" style="margin-top: 45px;margin-left: 10px;">Featured Users</span>
+            </h6>
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <h6
-                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-                        <span class="navbar-text-gone" style="margin-top: 40px;">Featured Users</span>
-                    </h6>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="/tiktok-realtime/?u=charlidamelio">
-                        <i class="fas fa-user"></i>
-                        <span class="navbar-text-gone">charli d'amelio</span>
+                        <img src="https://p16.muscdn.com/img/musically-maliva-obj/1664269796570117~c5_720x720.jpeg" alt="" class="featured-pic">
+                        <span class="navbar-text-gone">Charli d'amelio</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tiktok-realtime/?u=lorengray">
+                        <img src="https://p16.muscdn.com/img/musically-maliva-obj/1660343861335046~c5_720x720.jpeg" alt="" class="featured-pic">
+                        <span class="navbar-text-gone">Loren Gray</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/tiktok-realtime/?u=zachking">
+                        <img src="https://mpak-suse1.akamaized.net/res/usericon/913/icon-68616495085350913-596.jpg" alt="" class="featured-pic">
+                        <span class="navbar-text-gone">Zach King</span>
+                    </a>
+                </li>
+
+                <div class="more-users">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tiktok-realtime/?u=tiktok">
+                            <img src="https://p16.muscdn.com/img/musically-maliva-obj/1645136815763462~c5_720x720.jpeg" alt="" class="featured-pic">
+                            <span class="navbar-text-gone">Tiktok</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tiktok-realtime/?u=riyaz.14">
+                            <img src="https://p16-tiktokcdn-com.akamaized.net/aweme/720x720/tiktok-obj/1659291656883201.jpeg" alt="" class="featured-pic">
+                            <span class="navbar-text-gone">Riyas Aly</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tiktok-realtime/?u=addisonre">
+                            <img src="https://p16.muscdn.com/img/musically-maliva-obj/1661468384642053~c5_720x720.jpeg" alt="" class="featured-pic">
+                            <span class="navbar-text-gone">Addison Rae</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/tiktok-realtime/?u=babyariel">
+                            <img src="https://p16.muscdn.com/img/musically-maliva-obj/1661728335585285~c5_720x720.jpeg" alt="" class="featured-pic">
+                            <span class="navbar-text-gone">Baby Ariel</span>
+                        </a>
+                    </li>
+                </div>
+                <li class="nav-item">
+                    <a class="nav-link more-toggle" data-moretoggle="false">
+                        <i class="fas fa-arrow-down"></i>
+                        <span class="navbar-text-gone">More</span>
+                    </a>
+                </li>
+
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
@@ -147,14 +190,14 @@
                     </div>
 
                 <div class="row">
-                    <div class="col">
-                        <div class="card p-2">
+                    <div class="col-md">
+                        <div class="card p-2 mt-2">
                             <div class="text-center heart-odometer bottom-odometer odometer"></div>
                             <h5 class="text-center">Hearts</h5>
                         </div>
                     </div>
-                    <div class="col">
-                        <div class="card p-2">
+                    <div class="col-md">
+                        <div class="card p-2 mt-2">
                             <div class="text-center goal-odometer bottom-odometer odometer"></div>
                             <h5 class="text-center">Goal</h5>
                         </div>
@@ -346,14 +389,14 @@ aria-hidden="true">
 
 </body>
 
-<script data-ad-client="ca-pub-1358865196814452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
+
 <script src="https://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://livecounts.io/assets/global/odometer.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
+<script src="/assets/global/counters/js/tiktok-realtime.js?v=36"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://livecounts.io/assets/global/corsProxies.js?"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<script src="/assets/global/counters/js/tiktok-realtime.js?v=31"></script>
+<script data-ad-client="ca-pub-1358865196814452" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119417406-7"></script>
 
 </html>

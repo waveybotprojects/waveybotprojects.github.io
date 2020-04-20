@@ -4,10 +4,19 @@ var startRefresh;
 var ok;
 var tiktokUrl = 'https://tiktok.livecounts.io/tiktok/';
 
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-119417406-7');
+
+if (!getUrlVars()["u"]) {
+  user = "charlidamelio";
+} else {
+  user = getUrlVars()["u"];
+}
+
+window.onload = () => {
+  getData()
+  TikTok.updateManager.updateYear()
+  TikTok.refreshManager.start()
+}
+
 
 var chart = new Highcharts.chart({
 	chart: {
@@ -45,6 +54,11 @@ TikTok.updateManager = {
     for (let i=0; i < items.length; i++) {
       items[i].innerHTML = a
     }
+
+    if (window.location.href.includes("?u=")) {
+      document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count"	      document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count"
+      document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");	      document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");
+    }
     
     document.querySelector(".tiktok-url").href = "https://tiktok.com/@"+user
     document.querySelector("#shareurl").value = window.location.href
@@ -81,16 +95,6 @@ TikTok.updateManager = {
     document.querySelector(".year").innerHTML = new Date().getFullYear()
   }
 };
-
-TikTok.corsManager = {
-  get: function() {
-    return corsProxies[Math.floor(Math.random() * corsProxies.length)];
-  },
-  getV2: function() {
-    return corsProxiesV2[Math.floor(Math.random() * corsProxiesV2.length)];
-  }
-
-}
 
 TikTok.refreshManager = {
   start: function() {
@@ -157,11 +161,10 @@ function searchCompareUser() {
 
 // --------------------------------- //
 
-if (!getUrlVars()["u"]) {
-    user = "charlidamelio";
-} else {
-    user = getUrlVars()["u"];
-}
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-119417406-7');
 
 // Change User Handler
 
@@ -186,17 +189,6 @@ $(".compare-search").keyup(function(event) {
         searchCompareUser();
     }
 });
-
-setTimeout(function() {
-  if (!getUrlVars()["u"]) {
-    history.pushState(null,'',window.location.href+'?u='+user)
-  }
-  
-  getData()
-  TikTok.updateManager.updateYear()
-  TikTok.refreshManager.start()
-},1)
-
 
 var disqus_config = function() {
     this.page.url = 'https://livecounts.io/tiktok-realtime/?u=' + user;
@@ -244,6 +236,20 @@ $('.style-options').on('change', function(){
 			window.location = window.location.href + $(this).val()
 		}
 	}
+})
+
+$('.more-toggle').click(() => {
+  if($('.more-toggle').attr('data-moretoggle') == "true") {
+    $('.more-users').css('display','none');
+    $('.more-users').css('opacity','0');
+    $('.nav-link .fa-arrow-down').css('transform', 'rotate(0deg)')
+    $('.more-toggle').attr('data-moretoggle','false');
+  } else {
+    $('.more-users').css('display','block');
+    $('.more-users').css('opacity','1');
+    $('.nav-link .fa-arrow-down').css('transform', 'rotate(180deg)')
+    $('.more-toggle').attr('data-moretoggle','true');
+  }
 })
 
 if (getUrlVars()["t"] == 1) {
