@@ -46,8 +46,8 @@ TikTok.updateManager = {
       items[i].innerHTML = a
     }
 
-        //don't update if there's no user specified, seo related stuff
-    if (getUrlVars(["u"])) {
+      //don't update if there's no user specified, seo related stuff
+    if (window.location.href.includes("?u=")) {
       document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count"
       document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");
     }
