@@ -229,7 +229,11 @@ $('.theme-options').on('change', function(){
 	if (getUrlVars()["t"]) {
 		window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
 	} else {
-		window.location = window.location.href + $(this).val()
+    if (getUrlVars()["u"]) {
+      window.location = window.location.href + $(this).val()
+    } else {
+      window.location = window.location.href + '?u='+user + $(this).val()
+    }
 	}
 })
 
@@ -240,7 +244,11 @@ $('.style-options').on('change', function(){
 		if (getUrlVars()["t"]) {
 			window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
 		} else {
-			window.location = window.location.href + $(this).val()
+      if (getUrlVars()["u"]) {
+        window.location = window.location.href + $(this).val()
+      } else {
+        window.location = window.location.href + '?u='+user + $(this).val()
+      }
 		}
 	}
 })
