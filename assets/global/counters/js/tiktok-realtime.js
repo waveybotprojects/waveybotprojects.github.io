@@ -56,8 +56,8 @@ TikTok.updateManager = {
     }
 
     if (window.location.href.includes("?u=")) {
-      document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count"	      document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count"
-      document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");	      document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");
+      document.title = "Livecounts.io - "+a+"'s TikTok Live Follower Count";
+      document.querySelector('meta[name="description"]').setAttribute("content","Livecounts.io is the simple way to check "+a+"'s Follower Count on TikTok, upadated in real-time!");
     }
     
     document.querySelector(".tiktok-url").href = "https://tiktok.com/@"+user
