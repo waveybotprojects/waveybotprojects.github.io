@@ -50,6 +50,12 @@ TikTok.updateManager = {
     document.querySelector("#shareurl").value = window.location.href
     document.querySelector("#embed-website").value = '<iframe height="80px" width="300px" frameborder="0" src="https://livecounts.io/tiktok-realtime/embed/?u='+user+'" style="border: 0; width:300px; height:80px; background-color: #FFF;"></iframe>'
     document.querySelector("#obs-url").value = 'https://livecounts.io/tiktok-realtime/embed/?u='+user
+
+    //don't update if there's no user specified, seo related stuff
+    if (getUrlVars(["u"])) {
+      window.title = `Livecounts.io - ${a}'s TikTok Live Follower Count`
+      document.querySelector('meta[name="description"]').setAttribute("content",`Livecounts.io is the simple way to check ${a}'s Follower Count on TikTok, upadated in real-time`);
+    }
   },
   updateAvatar: function(a) {
     document.querySelector(".profile-picture").src = a;
@@ -188,9 +194,9 @@ $(".compare-search").keyup(function(event) {
 });
 
 setTimeout(function() {
-  if (!getUrlVars()["u"]) {
-    history.pushState(null,'',window.location.href+'?u='+user)
-  }
+ // if (!getUrlVars()["u"]) {
+  //  history.pushState(null,'',window.location.href+'?u='+user)
+//  }
   
   getData()
   TikTok.updateManager.updateYear()
