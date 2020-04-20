@@ -109,7 +109,6 @@ iframe[src*="ads-iframe"] { display: none; }
 
 .nav-item {
   font-size: 17px;
-  margin: 0 10px;
 }
 
 .nav-item:hover {

@@ -15,6 +15,13 @@ window.onload = () => {
   getData()
   TikTok.updateManager.updateYear()
   TikTok.refreshManager.start()
+
+  var pattern = Trianglify({
+    width: 1110,
+    height: 160
+  });
+  
+  document.querySelector(".banner").src = pattern.png()
 }
 
 
