@@ -11,7 +11,7 @@ if (!getUrlVars()["u"]) {
   user = getUrlVars()["u"];
 }
 
-window.onload = () => {
+setTimeout(() => {
   getData()
   TikTok.updateManager.updateYear()
   TikTok.refreshManager.start()
@@ -22,7 +22,7 @@ window.onload = () => {
   });
   
   document.querySelector(".banner").src = pattern.png()
-}
+}, 1)
 
 
 var chart = new Highcharts.chart({
