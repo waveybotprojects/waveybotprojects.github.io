@@ -18,7 +18,7 @@ setTimeout(() => {
 
   var pattern = Trianglify({
     width: 1110,
-    height: 160
+    height: 180
   });
   
   document.querySelector(".banner").src = pattern.png()
