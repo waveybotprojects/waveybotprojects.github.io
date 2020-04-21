@@ -3,7 +3,7 @@ var YT = {};
 var user;
 var subCountRefresh;
 var totalViewsRefresh;
-var isUsingEstimatedCounters = false;
+var isUsingEstimatedCounters = true;
 
 // ----------------------------------- //
 
