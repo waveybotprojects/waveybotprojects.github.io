@@ -11,6 +11,10 @@ gtag('js', new Date());
 gtag('config', 'UA-119417406-7');
 
 TikTok.updateManager = {
+  updateBanner: function(a,b) {
+    document.querySelector(".banner-1").src = a;
+    document.querySelector(".banner-2").src = b;
+  },
   updateAvatar: function(a,b) {
     document.querySelector(".profile-picture-1").src = a;
     document.querySelector(".profile-picture-2").src = b;
@@ -87,7 +91,7 @@ function searchUser1() {
   if (change_user.length == 0) {
     alert("Invalid Username!")
   } else {
-    window.location.href = "/tiktok-realtime/?user1="+change_user+"&user2="+user2
+    window.location.href = "/tiktok-realtime/compare/?user1="+change_user+"&user2="+user2
   }
 }
 
@@ -96,7 +100,7 @@ function searchUser2() {
   if (change_user.length == 0) {
     alert("Invalid Username!")
   } else {
-    window.location.href = "/tiktok-realtime/?user1="+user1+"&user2="+change_user
+    window.location.href = "/tiktok-realtime/compare/?user1="+user1+"&user2="+change_user
   }
 }
 
@@ -129,6 +133,18 @@ setTimeout(function() {
   
   getData();
   TikTok.refreshManager.start();
+
+  var pattern1 = Trianglify({
+    width: 1110,
+    height: 200
+  });
+
+  var pattern2 = Trianglify({
+    width: 1110,
+    height: 200
+  });
+
+  TikTok.updateManager.updateBanner(pattern1.png(), pattern2.png())
 }, 1)
 
 // ---------------------------------- //
@@ -170,3 +186,35 @@ var disqus_config = function() {
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
 })();
+
+$('.theme-options').on('change', function(){
+	if (getUrlVars()["t"]) {
+		window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
+	} else {
+    window.location = window.location.href + $(this).val()
+	}
+})
+
+$('.style-options').on('change', function(){
+	if ($(this).val().includes("https")) {
+		window.location = $(this).val()
+	} else {
+		if (getUrlVars()["t"]) {
+			window.location = window.location.href.substring(0, window.location.href.indexOf('&t')) + $(this).val()
+		} else {
+      window.location = window.location.href + $(this).val()
+		}
+	}
+})
+
+if (getUrlVars()["t"] == 4) {
+	$('head').append('<link rel="stylesheet" type="text/css" href="https://livecounts.io/assets/global/odometer-fast.css">');
+	$("h1,h3,h4,h5,h6,p, .username").css({
+		"font-weight": "400",
+		"color": "#455A64"
+	});
+	$(".odometer").css({
+		"font-weight": "300",
+		"color": "#455A64"
+	});
+}
