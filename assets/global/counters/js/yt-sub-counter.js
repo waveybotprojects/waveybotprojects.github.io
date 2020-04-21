@@ -25,7 +25,7 @@ function checkData() {
 }
 
 function getData() {
-	$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id='+user+'&key=AIzaSyAuecFZ9xJXbGDkQYWBmYrtzOGJD-iDIgI', function(data) {
+	$.getJSON('https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics,brandingSettings&id='+user+'&key=AIzaSyAYS0w5i6ouN9FXHNPmCpWfCpg9OUFZ06g', function(data) {
 		if (data.items[0].brandingSettings.image.bannerImageUrl.toString() != "http://s.ytimg.com/yts/img/channels/c4/default_banner-vfl7DRgTn.png") {
 			YT.updateManager.updateBanner(data.items[0].brandingSettings.image.bannerImageUrl)
 		}
